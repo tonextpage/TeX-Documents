@@ -1,4 +1,4 @@
-TeX로 조판한 문서를 모아놓은 리포지토리입니다.
+TeX로 조판한 문서를 모아놓은 리포지토리입니다. 모든 문서는 TeXLive로 조판하였습니다.
 
 ## [preamble.tex](https://github.com/tonextpage/TeX-Documents/blob/28f796ced48c096816a3fce742c2fe40d53a6ab9/preamble.tex) 이용 가이드
 
