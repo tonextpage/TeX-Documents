@@ -64,7 +64,7 @@
 ```
 **사용 예시**
 ```TeX
-\begin{thm}{닫힌집합의 기본 성질}{1.4}
+\begin{thm}{닫힌집합의 기본 성질}{1.3}
   위상공간 $X$에 대하여 다음이 성립한다.
   \begin{enumerate}[(1)]
     \item $\varnothing$, $X$는 닫힌집합이다.
@@ -109,7 +109,7 @@
 **사용 예시**
 ```TeX
 \begin{remark}
-  정리 \ref{thm:1.4}에 의해 위상을 닫힌집합을 설정하여 정의할 수 있음을 알 수 있다.
+  정리 \ref{thm:1.3}에 의해 위상을 닫힌집합을 설정하여 정의할 수 있음을 알 수 있다.
 \end{remark}
 ```
 ### 연습문제(exercise)
@@ -164,7 +164,7 @@
   위상공간 $X$의 부분집합 $A$의 내부(interior)와 경계(boundary)를 각각 $\operatorname{Int}(A)$, $\operatorname{Bd}(A)$라고 할 때, 다음은 희수가 $\operatorname{Int}(A)=A-\operatorname{Bd}(A)$임을 증명한 답안이다.
   \begin{hint} % [제목]을 입력하지 않은 힌트 박스
     \textbf{(경우 1)} $A$가 열린 집합(open set)일 때 : 집합 $A$의 외부(exterior)를 $\operatorname{Ext}(A)$라 하면 $\operatorname{Int}(A)=A$이므로 $\operatorname{Bd}(A)\subset\operatorname{Ext}(A)$이다. 따라서 $A-\operatorname{Bd}(A)=A=\operatorname{Int}(A)$이다. \\
-    \textbf{(경우 2)} $A$가 닫힌 집합(closed set)일 때 : 이 경우 집합 $A$의 폐포(closure) $\overline{A}$는 $A$와 같으므로 $A=\overline{A}=\operatorname{Int}(A)\cup\operatorname{Bd}(A)$이다. 그런데 일반적으로 집하 $B$, $C$에 대하여 $D=B\cup C$이면 $B=D-C$이므로 $\operatorname{Int}(A)=A-\operatorname{Bd}(A)$이다.
+    \textbf{(경우 2)} $A$가 닫힌 집합(closed set)일 때 : 이 경우 집합 $A$의 폐포(closure) $\overline{A}$는 $A$와 같으므로 $A=\overline{A}=\operatorname{Int}(A)\cup\operatorname{Bd}(A)$이다. 그런데 일반적으로 집합 $B$, $C$에 대하여 $D=B\cup C$이면 $B=D-C$이므로 $\operatorname{Int}(A)=A-\operatorname{Bd}(A)$이다.
   \end{hint}
   희수의 답안을 보고 옳게 말한 학생을 $\langle$보기$\rangle$에서 모두 고른 것은? [2.5점]
   \begin{hint}[보기] % [제목]을 [보기]로 입력한 힌트 박스
