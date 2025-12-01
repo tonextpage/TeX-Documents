@@ -177,4 +177,3 @@
   \end{hint}
 \end{prob}
 ```
-[sample.pdf](https://github.com/user-attachments/files/23853218/sample.pdf)
