@@ -17,18 +17,18 @@ preamble.tex에는 문서 조판에 도움되는 여러 tcolorbox 환경이 정�
 
 문서 샘플 [sample.tex](https://github.com/tonextpage/TeX-Documents/blob/43b46be03d7181becaad294163a61198c1aff1f8/sameple/sample.pdf)을 확인해보세요.
 
-| 환경 이름 | 사용법 요약|
-| ------------- | ------------- |
-| 정의 | \begin{dfn}{제목}{참조 키워드}  |
-| 예시 | \begin{example}{제목}{참조 키워드} |
-| 예제 | \begin{exc}{제목}{참조 키워드} |
-| 정리 | \begin{thm}{제목}{참조 키워드} |
-| 보조정리 | \begin{lemma}{제목}{참조 키워드} |
-| 명제 | \begin{prop}{제목}{참조 키워드} |
-| 증명 | \begin{proof} |
-| 참고 | \begin{remark}[제목] |
-| 연습문제 | \begin{prob}{제목}{참조 키워드} |
-| 풀이 | \begin{sol}[제목] |
+| 환경 이름 | 사용법 요약 | 참조 방법 |
+| ------------- | ------------- | ------------- |
+| 정의 | \begin{dfn}{제목}{참조 키워드}  | \ref{dfn:참조 키워드}
+| 예시 | \begin{example}{제목}{참조 키워드} | \ref{example:참조 키워드}
+| 예제 | \begin{exc}{제목}{참조 키워드} | \ref{exc:참조 키워드}
+| 정리 | \begin{thm}{제목}{참조 키워드} | \ref{thm:참조 키워드}
+| 보조정리 | \begin{lemma}{제목}{참조 키워드} | \ref{lemma:참조 키워드}
+| 명제 | \begin{prop}{제목}{참조 키워드} | \ref{prop:참조 키워드}
+| 증명 | \begin{proof} | |
+| 참고 | \begin{remark}[제목] | |
+| 연습문제 | \begin{prob}{제목}{참조 키워드} | \ref{prob:참조 키워드} |
+| 풀이 | \begin{sol}[제목] | |
 | 힌트 | \begin{hint}[제목] |
 
 **정의(definition)**
