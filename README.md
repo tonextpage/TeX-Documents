@@ -85,7 +85,7 @@
 ### 참고(remark)
 **사용법**
 ```TeX
-\begin{remark}[제목(기본값="참고"]
+\begin{remark}[제목(기본값="참고")]
   내용
 \end{remark}
 ```
