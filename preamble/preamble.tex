@@ -1,0 +1,139 @@
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage{mathtools}
+\usepackage{amsthm, amsmath, amsfonts, amssymb}
+\usepackage[]{mdframed}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage[skins, vignette, raster, theorems, breakable]{tcolorbox}
+\usepackage{pgfkeys}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+\usepackage{textcomp, gensymb}
+\usepackage{kotex}
+\usepackage{setspace}
+\usepackage{cancel}
+\usepackage{diagbox}
+\usepackage[no-math]{fontspec}
+
+%%% font setting %%%
+\setmainfont{KoPub Dotum}[
+	Extension = .ttf,
+	UprightFont = * Light,
+	BoldFont = * Bold,
+	ItalicFont = * Light,
+]
+
+%%% author %%%
+\author{tonextpage\\
+	\url{https://tonextpage.notion.site/}}
+\date{}
+
+%%% TCBox - Definition %%%
+\DeclareTcbTheorem[number within=section]{dfn}{정의}{
+	enhanced, breakable, left=4mm, right=4mm, top=4mm, bottom=2mm,
+	colback=Mahogany!5, coltitle=white, colframe=Mahogany,
+	before title={\,}, title={#1}, after title={\,}, fonttitle=\bfseries,
+	attach boxed title to top left={xshift=4mm, yshift=-3.45mm},
+	boxed title style={colback=Mahogany, left=0mm,right=0mm, top=0mm, bottom=0mm},
+	separator sign none, description delimiters parenthesis
+}{dfn}
+
+%%% TCBox - Theorems %%%
+\DeclareTcbTheorem[use counter from=dfn]{thm}{정리}{
+	enhanced, breakable, left=4mm, right=4mm, top=4mm, bottom=2mm,
+	colback=BurntOrange!5, coltitle=white, colframe=BurntOrange,
+	before title={\,}, title={#1}, after title={\,}, fonttitle=\bfseries,
+	attach boxed title to top left={xshift=4mm, yshift=-3.45mm},
+	boxed title style={colback=BurntOrange,left=0mm,right=0mm, top=0mm, bottom=0mm,},
+	separator sign none, description delimiters parenthesis
+}{thm}
+
+\DeclareTcbTheorem[use counter from=dfn]{lemma}{보조정리}{
+	enhanced, breakable, left=4mm, right=4mm, top=4mm, bottom=2mm,
+	colback=BurntOrange!5, coltitle=white, colframe=BurntOrange,
+	before title={\,}, title={#1}, after title={\,}, fonttitle=\bfseries,
+	attach boxed title to top left={xshift=4mm, yshift=-3.45mm},
+	boxed title style={colback=BurntOrange, left=0mm,right=0mm, top=0mm, bottom=0mm,},
+	separator sign none, description delimiters parenthesis
+}{lemma}
+
+\DeclareTcbTheorem[use counter from=dfn]{prop}{명제}{
+	enhanced, breakable, left=4mm, right=4mm, top=4mm, bottom=2mm,
+	colback=BurntOrange!5, coltitle=white, colframe=BurntOrange,
+	before title={\,}, title={#1}, after title={\,}, fonttitle=\bfseries,
+	attach boxed title to top left={xshift=4mm, yshift=-3.45mm},
+	boxed title style={colback=BurntOrange, left=0mm,right=0mm, top=0mm, bottom=0mm,},
+	separator sign none, description delimiters parenthesis
+}{prop}
+
+%%% TCBox - Examples %%%
+\DeclareTcbTheorem[use counter from=dfn]{example}{예시}{
+	enhanced, breakable, frame hidden, left=0mm, right=0mm, top=4mm, bottom=2mm,
+	colback=white, coltitle=white, colframe=ProcessBlue,
+	%borderline north={.5mm}{0pt}{ProcessBlue},
+	borderline south={.5mm}{0pt}{ProcessBlue},
+	before title={\,}, title={#1}, after title={\,}, fonttitle=\bfseries,
+	attach boxed title to top left={yshift=-3.45mm},
+	boxed title style={colback=ProcessBlue, sharp corners, left=0mm,right=0mm, top=0mm, bottom=0mm,},
+	separator sign none, description delimiters parenthesis
+}{ex}
+
+\DeclareTcbTheorem[use counter from=dfn]{exc}{예제}{
+	enhanced, breakable, frame hidden, left=0mm, right=0mm, top=4mm, bottom=2mm,
+	colback=white, coltitle=white, colframe=NavyBlue,
+	%borderline north={.5mm}{0pt}{NavyBlue},
+	borderline south={.5mm}{0pt}{NavyBlue},
+	before title={\,}, title={#1}, after title={\,}, fonttitle=\bfseries,
+	attach boxed title to top left={yshift=-3.45mm},
+	boxed title style={colback=NavyBlue, sharp corners, left=0mm,right=0mm, top=0mm, bottom=0mm,},
+	separator sign none, description delimiters parenthesis
+}{exc}
+
+%%% TCBox - Proof / Remark / Solution  %%%
+\AtBeginDocument{\renewcommand\proofname{\bfseries 증명}}
+\tcolorboxenvironment{proof}{% `proof' from `amsthm'
+	enhanced, blanker, breakable, toprule=.5mm, bottomrule=.5mm
+}
+
+\DeclareTColorBox{remark}{ O{참고} }{
+	enhanced, breakable, blanker, coltitle=black, toprule=.5mm, bottomrule=.5mm,
+	title={\bfseries #1}, after title={.~}, attach title to upper
+}
+
+\DeclareTColorBox{sol}{ O{풀이} }{
+	enhanced, frame hidden, breakable, left=0mm, right=0mm, top=2.5mm, bottom=2.5mm,
+	borderline north={0.4mm}{.8pt}{black}, borderline south={0.4mm}{.8pt}{black},
+	colback=white, coltitle=black,
+	before title={\,}, title={#1}, after title={\,}, fonttitle=\bfseries,
+	attach boxed title to top left={xshift=6mm, yshift=-3.5mm},
+	boxed title style={left=0mm,right=0mm, top=0mm, bottom=0mm, sharp corners, frame hidden, colback = white,}
+}
+
+%%% TCBox - Exercise Problem / HintBox %%%
+\DeclareTColorBox{hint}{ O{}  }{
+	enhanced, breakable, colframe=black, colback=white, sharp corners,
+	IfValueT={#1}{before title={$\langle$}, title={#1}, after title={$\rangle$}, fonttitle=\bfseries},
+	breakable, coltitle = black, top=2.5mm, left=2mm, right=2mm, bottom=2.5mm,  before skip=2mm,
+	attach boxed title to top center={yshift=-3.45mm}, 
+	boxed title style={left=0mm,right=0mm, top=0mm, bottom=0mm, sharp corners, frame hidden, colback = white},
+}
+
+\DeclareTcbTheorem[auto counter]{prob}{연습문제}{
+	enhanced, breakable, frame hidden, left=0mm, right=0mm, top=4mm, bottom=2mm,
+	colback=white, coltitle=white, colframe=RedOrange,
+	%borderline north={.5mm}{0pt}{RedOrange},
+	borderline south={.5mm}{0pt}{RedOrange},
+	before title={\,}, title={#1}, after title={\,}, fonttitle=\bfseries,
+	attach boxed title to top left={yshift=-3.45mm},
+	boxed title style={colback=RedOrange, sharp corners, left=0mm,right=0mm, top=0mm, bottom=0mm,},
+	separator sign none, description delimiters parenthesis
+}{prob}
