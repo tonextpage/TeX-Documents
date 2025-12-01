@@ -43,14 +43,6 @@
     \item $X$의 모든 부분집합의 집합 ${\mathcal P}(X)$로 구성된 위상을 $X$의 \textbf{이산 위상(discrete topology)}이라 한다.
   \end{enumerate}
 \end{example}
-
-\begin{exc}{여유한 위상}{1.3}
-  집합 $X$에 대하여 집합족 ${\mathcal T}_f$를 다음과 같이 정의하자.
-  \[
-    {\mathcal T}_f=\{U\subset X\mid X-U\text{가 유한집합이거나 }X\text{ 전체이다.}\}
-  \]
-  ${\mathcal T}_f$가 $X$의 위상임을 보여라.
-\end{exc}
 ```
 ### 정리(theorem)
 **사용법**
