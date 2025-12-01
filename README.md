@@ -112,3 +112,41 @@
   정리 \ref{thm:1.4}에 의해 위상을 닫힌집합을 설정하여 정의할 수 있음을 알 수 있다.
 \end{remark}
 ```
+### 연습문제(exercise)
+**사용법**
+```TeX
+\begin{prob}{제목}{참조 키워드}
+  내용
+\end{prob}
+```
+**사용 예시**
+```TeX
+\begin{prob}{여유한위상}{1}
+  집합 $X$에 대하여 집합족 ${\mathcal T}_f$를 다음과 같이 정의하자.
+  \[
+    {\mathcal T}_f=\{U\in X\mid X\setminus U\text{가 유한집합이거나 }X\text{ 전체이다.}\}
+  \]
+  ${\mathcal T}_f$가 $X$의 위상임을 보여라. 이 위상을 $X$의 \textbf{여유한위상(finite complement topology)}라 한다.
+\end{prob}
+```
+### 풀이(solution)
+**사용법**
+```TeX
+\begin{sol}[제목=기본값=""]
+  내용
+\end{sol}
+```
+**사용 예시**
+```TeX
+\begin{sol}
+  $X\setminus\varnothing=X$이고 $X\setminus X=\varnothing$은 유한집합이므로 $\varnothing,X\in{\mathcal T}$이다. ${\mathcal T}_f$의 임의의 부분집합족 $\{U_\alpha\}$에 대하여 집합
+  \[
+    X\setminus\bigcup_\alpha U_\alpha=\bigcap_\alpha X\setminus U_\alpha
+  \]
+  는 유한집합($U_\alpha$ 중 유한집합이 존재하는 경우)이거나 $X$ 전체(모든 $U_\alpha$가 $X$인 경우)이므로 $\bigcup_\alpha U_\alpha$\in{\mathcal T}_f$이다. ${\mathcal T}_f$의 임의의 유한 부분집합족 $\{U_i\}_{i=1}^n$에 대하여 집합
+  \[
+    X\setminus\bigcup_{i=1}^nU_i=\bigcup_{i=1}^nX\setminus U_i
+  \]
+  는 유한집합(모든 $U_\alpha$가 $X$의 진부분집합인 경우)이거나 $X$ 전체($U_i$ 중 하나가 $X$인 경우)이므로 $\bigcap_{i=1}^nU_i\in{\mathcal T}_f$이다. 그러므로 정의에 의해 ${\mathcal T}_f$는 $X$의 위상이다.
+\end{sol}
+```
