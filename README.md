@@ -39,7 +39,7 @@ preamble.tex에는 문서 조판에 도움되는 여러 tcolorbox 환경이 정�
 \end{dfn}
 ```
 
-https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda57ec8af7e0/sameple/sample.tex#L11-L18
+https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L11-L18
 
 **예시(example)와 예제(example problem)**
 
@@ -55,7 +55,7 @@ https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda5
 \end{exc}
 ```
 
-https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda57ec8af7e0/sameple/sample.tex#L21-L27
+https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L21-L27
 
 **정리(theorem)**
 
@@ -76,7 +76,7 @@ https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda5
 \end{prop}
 ```
 
-https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda57ec8af7e0/sameple/sample.tex#L29-L36
+https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L29-L36
 
 **증명(proof)**
 
@@ -86,7 +86,7 @@ https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda5
 \end{proof}
 ```
 
-https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda57ec8af7e0/sameple/sample.tex#L38-L53
+https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L38-L53
 
 **참고(remark)**
 
@@ -96,7 +96,7 @@ https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda5
 \end{remark}
 ```
 
-https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda57ec8af7e0/sameple/sample.tex#L55-L57
+https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L55-L57
 
 **연습문제(exercise)**
 
@@ -106,7 +106,7 @@ https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda5
 \end{prob}
 ```
 
-https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda57ec8af7e0/sameple/sample.tex#L59-L65
+https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L59-L65
 
 **풀이(solution)**
 
@@ -116,7 +116,7 @@ https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda5
 \end{sol}
 ```
 
-https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda57ec8af7e0/sameple/sample.tex#L67-L77
+https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L67-L77
 
 **힌트 상자(hint box)**
 
@@ -126,6 +126,6 @@ https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda5
 \end{hint}
 ```
 
-https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda57ec8af7e0/sameple/sample.tex#L81-L84
+https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L81-L84
 
-https://github.com/tonextpage/TeX-Documents/blob/c37cb882f848aa819b3e49a2c77dda57ec8af7e0/sameple/sample.tex#L86-L93
+https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L86-L93
