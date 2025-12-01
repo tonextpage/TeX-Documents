@@ -1,0 +1,232 @@
+\documentclass{article}
+\input{"D:/OneDrive/LaTeX/preamble/preamble.tex"}
+%\pagenumbering{gobble}
+
+\geometry{a4paper, total={6.4in, 10in}}
+\title{고등학교 수학으로 증명하는 바젤 문제}
+
+\begin{document}
+\setstretch{1.3}
+\maketitle
+%\tableofcontents
+
+\noindent 바젤문제(Basel Problem)는 1650년 이탈리아의 수학자 피에트로멩골리(Pietro Mengoli)가 제시한 문제이다. 문제의 이름은 이 문제를 오랫동안 공략하고 수학계에 널리 알린 야코프 베르누이가 근무했던 바젤대학교에서 유래했다.
+\begin{hint}[바젤 문제]
+	\centering 급수 $\displaystyle\sum_{n=1}^\infty\frac{1}{n^2}$의 값을 닫힌 형식으로 구하시오.
+\end{hint}
+
+수학자 레온하르트 오일러가 1735년에 이 급수가 $\pi^2/6$으로 수렴함을 불완전하게 증명하였다. 이후 1741년에 더욱 엄밀한 증명을 선보였으며, 약 100년 후 수학자 카를 바이어슈트라스가 바이어슈트라스 곱 정리로 증명의 타당성을 확보했다. 추후 이 문제에서 영감을 받아 급수를 리만 제타 함수로 일반화하였다. 리만 제타 함수와 관련된 가장 유명한 문제가 바로 리만 가설이다.
+
+오일러의 증명 이외에도 수학자 오귀스탱 루이 코시의 초등적인 증명, 푸리에 급수를 이용한 증명 등의 풀이가 알려져 있으나, 이 칼럼에서는 고등학교 미적분 수준에서 증명하는 과정을 소개할 것이다.
+
+\section{정적분 수열의 정의}
+음이 아닌 정수 $n$에 대하여 두 수열 $\{a_n\}$과 $\{b_n\}$을 다음과 같이 정의하자.
+\[
+	a_n=\int_0^{\tfrac{\pi}{2}}\cos^{2n}x\,dx,\quad b_n=\int_0^{\tfrac{\pi}{2}}x^2\cos^{2n}x\,dx
+\]
+피적분함수와 적분 구간을 보면 자명하게 $a_n>0$, $b_n>0$이다.
+
+\section{증명}
+\begin{thm}{간단한 값}{2.1}
+	\[
+		a_0=\frac{\pi}{2},\quad b_0=\frac{\pi^3}{24}
+	\]
+\end{thm}
+\begin{proof}
+	\[
+		a_0=\int_0^{\tfrac{\pi}{2}}1\,dx=\frac{\pi}{2},\quad b_0=\int_0^{\tfrac{\pi}{2}}x^2\,dx=\frac{\pi^3}{24}\qedhere
+	\]
+\end{proof}
+
+\begin{thm}{점화식}{2.2}
+	\[
+		2na_n=(2n-1)a_{n-1}
+	\]
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		a_n&=\int_0^{\tfrac{\pi}{2}}\cos^{2n}x\,dx=\int_0^{\tfrac{\pi}{2}}\cos x\cos^{2n-1}x\,dx\\[3pt]
+		&=\biggl[\sin x\cos^{2n-1}x\biggr]_0^{\tfrac{\pi}{2}}+\int_0^{\tfrac{\pi}{2}}(2n-1)\sin^2x\cos^{2n-2}x\,dx\\[3pt]
+		&=\int_0^{\tfrac{\pi}{2}}(2n-1)(1-\cos^2x)\cos^{2n-2}x\,dx\\[3pt]
+		&=(2n-1)\int_0^{\tfrac{\pi}{2}}(\cos^{2n-2}x-\cos^{2n}x)\,dx\\[3pt]
+		&=(2n-1)(a_{n-1}-a_n)\qedhere
+	\end{align*}
+\end{proof}
+
+\begin{thm}{정적분의 다른 형태}{2.3}
+	\[
+		a_n=2n\int_0^{\tfrac{\pi}{2}}x\sin x\cos^{2n-1}x\,dx
+	\]
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		a_n&=\int_0^{\tfrac{\pi}{2}}1\times\cos^{2n}x\,dx\\[3pt]
+		&=\biggl[x\cos^{2n}x\biggr]_0^{\tfrac{\pi}{2}}-\int_0^{\tfrac{\pi}{2}}x(2n)(-\sin x)\cos^{2n-1}x\,dx\\[3pt]
+		&=2n\int_0^{\tfrac{\pi}{2}}x\sin x\cos^{2n-1}x\,dx\qedhere
+	\end{align*}
+\end{proof}
+
+\begin{thm}{두 수열의 관계}{2.4}
+	\[
+		\frac{a_n}{n^2}=\frac{2n-1}{n}b_{n-1}-2b_n
+	\]
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		\frac{a_n}{n}&=\int_0^{\tfrac{\pi}{2}}2x\sin x\cos^{2n-1}x\,dx\\[3pt]
+		&=\biggl[x^2\sin x\cos^{2n-1}x\biggr]_0^{\tfrac{\pi}{2}}-\int_0^{\tfrac{\pi}{2}}x^2(\cos^{2n}x-(2n-1)(\cos^{2n-2}x-\cos^{2n}x))\,dx\\[3pt]
+		&=-b_n+(2n-1)(b_{n-1}-b_n)\\
+		&=(2n-1)b_{n-1}-2nb_n\qedhere
+	\end{align*}
+\end{proof}
+
+\newpage
+\begin{thm}{망원급수}{2.5}
+	\[
+		\frac{1}{n^2}=2\biggl(\frac{b_{n-1}}{a_{n-1}}-\frac{b_n}{a_n}\biggr)
+	\]
+\end{thm}
+
+\begin{proof}
+	정리 \ref{thm:2.4}에서 $\displaystyle\frac{1}{n^2}=\frac{2n-1}{na_n}b_{n-1}-\frac{2b_n}{a_n}$이고, 정리 \ref{thm:2.2}에서 $na_n=\dfrac{2n-1}{2}a_{n-1}$이므로
+	\[
+		\frac{1}{n^2}=\frac{2n-1}{\frac{2n-1}{2}a_{n-1}}b_{n-1}-\frac{2b_n}{a_n}=2\biggl(\frac{b_{n-1}}{a_{n-1}-\frac{b_n}{a_n}}\biggr).\qedhere
+	\]
+\end{proof}
+
+\begin{thm}{부분합}{2.6}
+	\[
+		\sum_{k=1}^n\frac{1}{k^2}=\frac{\pi^2}{6}-\frac{2b_n}{a_n}
+	\]
+\end{thm}
+
+\begin{proof}
+	\[
+		\displaystyle\sum_{k=1}^n\frac{1}{k^2}=\sum_{k=1}^n2\biggl(\frac{b_{k-1}}{a_{k-1}}-\frac{b_k}{a_k}\biggr)=2\biggl(\frac{b_0}{a_0}-\frac{b_k}{a_k}\biggr)=\frac{\pi^2}{6}-\frac{2b_n}{a_n}\qedhere
+	\]
+\end{proof}
+
+\begin{thm}{부등식}{2.7}
+	\[
+		b_n\leq\int_0^{\tfrac{\pi}{2}}x^2\biggl(1-\frac{4x^2}{\pi^2}\biggr)^n\,dx
+	\]
+\end{thm}
+
+\begin{proof}
+	$0\leq x\leq\dfrac{\pi}{2}$일 때 $\sin x\geq\dfrac{2}{\pi}x\geq0$이므로
+	\begin{align*}
+		\sin x\geq\frac{2}{\pi}x~&\longrightarrow~\sin^2x\geq\biggl(\frac{2}{\pi}x\biggr)^2~\longrightarrow~1-\sin^2x\leq1-\biggl(\frac{2}{\pi}x\biggr)^2\\[3pt]
+	&\longrightarrow~\cos^2x\leq1-\frac{4}{\pi^2}x^2~\longrightarrow~\cos^{2n}x\leq\biggl(1-\frac{4}{\pi^2}x^2\biggr)^n.
+	\end{align*}
+	그러므로 $x^2\geq0$으로부터
+	\[
+		b_n=\int_0^{\tfrac{\pi}{2}}x^2\cos^{2n}x\,dx\leq\int_0^{\tfrac{\pi}{2}}x^2\biggl(1-\frac{4x^2}{\pi^2}\biggr)^n\,dx.\qedhere
+	\]
+\end{proof}
+
+\begin{thm}{다항함수의 정적분}{2.8}
+	\[
+		\int_0^{\tfrac{\pi}{2}}x^2\biggl(1-\frac{4x^2}{\pi^2}\biggr)^n\,dx=\frac{\pi^2}{8(n+1)}\int_0^{\tfrac{\pi}{2}}\biggl(1-\frac{4x^2}{\pi^2}\biggr)^{n+1}\,dx
+	\]
+\end{thm}
+
+\begin{proof}
+	\begin{align*}
+		\int_0^{\tfrac{\pi}{2}}x^2\biggl(1-\frac{4x^2}{\pi^2}^n\,dx&=-\frac{\pi^2}{8}\int_0^{\tfrac{\pi}{2}}x\times\biggl(-\frac{8}{\pi^2}x\biggr)\biggl(1-\frac{4x^2}{\pi^2}\biggr)^n\,dx\\[3pt]
+		&=-\frac{\pi^2}{8}\biggl(\biggl[\frac{x}{n+1}\biggl(1-\frac{4x^2}{\pi^2}\biggr)^{n+1}\biggr]_0^{\tfrac{\pi}{2}}-\int_0^{\tfrac{\pi}{2}}\frac{1}{n+1}\biggl(1-\frac{4x^2}{\pi^2}\biggr)^{n+1}\,dx\biggr)\\[3pt]
+		&=\frac{\pi^2}{8(n+1)}\int_0^{\tfrac{\pi}{2}}\biggl(1-\frac{4x^2}{\pi^2}\biggr)^{n+1}\,dx\qedhere
+	\end{align*}
+\end{proof}
+
+\begin{thm}{다항함수에서 삼각함수로}{2.9}
+	\[
+		b_n\leq\frac{\pi^3}{16(n+1)}\int_0^{\tfrac{\pi}{2}}\cos^{2n+3}x\,dx\leq\frac{\pi^3}{16(n+1)}a_n
+	\]
+\end{thm}
+
+\begin{proof}
+	정리 \ref{thm:2.7}과 정리 \ref{thm:2.8}로부터
+	\[
+		b_n\leq\frac{\pi^2}{8(n+1)}\int_0^{\tfrac{\pi}{2}}\biggl(1-\frac{4x^2}{\pi^2}^{n+1}\,dx
+	\]
+	이 성립한다. $x=\frac{\pi}{2}\sin t$로 치환하면 $\frac{4x^2}{\pi^2}=\sin^2t$이고 $\dfrac{dx}{dt}=\dfrac{\pi}{2}\cos t$이므로
+	\[
+		\int_0^{\tfrac{\pi}{2}}\biggl(1-\frac{4x^2}{\pi^2}\biggr)^{n+1}\,dx=\int_0^{\tfrac{\pi}{2}}\frac{\pi}{2}\cos t(1-\sin^2t)^{n+1}\,dt=\frac{\pi}{2}(\cos^2t)^{n+1}\cos t\,dt=\frac{\pi}{2}\int_0^{\tfrac{\pi}{2}}\cos^{2n+3}t\,dt.
+	\]
+	따라서
+	\[
+		b_n\leq\frac{\pi^2}{8(n+1)}\int_0^{\tfrac{\pi}{2}}\biggl(1-\frac{4x^2}{\pi^2}\biggr)^{n+1}\,dx=\frac{\pi^3}{16(n+1)}\int_0^{\tfrac{\pi}{2}}\cos^{2n+3}x\,dx
+	\]
+	가 성립하고, $0\leq x\leq\dfrac{\pi}{2}$일 때 $0\leq\cos x\leq1$이므로
+	\[
+		\int_0^{\tfrac{\pi}{2}}\cos^{2n+3}x\,dx\leq\int_0^{\tfrac{\pi}{2}}\cos^{2n}x\,dx=a_n
+	\]
+	이므로 주어진 부등식이 성립한다.
+\end{proof}
+
+\begin{thm}{부분합 부등식}{2.10}
+	\[
+		\frac{\pi^2}{6}-\frac{\pi^3}{8(n+1)}\leq\sum_{k=1}^n\frac{1}{k^2}<\frac{\pi^2}{6}
+	\]
+\end{thm}
+
+\begin{proof}
+	$a_n>0$, $b_n>0$이므로 정리 \ref{thm:2.6}으로부터
+	\[
+		\sum_{k=1}^n\frac{1}{k^2}=\frac{\pi^2}{6}-\frac{2b_n}{a_n}<\frac{\pi^2}{6}
+	\]
+	이고, 정리 \ref{thm:2.9}로부터
+	\[
+		\sum_{k=1}^n\frac{1}{k^2}=\frac{\pi^2}{6}-\frac{2b_n}{a_n}\geq\frac{\pi^2}{6}-\frac{2\cdot\frac{\pi^3}{16(n+1)}a_n}{a_n}=\frac{\pi^2}{6}-\frac{\pi^3}{8(n+1)}.\qedhere
+	\]
+\end{proof}
+
+\begin{thm}{바젤 문제의 답}{2.11}
+	\[
+		\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}
+	\]
+\end{thm}
+
+\begin{proof}
+	$\lim\limits_{n\to\infty}\biggl(\dfrac{\pi^2}{6}-\dfrac{\pi^3}{8(n+1)}\biggr)=\dfrac{\pi^2}{6}=\lim\limits_{n\to\infty}\dfrac{\pi^2}{6}$이므로 정리 \ref{thm:2.10}에 샌드위치 정리를 적용하면 $\displaystyle\sum_{n=1}^\infty\frac{1}{n^2}=\frac{\pi^2}{6}$.
+\end{proof}
+
+\begin{thebibliography}{9}
+\bibitem{1}
+	Daners, D. A short elementary proof of $\sum1/k^2=\pi^2/6$. Mathematics Magazine 2012, 85, 361–364. \url{https://doi.org/10.4169/math.mag.85.5.361}
+\end{thebibliography}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

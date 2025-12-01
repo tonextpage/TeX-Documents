@@ -1,0 +1,649 @@
+\documentclass{article}
+\input{"D:/OneDrive/LaTeX/preamble/preamble.tex"}
+%\pagenumbering{gobble}
+
+\geometry{a4paper, total={6.4in, 10in}}
+\title{함수방정식 유형의 시간단축}
+
+\begin{document}
+\setstretch{1.3}
+\maketitle
+
+\noindent 함수방정식은 일반적인 방정식과 달리 미지수의 값이 아닌 미지 함수의 식을 구하는 것을 목표로 한다. 도함수의 정의를 배우고 나면 대표 유형으로 함수방정식이 주어진 상태에서 미분계수 등의 값을 구하는 문제가 등장한다. 정의를 이용하는 정석적인 방법은 다소 길고 복잡한 계산을 포함하기에 시간이 오래 걸린다. 이 칼럼에서는 편미분을 이용하여 이러한 유형의 문제를 빠르게 해결하는 방법과 자주 등장하는 함수방정식을 소개할 것이다.
+
+\section{도함수의 정의와 함수방정식}
+본격적으로 함수방정식 유형을 살펴보기 전에, 미분계수와 도함수의 정의를 짚고 넘어가자.
+
+\begin{dfn}{미분가능성}{1.1}
+	함수 $y=f(x)$에서 $\Delta x\to 0$일 때, 평균변화율의 극한값
+	\[
+		\lim\limits_{\Delta x\to0}\frac{\Delta y}{\Delta x}=\lim\limits_{\Delta x\to 0}\frac{f(a+\Delta x)-f(a)}{\Delta x}
+	\]
+	가 존재하면 함수 $y=f(x)$는 $x=a$에서 \textbf{미분가능하다}고 한다. 이때 이 극한값을 함수 $y=f(x)$의 $x=a$에서의 \textbf{순간변화율} 또는 \textbf{미분계수}라 하고, 이를 기호로 $f^\prime(a)$로 나타낸다.
+\end{dfn}
+
+\begin{dfn}{도함수}{1.2}
+	함수 $f:X\to\mathbb R$가 정의역 $X$에서 미분가능할 때, 정의역의 각 원소 $x$에 미분계수 $f^\prime(x)$를 대응시키는 새로운 함수
+	\[
+		f^\prime:X\to\mathbb R,\quad f^\prime(x)=\lim\limits_{\Delta x\to0}\frac{f(a+\Delta x)-f(a)}{\Delta x}
+	\]
+	를 함수 $f(x)$의 \textbf{도함수}라 하고, 이를 기호로 $f^\prime(x)$ 등으로 나타낸다.
+\end{dfn}
+
+이제 아래의 예제 \ref{exc:1.1}을 통해 함수방정식이 도함수의 정의와 맞물리는 문제를 살펴보자.
+
+\begin{exc}{}{1.1}
+	미분가능한 함수 $f(x)$가 모든 실수 $x$, $y$에 대하여 $f(x+y)=f(x)+f(y)-3xy$을 만족시키고 $f^\prime(0)=-2$일 때, $f^\prime(x)$를 구하여라.
+\end{exc}
+
+\begin{sol}
+	이러한 유형의 문제를 해결하기 위해서는 다음의 절차를 따른다.
+	\begin{enumerate}
+		\item 주어진 식의 문자에 적당한 수를 대입하여 $f(0)$ (또는 다른 초깃값)을 구한다.
+		\item $f^\prime(0)$ (또는 다른 미분계수)의 정의를 이용하여 미분계수나 도함수를 구한다.
+		\item 도함수를 부정적분하여 주어진 함수를 구한다.
+	\end{enumerate}
+	이 절차대로 $f^\prime(x)$를 구해보자. 주어진 식에 $x=0,y=0$을 대입하면 $f(0)=f(0)+f(0)$에서 $f(0)=0$이다. 주어진 식에 $y=h$를 대입하면 $f(x+h)=f(x)+f(h)-3xh$이므로 도함수의 정의에 의해
+	\[
+		f^\prime(x)=\lim\limits_{h\to0}\frac{f(x)+f(h)-3xh-f(x)}{h}=\lim\limits_{h\to0}\biggl(\frac{f(h)}{h}-3x\biggr).
+	\]
+	이때 $f(0)=0$이므로 $\lim\limits_{h\to0}\dfrac{f(h)}{h}=\lim\limits_{h\to0}\dfrac{f(h)-f(0)}{h}=f^\prime(0)=-2$이다. 따라서 $f^\prime(x)=-3x-2$이다.\qed
+\end{sol}
+
+\begin{remark}
+	$f(x+y)$ 부분을 미분계수의 정의에서 $f(x+h)$로 볼 수 있어야 함을 강조하겠다.
+\end{remark}
+
+위와 같은 미분계수와 도함수의 정의를 이용한 정석적인 풀이보다 빠르게 해결할 수 있도록 하는 것이 편미분이다. 고등학교 범위를 넘는 개념이지만 이해하기는 쉽기에 알아두면 여러모로 좋다.
+
+\section{편미분을 이용한 시간단축}
+편미분을 간단히 설명하면 다음과 같다.
+
+\begin{hint}
+	다변수함수의 특정 변수를 제외한 나머지 변수를 상수로 취급하여 미분하는 것을 편미분이라 한다.
+\end{hint}
+
+다변수함수는 쉽게 말해 '변수가 여러개인 함수'이다. 예제 \ref{exc:1.1}에서 등장한 함수방정식을 다시 보자.
+\begin{equation}
+	\label{eq:1}
+	f(x+y)=f(x)+f(y)-3xy
+\end{equation}
+
+좌변의 $f(x+y)$를 두 변수 $x$와 $y$에 대한 함수라 생각할 수 있다. 수학적으로는 $g(x,y)=f(x+y)$로 표현할 수 있다. 우변도 마찬가지로 두 변수 $x$와 $y$에 대한 함수 $h(x,y)=f(x)+f(y)-3xy$로 생각할 수 있다.
+
+이제 편미분을 이용하여 각 다변수함수를 변수 $x$에 대해 미분해보자. 함수 $f$가 미분가능하다는 조건이 주어졌으므로 미분가능성에 대한 걱정을 하지 않아도 된다.
+
+\begin{itemize}
+	\item $f(x+y)\to f^\prime(x+y)$: 합성함수의 미분법을 이용한다.
+	\item $f(x)\to f^\prime(x)$: $f(x)$는 $x$에 대한 함수이므로 미분하면 $f^\prime(x)$를 얻는다.
+	\item $f(y)\to 0$: $f(y)$는 $x$에 대한 함수가 아니므로 상수로 취급하여 미분하면 $0$이 된다.
+	\item $-3xy\to -3y$: $(-3y)x$처럼 $-3y$가 $x$의 계수라 생각하고 미분하면 $-3y$가 된다.
+\end{itemize}
+
+등식 (\ref{eq:1})은 $x$와 $y$에 대한 항등식이므로 양변을 미분해도 등식이 성립한다. 따라서 모든 실수 $x$, $y$에 대하여
+\[
+	f^\prime(x+y)=f^\prime(x)-3y
+\]
+가 성립한다. $x=0$을 대입하고 정리하면 $f^\prime(y)=f^\prime(0)-3y=-3y-2$이고, $y$ 대신 $x$를 쓰면 정석 풀이와 똑같이 $f^\prime(x)=-3x-2$를 얻는다. 편미분을 이용한 방법은 잘못 이해하면 오히려 독이 된다. 처음에는 $y$를 상수로, 나중에는 $y$를 변수로 취급했던 것처럼, 등식에 사용된 문자의 역할을 정확하게 이해하고 있어야 한다. 또한 주어진 함수가 미분가능하다는 조건이 있는 경우에만 편미분을 자유롭게 이용할 수 있다.
+
+\section{코시 함수방정식}
+함수방정식 문제에서 다음 형태가 자주 등장한다.
+\begin{equation}
+	\label{eq:2}
+	f(x+y)=f(x)+f(y)
+\end{equation}
+
+함수방정식 (\ref{eq:2})는 코시 함수방정식으로 불리며, 유리수 범위에서의 해는 상수 $k$에 대하여 $f(x)=kx$이다.
+
+\begin{thm}{코시 함수방정식: 유리수 위에서의 해}{3.1}
+	함수 $f:\mathbb Q\to\mathbb Q$가 코시 함수방정식을 만족하면 어떤 실수 $k$에 대하여 $f(x)=kx$이다.
+\end{thm}
+
+\begin{proof}
+	코시 함수방정식에 $x=y=0$을 대입하면 $f(0)=f(0)+f(0)$이므로 $f(0)=0$이다. 임의의 자연수 $n$에 대하여
+	\[
+		f(n+1)=f(n)+f(1)
+	\]
+	이므로 수학적 귀납법을 적절히 이용하면 $f(n)=nf(1)$이 성립함을 알 수 있다. 임의의 자연수 $m$에 대하여
+	\[
+		f(1)=\sum_{k=1}^m f\biggl(\frac{1}{m}\biggr)=mf\biggl(\frac{1}{m}\biggr)
+	\]
+	이므로 $f\biggl(\dfrac{1}{m}\biggr)=\dfrac{1}{m}f(1)$이 성립한다. 그러므로 자연수 $m$, $n$에 대하여 $f\biggl(\dfrac{n}{m}\biggr)=\dfrac{n}{m}f(1)$이다. 임의의 양의 유리수 $q$에 대하여 $f(0)=f(q)+f(-q)$이므로 $f(-q)=-f(q)$이다. 따라서 $k=f(1)$이라 하면 모든 유리수 $x$에 대하여 $f(x)=kx$이다.
+\end{proof}
+
+실수 범위에서는 다음 조건 중 하나가 추가되면 해가 $f(x)=kx$로 결정된다.
+
+\begin{itemize}
+	\item $f$가 어느 한 점에서 연속이다.
+	\item $f$가 어느 한 점에서 미분가능하다.
+	\item $f$가 어떤 열린구간에서 단조이다.
+	\item $f$가 어떤 열린구간에서 유계이다. (상수 $M>0$이 존재하여 $\vert f(x)\vert\leq M$이다.)
+\end{itemize}
+
+\begin{thm}{코시 함수방정식: 실수 위에서의 미분가능한 해}{3.2}
+	미분가능한 함수 $f:\mathbb R\to\mathbb R$가 코시 함수방정식을 만족하면 어떤 실수 $k$에 대하여 $f(x)=kx$이다.
+\end{thm}
+
+\begin{proof}
+	 정리 \ref{thm:3.1}과 같은 방법으로 $f(0)=0$이다. 도함수의 정의에 의해
+	 \[
+	 	f^\prime(x)=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}=\lim\limits_{h\to0}\frac{f(x)+f(h)-f(x)}{h}=\lim\limits_{h\to0}\frac{f(h)}{h}=f^\prime(0)
+	 \]
+	 이므로 $k=f^\prime(0)$라 하면 $f(x)=kx$이다.
+\end{proof}
+
+\begin{remark}
+	$x=0$에서 미분가능하기만 하면 같은 방식으로 정리가 성립한다.
+\end{remark}
+
+위에서 언급한 좋은 조건이 추가되지 않은 경우에는 실수 범위에서 직선이 아닌 해가 존재하며, 선택 공리를 이용하면 이를 증명할 수 있다. (이 칼럼의 수준을 아득히 넘으니 선택 공리를 다루지 않겠다.) 복소수 범위에서는 선택 공리를 이용하지 않아도 직선이 아닌 해를 쉽게 찾을 수 있다. 이제 코시 함수방정식과 유사한 변형 형태를 알아보자.
+
+\begin{thm}{코시 함수방정식: 변형}{3.3}
+	양의 실수 전체의 집합을 $\mathbb R^+$라 하자.
+	\begin{enumerate}[(i)]
+		\item 연속함수 $f:\mathbb R\to\mathbb R$가 모든 실수 $x$, $y$에 대하여 $f(x+y)=f(x)f(y)$를 만족하고 $f(x)>0$이면 실수 $a$에 대하여 $f(x)=a^x$이다.
+		\item 미분가능한 함수 $f:\mathbb R^+\to\mathbb R^+$가 모든 실수 $x$, $y$에 대하여 $f(xy)=f(x)+f(y)$를 만족하면 $1$이 아닌 양수 $a$에 대하여 $f(x)=\log_ax$이다.
+		\item 미분가능한 함수 $f:\mathbb R^+\to\mathbb R^+$가 모든 실수 $x$, $y$에 대하여 $f(xy)=f(x)f(y)$를 만족하면 실수 $p$에 대하여 $f(x)=x^p$이다.
+	\end{enumerate}
+\end{thm}
+
+\begin{proof}
+	\phantom{}
+	\begin{enumerate}[(i)]
+		\item 함수 $g(x)=\ln f(x)$라 하면
+			\[
+				g(x+y)=\ln f(x+y)=\ln f(x)f(y)=\ln f(x)+\ln f(y)=g(x)+g(y)
+			\]
+			이므로 함수 $g$는 코시 함수방정식을 만족하는 연속함수이다. 따라서 어떤 실수 $k$에 대해 $g(x)=kx$이고, $a=e^k$라 하면 $f(x)=a^x$이다.
+		\item 주어진 등식에 $x=y=1$을 대입하면 $f(1)=f(1)+f(1)$에서 $f(1)=0$이다. 도함수의 정의에 의해
+			\begin{align*}
+				f^\prime(x)&=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}=\lim\limits_{h\to0}\frac{f(x(1+h/x))-f(x)}{h}\\[3pt]
+				&=\lim\limits_{h\to0}\frac{f(x)+f(1+h/x)-f(x)}{h}=\lim\limits_{h\to0}\frac{f(1+h/x)-f(1)}{h}=\frac{f^\prime(1)}{x}.
+			\end{align*}
+			이때 $f^\prime(1)\leq0$이면 모든 양수 $x$에 대해 $f^\prime(x)\leq0$이므로 $f(x_0)\leq0$인 실수 $x_0$가 존재하여 모순이다. 따라서 $f^\prime(1)>0$이고 $a=e^{1/f^\prime(1)}$이라 하면 $f(x)=\log_ax$이다.
+		\item 함수 $g(x)=\ln f(x)$라 하면
+			\[
+				g(xy)=\ln f(xy)=\ln f(x)f(y)=\ln f(x)+\ln f(y)=g(x)+g(y)
+			\]
+			이므로 함수 $g$는 (ii)의 함수방정식을 만족하는 미분가능한 함수이다. 그러므로 $1$이 아닌 양수 $a$에 대하여 $g(x)=\log_ax$이고, $p=\log_ce$라 하면 $f(x)=x^p$이다.\qedhere
+	\end{enumerate}
+\end{proof}
+
+\begin{thebibliography}{9}
+\bibitem{1}
+	비상교육, 고등 수학 II(김원경) 교과서 (2015 개정 교육과정)
+\bibitem{2}
+	\url{https://en.wikipedia.org/wiki/Cauchy's_functional_equation}
+\bibitem{3}
+	\url{https://youtu.be/SP_HYNl1zAo?si=evWZAZD2Qrc1lkZE}
+\bibitem{4}
+	\url{https://www.youtube.com/watch?v=gbcFep9Rm64}
+\end{thebibliography}
+
+\newpage
+\section{연습문제}
+\begin{prob}{2021학년도 수능특강}{1}
+	실수 전체의 집합에서 미분가능한 함수 $f(x)$가 모든 실수 $x$, $y$에 대하여
+	\[
+		f(x+y=f(x)+f(y)+xy(x+y)
+	\]
+	를 만족시킨다. $f^\prime(3)-f^\prime(0)$의 값을 구하시오.
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	주어진 등식에 $x=y=0$을 대입하면 $f(0)=f(0)+f(0)$에서 $f(0)=0$. 도함수의 정의에 의해
+	\begin{align*}
+		f^\prime(x)&=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}=\lim\limits_{h\to0}\frac{f(x)+f(h)+xh(x+h)-f(x)}{h}\\[3pt]
+		&=\lim\limits_{h\to0}\frac{f(h)+xh(x+h)}{h}=\lim\limits_{h\to0}\biggl(\frac{f(h)}{h}+x(x+h)\biggr)=f^\prime(0)+x^2.
+	\end{align*}
+	따라서 $f^\prime(3)-f^\prime(0)=9$이다.\qed
+\end{sol}
+
+\begin{sol}[편미분 풀이]
+	주어진 등식의 양변을 $x$에 대하여 편미분하면 $f^\prime(x+y)=f^\prime(x)+2xy+y^2$이다. $x=0$, $y=3$을 대입하면 $f^\prime(3)=f^\prime(0)+9$, 즉 $f^\prime(3)-f^\prime(0)=9$이다.\qed
+\end{sol}
+
+\newpage
+\begin{prob}{2022학년도 수능특강}{2}
+	미분가능한 함수 $f(x)$가 모든 실수 $x$, $y$에 대하여
+	\[
+		f(x+y)=f(x)+f(y)+x^2y+xy^2-xy
+	\]
+	를 만족시키고 $f^\prime(2)=3$일 때, 함수 $f^\prime(x)$의 최솟값은?
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	주어진 등식에 $x=y=0$을 대입하면 $f(0)=f(0)+f(0)$에서 $f(0)=0$. 도함수의 정의에 의해
+	\begin{align*}
+		f^\prime(x)&=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}=\lim\limits_{h\to0}\frac{f(x)+f(h)+x^2h+xh^2-xh-f(x)}{h}\\[3pt]
+		&=\lim\limits_{h\to0}\frac{f(h)+x^2h+xh^2-xh}{h}=\lim\limits_{h\to0}\biggl(\frac{f(h)}{h}+x^2+xh-x\biggr)=f^\prime(0)+x^2-x
+	\end{align*}
+	$f^\prime(2)=3$에서 $f^\prime(0)=1$이다. 따라서 $f^\prime(x)=x^2-x+1=\biggl(x-\dfrac{1}{2}\biggr)^2+\dfrac{3}{4}$이므로 구하는 최솟값은 $\dfrac{3}{4}$이다.\qed
+\end{sol}
+
+\begin{sol}[편미분 풀이]
+	주어진 등식의 양변을 $x$에 대하여 편미분하면 $f^\prime(x+y)=f^\prime(x)+2xy+y^2-y$이다. $x=0$, $y=2$를 대입하면 $f^\prime(2)=f^\prime(0)+2$이므로 $f^\prime(0)=1$이고 $x=0$, $y=x$를 대입하면 $f^\prime(x)=x^2-x+1$이다. (이하 동일)\qed
+\end{sol}
+
+\newpage
+\begin{prob}{2023학년도 수능특강}{3}
+	다항함수 $f(x)$가 다음 조건을 만족시킨다.
+	\begin{hint}
+		\begin{itemize}
+			\item[(가)] 모든 실수 $x$, $y$에 대하여 $f(x+y)=f(x)+f(y)+ax^2y+axy^2+bxy-1$이다.
+			\item[(나)] 곡선 $y=f^\prime(x)$는 직선 $x=1$에 대하여 대칭이고 직선 $y=15$와 오직 한 점에서 만난다.
+		\end{itemize}
+	\end{hint}
+	$f^\prime(0)+f^\prime(-2)=0$일 때, $f^\prime(a+b)$의 값을 구하시오. (단, $a$, $b$는 상수이다.)
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	(가) 조건에서 주어진 등식에 $x=y=0$을 대입하면 $f(0)=f(0)+f(0)-1$에서 $f(0)=1$이다. 도함수의 정의에 의해
+	\begin{align*}
+		f^\prime(x)&=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}=\lim\limits_{h\to0}\frac{f(x)+f(h)+ax^2h+axh^2+bxh-1-f(x)}{h}\\[3pt]
+		&=\lim\limits_{h\to0}\frac{f(h)-1+ax^2h+axh^2+bxh}{h}=\lim\limits_{h\to0}\biggl(\frac{f(h)-1}{h}+ax^2+axh+bx\biggr)\\[3pt]
+		&=f^\prime(0)+ax^2+bx.
+	\end{align*}
+	함수 $f^\prime(x)$는 이차함수이므로 (나)로부터 $f^\prime(x)=a(x-1)^2+15$이다. $f^\prime(0)+f^\prime(2)=0$로부터
+	\[
+		(a+15)+(9a+15)=0~\longrightarrow~a=-3.
+	\]
+	$f^\prime(x)=-3(x-1)^2+15=-3x^2+6x+12$에서 $b=6$이다. 따라서 $f^\prime(a+b)=f^\prime(3)=3$이다.\qed
+\end{sol}
+
+\begin{sol}[편미분 풀이]
+	(가) 조건에서 주어진 등식의 양변을 $x$에 대하여 편미분하면 $f^\prime(x+y)=f^\prime(x)+2axy+ay^2+by$이다. $x=0$, $y=x$를 대입하면 $f^\prime(x)=f^\prime(0)+ax^2+bx$이다. (이하 동일)\qed
+\end{sol}
+
+\newpage
+\begin{prob}{2024학년도 수능특강}{4}
+	실수 전체의 집합에서 미분가능한 함수 $f(x)$가 모든 실수 $x$, $y$에 대하여
+	\[
+		f(x+y)=f(x)+f(y)-xy-f(0)
+	\]
+	일 때, $f^\prime(0)-f^\prime(-2)$의 값은?
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	주어진 등식에서 $y\ne0$이라 하면
+	\[
+		\frac{f(x+y)-f(x)}{y}=\frac{f(y)-f(0)}{y}-x
+	\]
+	이고, 양변에 극한을 취하면
+	\[
+		\lim\limits_{y\to0}\frac{f(x+y)-f(x)}{y}=\lim\limits_{y\to0}\frac{f(y)-f(0)}{y}-x
+	\]
+	에서 $f^\prime(x)=f^\prime(0)-x$이다. 따라서 $f^\prime(0)-f^\prime(-2)=-2$이다.\qed
+\end{sol}
+
+\begin{sol}[편미분 풀이]
+	주어진 등식의 양변을 $x$에 대하여 편미분하면 $f^\prime(x+y)=f^\prime(x)-y$이다. $x=0$, $y=x$를 대입하면 $f^\prime(x)=f^\prime(0)-x$이다. (이하 동일)\qed
+\end{sol}
+
+\newpage
+\begin{prob}{2007년 6월 모의평가 가형 23번}{5}
+	다항함수 $f(x)$는 모든 실수 $x$, $y$에 대하여
+	\[
+		f(x+y)=f(x)+f(y)+2xy-1
+	\]
+	을 만족시킨다.
+	\[
+		\lim\limits_{x\to1}\frac{f(x)-f^\prime(x)}{x^2-1}=14
+	\]
+	일 때, $f^\prime(0)$의 값을 구하시오. [4점]
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	주어진 등식에 $x=y=0$을 대입하면 $f(0)=f(0)+f(0)-1$에서 $f(0)=1$이다. 도함수의 정의에 의해
+	\begin{align*}
+		f^\prime(x)&=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}=\lim\limits_{h\to0}\frac{f(x)+f(h)+2xh-1-f(x)}{h}\\[3pt]
+		&=\lim\limits_{h\to0}\frac{f(h)-1+2xh}{h}=\lim\limits_{h\to0}\biggl(\frac{f(h)-1}{h}+2x\biggr)=f^\prime(0)+2x.
+	\end{align*}
+	주어진 극한이 수렴하려면 $f(1)=f^\prime(1)$이어야 하므로 $f^\prime(0)=f^\prime(1)-2=f(1)-2$이다.
+	\begin{align*}
+		14&=\lim\limits_{x\to1}\frac{f(x)-f^\prime(x)}{x^2-1}\\[3pt]
+		&=\lim\limits_{x\to1}\frac{f(x)-2x-f^\prime(0)}{x^2-1}\\[3pt]
+		&=\lim\limits_{x\to1}\frac{f(x)-f(1)-2x+2}{x^2-1}\\[3pt]
+		&=\lim\limits_{x\to1}\biggl(\frac{f(x)-f(1)}{x-1}\cdot\frac{1}{x+1}-\frac{2}{x+1}\biggr)\\[3pt]
+		&=\frac{f^\prime(1)}{2}-1
+	\end{align*}
+	에서 $f^\prime(1)=30$이므로 $f^\prime(0)=28$이다.\qed
+\end{sol}
+
+\begin{sol}[편미분 풀이]
+	주어진 등식에 $x=y=0$을 대입하면 $f(0)=f(0)+f(0)-1$에서 $f(0)=1$이다. 주어진 등식의 양변을 $x$에 대하여 편미분하면 $f^\prime(x+y)=f^\prime(x)+2y$이다. $x=0$, $y=x$를 대입하면 $f^\prime(x)=f^\prime(0)+2x$이다. $f^\prime(0)=k$라 하면 $f^\prime(x)=2x+k$이고 $f(x)=x^2+kx+1$이다.
+	\begin{align*}
+		14&=\lim\limits_{x\to1}\frac{f(x)-f^\prime(x)}{x^2-1}=\lim\limits_{x\to1}\frac{(x^2+kx+1)-(2x+k)}{x^2-1}\\[3pt]
+		&=\lim\limits_{x\to1}\frac{(x-1)^2+k(x-1)}{(x-1)(x+1)}=\lim\limits_{x\to1}\frac{x-1+k}{x+1}=\frac{k}{2}
+	\end{align*}
+	에서 $f^\prime(0)=k=28$이다.\qed
+\end{sol}
+
+\begin{remark}
+	두 풀이에서 주어진 극한을 처리하는 방식의 차이에 주목하라.
+\end{remark}
+
+\newpage
+\begin{prob}{2013학년도 사관학교 나형 20번}{6}
+	두 다항함수 $f(x)$, $g(x)$가 임의의 실수 $x$, $y$에 대하여
+	\[
+		x\{f(x+y)-f(x-y)\=4y\{f(x)+g(y)\}
+	\]
+	를 만족시킨다. $f(1)=4$, $g(0)=1$일 때, $f^\prime(2)$의 값은? [4점]
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	주어진 등식에서 $y\ne0$이라 하면
+	\[
+		x\times\frac{f(x+y)-f(x-y)}{2y}=2\{f(x)+g(y)\}
+	\]
+	이고, 양변에 극한을 취하면
+	\[
+		\lim\limits_{y\to0}\biggl(x\times\frac{f(x+y)-f(x-y)}{2y}\biggr)=\lim\limits_{y\to0}2\{f(x)+g(y)\}
+	\]
+	이므로 $xf^\prime(x)=2f(x)+2$이다. 다항함수 $f(x)$가 최고차항의 계수가 $a$인 $n$차 함수라 하자. 양변의 최고차항의 계수를 비교하면 $an=2a$이므로 $a=2$이다. $f(0)=-1$이므로 $f(x)=ax^2+bx-1$이라 하면 $x(2ax+b)=2(ax^2+bx)$에서 $b=0$이다. $f(1)=4$를 이용하면 $a=5$이므로 $f^\prime(x)=10x$이고 $f^\prime(2)=20$이다.\qed
+\end{sol}
+
+\begin{sol}[편미분 풀이]
+	주어진 등식의 양변을 $y$에 대하여 편미분하면 $x\{f^\prime(x+y)+f^\prime(x-y)\}=4\{f(x)+g(y)\}+4yg^\prime(y)$이다. $y=0$을 대입하면 $xf^\prime(x)=2f(x)+2$이다. (이하 동일)\qed
+\end{sol}
+
+\newpage
+\begin{prob}{2020학년도 경찰대 17번}{7}
+	임의의 두 실수 $x$, $y$에 대하여
+	\[
+		f(x-y)=f(x)-f(y)+3xy(x-y)
+	\]
+	를 만족시키는 다항함수 $f(x)$가 $x=2$에서 극댓값 $a$를 가진다. $f^\prime(0)=b$일 때, $a-b$의 값은? [5점]
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	주어진 등식에 $x=y=0$을 대입하면 $f(0)=f(0)-f(0)$이에서 $f(0)=0$이다. 주어진 등식에서 $x\ne y$라 하면
+	\[
+		\frac{f(x-y)}{x-y}=\frac{f(x)-f(y)}{x-y}+3xy
+	\]
+	이고, 양변에 극한을 취하면
+	\[
+		\lim\limits_{x\to y}\frac{f(x-y)}{x-y}=\lim\limits_{x\to y}\biggl(\frac{f(x)-f(y)}{x-y}+3xy\biggr)
+	\]
+	에서 $f^\prime(0)=f^\prime(x)+3x^2$이다. 다항함수 $f(x)$가 $x=2$에서 극대이므로 $f^\prime(2)+0$에서 $b=12$이다. $f^\prime(x)=-3x^2+12$에서 $f(x)=-x^3+12x$이고 $a=f(2)=16$이므로 $a-b=4$이다.\qed
+\end{sol}
+
+\begin{sol}[편미분 풀이]
+	주어진 등식의 양변을 $x$에 대하여 편미분하면 $f^\prime(x-y)=f^\prime(x)+6xy-3y^2$이다. $x=0$, $y=-x$를 대입하면 $f^\prime(x)=f^\prime(0)-3x^2$이다. (이하 동일)\qed
+\end{sol}
+
+\newpage
+\begin{prob}{2013학년도 사관학교 가/나형 30번}{8}
+	세 다항함수 $f(x)$, $g(x)$, $h(x)$가 다음 조건을 만족시킨다.
+	\begin{hint}
+		\begin{itemize}
+			\item[(가)] $f(1)=1$, $g(1)=2$
+			\item[(나)] 모든 실수 $x$, $y$에 대하여 $f(xy+1)=xg(y)+h(x+y)$이다.
+		\end{itemize}
+	\end{hint}
+	이때 $\displaystyle\int_0^3\{f(x)+g(x)+h(x)\}\,dx$의 값을 구하시오. [4점]
+\end{prob}
+
+\begin{sol}
+	(나)에서 주어진 등식에 $x=0$을 대입하면 $f(1)=h(y)$이다. 이 식은 모든 $y$에 대해 성립하므로 $h(x)$는 $h(x)=1$인 상수함수이다. 주어진 등식에 $y=1$을 대입하면 $f(x+1)=g(1)x+1$, 즉 $f(x)=2x-1$이다. $2xy+1=xg(y)+1$이므로 $g(x)=2x$이다. 그러므로 $\displaystyle\int_0^3\{f(x)+g(x)+h(x)\}\,dx=\int_0^34x\,dx=18$이다.\qed
+\end{sol}
+
+\begin{remark}
+	적절한 대입으로 해결할 수 있는 전형적인 함수방정식 문제이다. 세 함수가 엮여있는 등식을 보고도 편미분을 적용할 생각을 하면 안된다.
+\end{remark}
+
+\newpage
+\begin{prob}{2017년 8월 대구교육청 가형 21번}{9}
+	양의 실수 전체의 집합에서 미분가능한 함수 $f(x)$가 임의의 양수 $x$, $y$에 대하여
+	\[
+		f(xy)=xf(y)+yf(x)
+	\]
+	이고, $f^\prime(1)=1$이다. 실수 전체의 집합에서 정의된 함수 $g(x)$가 다음 조건을 만족시킨다.
+	\begin{hint}
+		\begin{itemize}
+			\item[(가)] $x>0$인 모든 실수 $x$에 대하여 $f(x)=g(x)$이다.
+			\item[(나)] 모든 실수 $x$에 대하여 $g(x)+g(-x)=0$이다.
+		\end{itemize}
+	\end{hint}
+	함수 $g(x)$가 미분가능하지 않은 점의 개수를 $a$라 할 때, 방정식 $g(x)=ax+k$의 서로 다른 실근의 개수는 $2$이다. 모든 실수 $k$의 값의 곱은? (단, $\lim\limits_{x\to0+}f(x)=0$이다.) [4점]
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	주어진 등식에 $x=y=1$을 대입하면 $f(1)=f(1)+f(1)$에서 $f(1)=0$이다. 주어진 등식의 양변을 $xy$로 나누고 $p(x)=\dfrac{f(x)}{x}$라 하면 $p(xy)=p(x)+p(y)$, $p(1)=0$이고, $p^\prime(x)=\dfrac{xf^\prime(x)-f(x)}{x^2}$에서 $p^\prime(1)=1$이다.
+	\begin{align*}
+		p^\prime(x)&=\lim\limits_{h\to 0}\frac{g(x+h)-g(x)}{h}=\lim\limits_{h\to 0}\frac{p(x(1+h/x))-p(x)}{h}\\[3pt]
+		&=\lim\limits_{h\to 0}\frac{p(x)+p(1+h/x)-p(x)}{h}=\lim\limits_{h\to 0}\frac{p(1+h/x)-p(1)}{h}=\frac{p^\prime(x)}{x}
+	\end{align*}
+	이므로 $p(x)=\ln x$이고 $f(x)=x\ln x$이다. (나)에서 $g(0)=0$이다. 함수 $g(x)$의 정의에 따라 $g(x)$는 $0$이 아닌 모든 실수 $x$에 대하여 미분가능하다. $x=0$인 경우 극한
+	\[
+		\lim\limits_{h\to 0+}\frac{g(h)-g(0)}{h}=\lim\limits_{h\to 0+}\ln h
+	\]
+	이 발산하므로 $g(x)$는 $x=0$에서 미분가능하지 않다. 따라서 $a=1$이다. 함수 $h(x)=g(x)-x$라 하면
+	\[
+		h(x)=\begin{cases}
+			x\ln x-x & (x>0) \\
+			0 & (x=0) \\
+			x\ln(-x)-x & (x<0)
+		\end{cases},\quad h^\prime(x)=\begin{cases}
+			\ln x & (x>0) \\
+			\ln(-x) & (x<0)
+		\end{cases}
+	\]
+	이므로 함수 $h(x)$의 증감표는 다음과 같다.
+	\begin{table}[H]
+		\centering
+		\begin{tabular}{c|ccccccc}
+			\toprule
+			$x$ & $\cdots$ & $-1$ & $\cdots$ & $0$ & $\cdots$ & $1$ & $\cdots$ \\
+			\midrule
+			$h^\prime(x)$ & $+$ & $0$ & $-$ & 발산 & $-$ & $0$ & $+$ \\
+			\midrule
+			$h(x)$ & $\searrow$ & 극대 & $\nearrow$ & $0$ & $\nearrow$ & 극소 & $\searrow$ \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	함수 $h(x)$는 실수 전체의 집합에서 연속이므로 가능한 $k$의 값은 극값인 $\pm1$이고 곱은 $-1$이다.\qed
+\end{sol}
+
+\begin{sol}[다른 풀이]
+	$p(xy)=p(x)+p(y)$에서 정리 \ref{thm:3.3}을 이용하면 $p(x)=\log_ax$ ($a$는 $1$이 아닌 양수)이다. (이하 동일)\qed
+\end{sol}
+
+\newpage
+\begin{prob}{2016학년도 경찰대 15번}{10}
+	함수 $f(x)$는 임의의 실수 $x$, $y$에 대하여 다음을 만족시킨다.
+	\[
+		 f(1)>0,\quad f(xy)=f(x)f(y)-x-y
+	\]
+	이때, $\displaystyle\lim\limits_{n\to\infty}\sum_{k=1}^n\biggl\{\frac{6}{\sqrt n}f\biggl(2+\frac{2k}{n}\biggr)\biggr\}^2$의 값은? [4점]
+\end{prob}
+
+\begin{sol}
+	주어진 등식에 $x=y=1$을 대입하면 $f(1)=(f(1))^2-2$이고 $f(1)>0$이므로 $f(1)=2$이다. $y=1$을 대입하면 $f(x)=x+1$이다. 따라서
+	\[
+		\lim\limits_{n\to\infty}\sum_{k=1}^n\biggl\{\frac{6}{\sqrt n}f\biggl(2+\frac{2k}{n}\biggr)\biggr\}^2=9\int_2^6(f(x))^2\,dx=9\int_2^6(x+1)^2\,dx=948
+	\]
+	이다.\qed
+\end{sol}
+
+\begin{remark}
+	이 문제 역시 적절한 대입으로 해결할 수 있는 함수방정식 문제이다. 특히 함수 $f$가 미분가능하다는 조건이 없으므로 편미분을 사용하여서는 안된다.
+\end{remark}
+
+\newpage
+\begin{prob}{2017학년도 사관학교 가형 21번}{11}
+	실수 전체의 집합에서 미분가능한 함수 $f(x)$가 다음 조건을 만족시킨다.
+	\begin{hint}
+		\begin{itemize}
+			\item[(가)] $f(0)=0$, $f^\prime(0)=1$
+			\item[(나)] 모든 실수 $x$, $y$에 대하여 $f(x+y)=\dfrac{f(x)+f(y)}{1+f(x)f(y)}$이다.
+		\end{itemize}
+	\end{hint}
+	$f(-1)=k$ $(-1<k<0)$일 때, $\displaystyle\int_0^1\{f(x)\}^2\,dx$의 값을 $k$로 나타낸 것은? [4점]
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	주어진 등식에 $x=1$, $y=-1$을 대임하면 $f(1)=-f(-1)=-k$이다. 도함수의 정의에 의해
+	\begin{align*}
+		f^\prime(x)&=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}=\lim\limits_{h\to0}\frac{\frac{f(x)+f(h)}{1+f(x)f(h)}-f(x)}{h}\\[3pt]
+		&=\lim\limits_{h\to0}\biggl[\frac{f(h)}{h}\times\frac{1-(f(x))^2}{1+f(x)f(h)}\biggr]=f^\prime(0)[1-(f(x))^2]=1-(f(x))^2.
+	\end{align*}
+	따라서 $\{f(x)\}^2=1-f\prime(x)$이므로 $\displaystyle\int_0^1\{f(x)\}^2\,dx=\int_0^1(1-f^\prime(x)\}\.dx=1-f(1)=1+k$이다.\qed
+\end{sol}
+
+\begin{sol}[편미분 풀이]
+	주어진 등식의 양변을 $y$에 대하여 편미분하면
+	\begin{align*}
+		f^\prime(x+y)&=\frac{f^\prime(y)(1+f(x)f(y))-f(x)f^\prime(y)(f(x)+f(y))}{(1+f(x)f(y))^2}\\[3pt]
+		&=\frac{f^\prime(y)+f(x)f(y)f^\prime(y)-(f(x))^2f^\prime(y)-f(x)f(y)f^\prime(y)}{(1+f(x)f(y))^2}\\[3pt]
+		&=\frac{f^\prime(y)[1-(f(x))^2]}{(1+f(x)f(y))^2}.
+	\end{align*}
+	$y=0$을 대입하면 $f^\prime(x)=1-\{f(x)\}^2$이다. (이하 동일)\qed
+\end{sol}
+
+\begin{remark}
+	(나)에서 쌍곡선함수의 덧셈정리를 떠올리면 $f(x)=\tanh x$임을 알 수 있다.
+\end{remark}
+
+\newpage
+\begin{prob}{2018학년도 경찰대 20번}{12}
+	미분가능한 함수 $f(x)$, $g(x)$가
+	\[
+		\begin{array}{ll}
+			f(x+y)=f(x)g(y)+f(y)g(x), & f(1)=1 \\[3pt]
+			g(x+y)=g(x)g(y)+f(x)f(y), & \lim\limits_{x\to0}\dfrac{g(x)-1}{x}=0
+		\end{array}
+	\]
+	을 만족시킬 때, 옳은 것만을 $\langle$보기$\rangle$에서 있는 대로 고른 것은? [5점]
+	\begin{hint}[보기]
+		\begin{itemize}
+			\item[ㄱ.] $f^\prime(x)=f^\prime(0)g(x)$
+			\item[ㄴ.] $g(x)$는 $x=0$에서 극솟값 $1$을 갖는다.
+			\item[ㄷ.] $\{g(x)\}^2-\{f(x)\}^2=1$
+		\end{itemize}
+	\end{hint}
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	$\lim\limits_{x\to0}\dfrac{g(x)-1}{x}=0$에서 $g(0)=1$, $g^\prime(0)=0$이다. 두번째 항등식에 $x=1$, $y=0$을 대입하면
+	\[
+		g(1)=g(1)g(0)+f(1)f(0)~\longrightarrow~f(1)f(0)=0~\longrightarrow~f(0)=0.
+	\]
+	도함수의 정의에 의해
+	\begin{align*}
+		f^\prime(x)&=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}\lim\limits_{h\to0}\frac{f(x)g(h)+f(h)g(x)-f(x)}{h}\\[3pt]
+		&=\lim\limits_{h\to0}\biggl(f(x)\times\frac{g(h)-1}{h}+\frac{f(h)}{h}\times g(x)\biggr)=f^\prime(0)g(x),\\[3pt]
+		g^\prime(x)&=\lim\limits_{h\to0}\frac{g(x+h)-g(x)}{h}=\lim\limits_{h\to0}\frac{g(x)g(h)+f(h)f(x)-g(x)}{h}\\[3pt]
+		&=\lim\limits_{h\to0}\biggl(g(x)\times\frac{g(h)-1}{h}+\frac{f(h)}{h}\times f(x)\biggr)=f^\prime(0)f(x).
+	\end{align*}
+	함수 $h(x)=\{g(x)\}^2-\{f(x)\}^2$라 하면
+	\[
+		h^\prime(x)=2g(x)g^\prime(x)-2f(x)f^\prime(x)=2f^\prime(0)f(x)g(x)-2f^\prime(0)f(x)g(x)=0
+	\]
+	이므로 $h(x)$는 상수함수이다. $h(0)=1$이므로 $\{g(x)\}^2-\{f(x)\}^2=1$이다. 모든 실수 $x$에 대하여 $\{g(x)\}^2=1+\{f(x)\}^2\geq1$이므로 $g(x)$는 $x=0$에서 극솟값 $1$을 갖는다.\qed
+\end{sol}
+
+\begin{sol}[편미분 풀이]
+	주어진 등식을 모두 $y$에 대하여 편미분하면
+	\[
+		f^\prime(x+y)=f(x)g^\prime(y)+f^\prime(y)g(x),\quad g^\prime(x+y)=g(x)g^\prime(y)+f(x)f^\prime(y).
+	\]
+	$y=0$을 대입하면 $f^\prime(x)=f^\prime(0)g(x)$이고 $g^\prime(x)=f^\prime(0)f(x)$. (이하 동일)\qed
+\end{sol}
+
+\begin{remark}
+	덧셈정리와 유사한 함수방정식 조건으로부터 두 함수가 각각 $f(x)=\sinh x$, $g(x)=\cosh x$임을 알 수 있다.
+\end{remark}
+
+\newpage
+\begin{prob}{}{13}
+	미분가능한 함수 $f(x)$가 모든 실수 $x$, $y$에 대하여
+	\[
+		f(x)f(y)-f(x+y)=\sin x\sin y
+	\]
+	를 만족하고, $f^\prime(0)=0$이다. 다음 물음에 답하여라.
+	\begin{enumerate}[(a)]
+		\item $f(0)$의 값을 구하여라.
+		\item 함수 $f(x)$의 도함수 $f^\prime(x)$를 구하여라.
+		\item 정적분 $\displaystyle\int_0^{\tfrac{\pi}{3}}\frac{1}{f(x)}\,dx$의 값을 구하여라.
+	\end{enumerate}
+\end{prob}
+
+\begin{sol}[정석 풀이]
+	\phantom{}
+	\begin{enumerate}[(a)]
+		\item 주어진 등식에 $x=y=0$을 대입하면 $(f())^2-f(0)=0$에서 $f(0)=0$ 또는 $f(0)=1$이다. 만약 $f(0)=0$이라 가정하고 등식에 $y=0$을 대입하면 $f(x)=0$이다. 그러나 $x=y=\pi/2$를 대입하면 $(f(\pi/2))^2-f(\pi)=1$이므로 이는 모순이다. 그러므로 $f(0)=1$이다.
+		\item 도함수의 정의에 의해
+			\begin{align*}
+				f^\prime(x)&=\lim\limits_{h\to0}\frac{f(x+h)-f(x)}{h}=\lim\limits_{h\to0}\frac{f(x)f(h)-\sin x\sin h-f(x)}{h}\\[3pt]
+				&=\lim\limits_{h\to0}\biggl(f(x)\times\frac{f(h)-1}{h}-\sin x\times\frac{\sin h}{h}\biggr)=f^\prime(0)f(x)-\sin x=-\sin x.
+			\end{align*}
+		\item $f^\prime(x)=-\sin x$이고 $f(0)=1$에서 $f(x)=\cos x$이다. 따라서
+			\[
+				\int_0^{\tfrac{\pi}{3}}\frac{1}{f(x)}\,dx=\int_0^{\tfrac{\pi}{3}}\sec x=\biggl[\ln\vert\sec x+\tan x\vert\biggr]_0^{\tfrac{\pi}{3}}=\ln(2+\sqrt3)
+			\]
+			이다.\qed
+	\end{enumerate}
+\end{sol}
+
+\begin{sol}[편미분 풀이]
+	주어진 등식의 양변을 $y$에 대하여 편미분하면 $f(x)f^\prime(y)-f^\prime(x+y)=\sin x\cos y$이다. $y=0$을 대입하면 $f^\prime(x)=-\sin x$이다. (이하 동일)\qed
+\end{sol}
+
+\begin{remark}
+	삼각함수의 덧셈정리에서 $f(x)=\cos x$임을 알 수 있다.
+\end{remark}
+
+\newpage
+\begin{prob}{}{14}
+	함수 $f(x)$가 모든 실수 $x$, $y$에 대하여 $f(x+y)=f(x)+f(y)$를 만족시킬 때, $x=0$에서 함수 $f(x)$가 연속이면 $f(x)$는 실수 전체의 집합에서 연속임을 보여라.
+\end{prob}
+
+\begin{sol}
+	주어진 등식에서 $x=y=0$을 대입하면 $f(0)=f(0)+f(0)$에서 $f(0)=0$이다. 함수 $f(x)$는 $x=0$에서 연속이므로 $\lim\limits_{x\to0}f(x)=f(0)=0$이다. 임의의 실수 $x$에 대하여
+	\[
+		\lim\limits_{h\to0}f(x+h)=\lim\limits_{h\to0}(f(x)+f(h))=\lim\limits_{h\to0}f(x)+\lim\limits_{h\to0}f(h)=f(x)
+	\]
+	이므로 $f(x)$는 실수 전체의 집합에서 연속이다.\qed
+\end{sol}
+
+\newpage
+\begin{prob}{}{15}
+	복소수 전체의 집합을 $\mathbb C$라 하자. 코시 함수방정식을 만족하는 함수 $f:\mathbb C\to\mathbb C$ 중에서 $f(x)=kx$가 아닌 함수 $f$를 하나 제시하여라.
+\end{prob}
+
+\begin{sol}
+	복소수 $z$의 켤레복소수를 $\overline{z}$라 하자. 함수 $f(z)=\overline{z}$는 코시 함수방정식을 만족한다.\qed
+\end{sol}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
