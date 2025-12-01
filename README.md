@@ -19,5 +19,5 @@
     \item 임의의 유한 집합족 $\{U_i\}_{i=1}^n\subset\mathcal T$에 대하여 $\bigcap_{i=1}^nU_i\in\mathcal T$이다.
   \end{enumerate}
 \end{dfn}
-정의 \ref{dfn:1.1}에서 $\mathcal T$의 원소를 \textbf{열린집합(open set)이라 한다.
+정의 \ref{dfn:1.1}에서 $\mathcal T$의 원소를 \textbf{열린집합(open set)}이라 한다.
 ```
