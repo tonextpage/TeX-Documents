@@ -1,11 +1,11 @@
 TeX로 조판한 문서를 모아놓은 리포지토리입니다.
 
-## preamble.tex 이용 가이드
+## [preamble.tex](https://github.com/tonextpage/TeX-Documents/blob/28f796ced48c096816a3fce742c2fe40d53a6ab9/preamble.tex) 이용 가이드
 
 ### 폰트 설치하기
-preaamble.tex에 설정된 기본 폰트는 [**KoPub Dotum**](https://www.kopus.org/biz-electronic-font2/)입니다. 해당 폰트를 다운로드하시거나, preamble.tex의 다음 부분을 수정하여 원하는 폰트를 사용하시기 바랍니다.
+preaamble.tex에 설정된 기본 폰트는 [**KoPub Dotum**](https://www.kopus.org/biz-electronic-font2/)입니다. 해당 폰트를 다운로드하시거나, 다음 부분을 수정하여 원하는 폰트를 사용하시기 바랍니다.
 
-https://github.com/tonextpage/LaTeX-Documents/blob/6224001ac63f70808b9392ded2e63f2ef5d43bc9/preamble.tex#L28-L33
+https://github.com/tonextpage/TeX-Documents/blob/28f796ced48c096816a3fce742c2fe40d53a6ab9/preamble.tex#L28-L33
 
 ---
 
