@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1769437471.90171 "적분법 총정리.xdv" "적분법 총정리.pdf" "적분법 총정리" 1769437472.67234 0
-  "적분법 총정리.xdv" 1769437471 1556436 d88cf9253c5f628d6ae42f149136a4c6 "xelatex"
+["xdvipdfmx"] 1769442227.65737 "적분법 총정리.xdv" "적분법 총정리.pdf" "적분법 총정리" 1769442228.44056 0
+  "적분법 총정리.xdv" 1769442227 1557468 dfe62c756f5de66b9bbaf918ab3aa824 "xelatex"
   (generated)
   "적분법 총정리.pdf"
   (rewritten before read)
-["xelatex"] 1769437465.41356 "d:/OneDrive/LaTeX/TeX-Documents/적분법 총정리/적분법 총정리.tex" "적분법 총정리.xdv" "적분법 총정리" 1769437472.66769 0
+["xelatex"] 1769442221.15592 "d:/OneDrive/TeX-Documents/적분법 총정리/적분법 총정리.tex" "적분법 총정리.xdv" "적분법 총정리" 1769442228.43541 0
   "2011년 10월 대전교육청 가형 29번.png" 1769433686 16013 15a3702dbdfa9290660ccc790c1bb8ec ""
   "2019년 4월 학력평가 가형 16번.png" 1769433686 37636 34dccb61b25885976a89ace8fd2b85b5 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1769433238 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -214,12 +214,12 @@
   "c:/texlive/2025/texmf-dist/web2c/texmf.cnf" 1769432127 42213 4e2ca030e8e2640502016e9e45868dcb ""
   "c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1769435966 5948051 a2404ebd8d84f923ded640655b1a0682 ""
   "c:/texlive/2025/texmf.cnf" 1769435751 713 e69b156964470283e0530f5060668171 ""
-  "d:/OneDrive/LaTeX/TeX-Documents/적분법 총정리/적분법 총정리.tex" 1769433686 96595 2d665411bd0922d45d66d256c636df05 ""
+  "d:/OneDrive/TeX-Documents/적분법 총정리/적분법 총정리.tex" 1769442063 96670 c548a53767a942578fc5717c86a8f30a ""
   "preamble.tex" 1769433686 9006 96bace6248f8991397ab6fd4844f9e8c ""
   "section 8.png" 1769433686 33723 2966b88f548d748ec24b035666960226 ""
-  "적분법 총정리.aux" 1769437471 8657 fffa66a49395b3d30151715afcb5310c "xelatex"
-  "적분법 총정리.out" 1769437471 1574 e05b316a881e168b477d2663db2a2597 "xelatex"
-  "적분법 총정리.tex" 1769433686 96595 2d665411bd0922d45d66d256c636df05 ""
+  "적분법 총정리.aux" 1769442227 8657 322c85f636d17298d34aea6d130106f6 "xelatex"
+  "적분법 총정리.out" 1769442227 1574 e05b316a881e168b477d2663db2a2597 "xelatex"
+  "적분법 총정리.tex" 1769442063 96670 c548a53767a942578fc5717c86a8f30a ""
   (generated)
   "적분법 총정리.aux"
   "적분법 총정리.log"

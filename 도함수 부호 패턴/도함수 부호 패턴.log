@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  27 JAN 2026 00:42
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  27 JAN 2026 00:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/OneDrive/TeX-Documents/sample/sample.tex
-(d:/OneDrive/TeX-Documents/sample/sample.tex
+**"d:/OneDrive/TeX-Documents/도함수 부호 패턴/도함수 부호 패턴.tex"
+(d:/OneDrive/TeX-Documents/도함수 부호 패턴/도함수 부호 패턴.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -933,8 +933,8 @@ Package fontspec Info:
 
 \c@tcb@cnt@dfn=\count384
 \c@tcb@cnt@prob=\count385
-) (./sample.aux)
-\openout1 = `sample.aux'.
+) (./도함수 부호 패턴.aux)
+\openout1 = `"도함수 부호 패턴.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
@@ -965,14 +965,14 @@ LaTeX Font Info:    ... okay on input line 11.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(74.71704pt, 448.07378pt, 74.71706pt)
+* h-part:(L,W,R)=(67.49016pt, 462.52756pt, 67.49016pt)
 * v-part:(T,H,B)=(48.93872pt, 722.7pt, 73.40813pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=448.07378pt
+* \textwidth=462.52756pt
 * \textheight=722.7pt
-* \oddsidemargin=2.44705pt
-* \evensidemargin=2.44705pt
+* \oddsidemargin=-4.77983pt
+* \evensidemargin=-4.77983pt
 * \topmargin=-60.33127pt
 * \headheight=12.0pt
 * \headsep=25.0pt
@@ -992,9 +992,9 @@ LaTeX Font Info:    ... okay on input line 11.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 11.
-(./sample.out) (./sample.out)
+(./도함수 부호 패턴.out) (./도함수 부호 패턴.out)
 \@outlinefile=\write4
-\openout4 = `sample.out'.
+\openout4 = `"도함수 부호 패턴.out"'.
 
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
@@ -1038,28 +1038,37 @@ Package fontspec Info:
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->"[UnDotumBold.ttf]/OT:language=dflt;extend=1.05;"
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 16.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for TS1+KoPubDotum(0) on input line 16.
-LaTeX Font Info:    No file TS1KoPubDotum(0).fd. on input line 16.
+LaTeX Font Info:    Trying to load font information for TS1+KoPubDotum(0) on input line 15.
+LaTeX Font Info:    No file TS1KoPubDotum(0).fd. on input line 15.
 
 
 LaTeX Font Warning: Font shape `TS1/KoPubDotum(0)/m/n' undefined
-(Font)              using `TS1/cmr/m/n' instead on input line 16.
-
-
-LaTeX Font Warning: Font shape `TU/KoPubDotum(0)/b/it' undefined
-(Font)              using `TU/KoPubDotum(0)/b/n' instead on input line 43.
+(Font)              using `TS1/cmr/m/n' instead on input line 15.
 
 [1
 
-] [2] (./sample.aux)
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 76.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 76.
+
+
+LaTeX Font Warning: Font shape `TU/KoPubDotum(0)/b/it' undefined
+(Font)              using `TU/KoPubDotum(0)/b/n' instead on input line 88.
+
+[2] [3] (./도함수 부호 패턴.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1068,16 +1077,16 @@ L3 programming layer <2026-01-19>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `sample.out' has not changed.
-(rerunfilecheck)             Checksum: A46CF4168A10FBE1F1580FCECF898894;107.
+Package rerunfilecheck Info: File `"도함수 부호 패턴".out' has not changed.
+(rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 35274 strings out of 468174
- 716368 string characters out of 5436827
- 1253054 words of memory out of 5000000
- 63437 multiletter control sequences out of 15000+600000
- 630945 words of font info for 71 fonts, out of 8000000 for 9000
+ 35336 strings out of 468174
+ 717345 string characters out of 5436827
+ 1246058 words of memory out of 5000000
+ 63479 multiletter control sequences out of 15000+600000
+ 638514 words of font info for 102 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 94i,7n,100p,576b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,9n,100p,584b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on sample.xdv (2 pages, 79116 bytes).
+Output written on 도함수 부호 패턴.xdv (3 pages, 116368 bytes).

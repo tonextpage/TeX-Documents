@@ -1,14 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1769442115.51317 "Cooperative Game Theory.xdv" "Cooperative Game Theory.pdf" "Cooperative Game Theory" 1769442116.16052 0
-  "Cooperative Game Theory.xdv" 1769442115 888260 facb8049abeec3ac0b1c8d5163118177 "xelatex"
+["xdvipdfmx"] 1769441908.88029 "도함수 부호 패턴.xdv" "도함수 부호 패턴.pdf" "도함수 부호 패턴" 1769441909.45458 0
+  "도함수 부호 패턴.xdv" 1769441908 116368 5e35796e08bc51e8a62ac4328a9bfec0 "xelatex"
   (generated)
-  "Cooperative Game Theory.pdf"
+  "도함수 부호 패턴.pdf"
   (rewritten before read)
-["xelatex"] 1769442111.85095 "d:/OneDrive/TeX-Documents/Cooperative Game Theory/Cooperative Game Theory.tex" "Cooperative Game Theory.xdv" "Cooperative Game Theory" 1769442116.15591 0
-  "Cooperative Game Theory.aux" 1769442115 6617 48a12528ce8a4c7c97ec0c9372973a14 "xelatex"
-  "Cooperative Game Theory.out" 1769442115 1980 3db0633ea3455f4888c9d35edfa245fe "xelatex"
-  "Cooperative Game Theory.tex" 1769442056 87670 f09210dd3f305aa266b26910092a75d2 ""
-  "Cooperative Game Theory.toc" 1769442115 1398 96bc4115fc2d429a5fe137806e042cf5 "xelatex"
+["xelatex"] 1769441907.22901 "d:/OneDrive/TeX-Documents/도함수 부호 패턴/도함수 부호 패턴.tex" "도함수 부호 패턴.xdv" "도함수 부호 패턴" 1769441909.44972 0
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1769433238 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1769435731 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1769432973 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -17,6 +13,7 @@
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm0800.tfm" 1769432973 1536 05df9db6aeccc4eea94fec15c9024f79 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1769432973 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1769432973 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
+  "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1440.tfm" 1769432973 1536 3290a75021d32d016616fe527bc9884c ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1769432201 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1769432201 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1769432201 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -216,12 +213,14 @@
   "c:/texlive/2025/texmf-dist/web2c/texmf.cnf" 1769432127 42213 4e2ca030e8e2640502016e9e45868dcb ""
   "c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1769435966 5948051 a2404ebd8d84f923ded640655b1a0682 ""
   "c:/texlive/2025/texmf.cnf" 1769435751 713 e69b156964470283e0530f5060668171 ""
-  "d:/OneDrive/TeX-Documents/Cooperative Game Theory/Cooperative Game Theory.tex" 1769442056 87670 f09210dd3f305aa266b26910092a75d2 ""
+  "d:/OneDrive/TeX-Documents/도함수 부호 패턴/도함수 부호 패턴.tex" 1769441906 7700 c91e022ca56351480f67c57b88f6b1da ""
   "preamble.tex" 1769433686 9006 96bace6248f8991397ab6fd4844f9e8c ""
+  "도함수 부호 패턴.aux" 1769441908 1246 e9858b1be43d9f3b7029bb54ec0ef76e "xelatex"
+  "도함수 부호 패턴.out" 1769441908 454 d878b4350686bc073409c75e1b2b24dd "xelatex"
+  "도함수 부호 패턴.tex" 1769441906 7700 c91e022ca56351480f67c57b88f6b1da ""
   (generated)
-  "Cooperative Game Theory.aux"
-  "Cooperative Game Theory.log"
-  "Cooperative Game Theory.out"
-  "Cooperative Game Theory.toc"
-  "Cooperative Game Theory.xdv"
+  "도함수 부호 패턴.aux"
+  "도함수 부호 패턴.log"
+  "도함수 부호 패턴.out"
+  "도함수 부호 패턴.xdv"
   (rewritten before read)

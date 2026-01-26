@@ -1,0 +1,145 @@
+\documentclass{article}
+\input{"preamble.tex"}
+
+\geometry{a4paper, total={6.4in, 10in}}
+\title{도함수 부호 패턴}
+\author{tonextpage\\
+    \url{https://github.com/tonextpage}
+}
+\date{}
+
+\begin{document}
+
+\setstretch{1.3}
+\maketitle
+
+\noindent 
+어떤 함수를 계속 미분하다 보면 규칙성이 드러나는 경우가 있다.
+지수함수 $e^x$는 아무리 미분해도 $e^x$ 자기 자신이 된다.
+사인함수와 코사인함수는 미분하면 서로가 계속 모습을 드러낸다.
+이 칼럼에서는 미분을 반복할 때의 부호 패턴을 다룬다.
+부호 패턴을 수열로 정의하여 실수 전체의 집합 $\mathbb R$과 임의의 열린구간 $(a$, $b)$ 위에서 도함수의 부호 패턴을 각각 살펴볼 것이다.
+
+\section{도함수의 부호 패턴}
+부호 패턴을 정의하기 위해 먼저 부호 함수를 생각하자.
+
+\begin{dfn}{}{1.1}
+    부호는 다음과 같이 정의된 함수 $\operatorname{sgn}:\mathbb R \to \{-1, 0, 1\}$이다.
+    \[
+        \operatorname{sgn}(x)=\begin{cases}
+            1 & (x>0)\\
+            0 & (x=0)\\
+            -1 & (x<0)
+        \end{cases}
+    \]
+\end{dfn}
+
+이제 부호 패턴을 정의하자.
+
+\begin{dfn}{}{1.2}
+    부호 패턴은 모든 자연수 $n$에 대하여 $a_n\in\{-1,1\}$을 만족하는 수열 $\{a_n\}_{n\geq0}$이다.
+\end{dfn}
+
+\begin{dfn}{}{1.3}
+    $A$를 $\mathbb{R}$의 한 열린 부분집합이라 하자. 무한번 미분가능한 함수 $f:A\to\mathbb R$가 다음 조건을 만족하면 부호 패턴 $\{a_n\}$을 갖는다고 한다.
+    \begin{itemize}
+        \item 모든 $x\in A$와 음이 아닌 정수에 대하여 $\operatorname{sgn}(f^{(n)}(x))=a_n$이다.
+    \end{itemize}
+    (여기서 $f^{(0)}=f$로 둔다.)
+\end{dfn}
+
+도함수 부호 패턴의 예시를 몇 가지 살펴보자.
+
+\begin{example}{}{1.4}
+    지수함수 $f(x)=e^x$는 모든 음이 아닌 정수 $n$에 대하여 $f^{(n)}(x)=e^x>0$이므로 $e^x$의 도함수 부호 패턴은 $\{1,1,1,1,\cdots\}$이다.
+\end{example}
+
+\begin{example}{}{1.5}
+    함수 $f(x)=e^{-x}$는 짝수 $n$에 대하여 $f^{(n)}(x)=e^{-x}>0$이고, 홀수 $n$에 대하여 $f^{(n)}(x)=e^{-x}>0$이고 홀수 $n$에 대하여는 $f^{(n)}(x)=-e^{-x}<0$이므로 $e^{-x}$의 도함수 부호 패턴은 $\{1,-1,1,-1,\cdots\}$이다
+\end{example}
+
+\begin{example}{}{1.6}
+    함수 $f$의 도함수 부호 패턴이 $\{a_n\}$이면 함수 $-f$의 도함수 부호 패턴은 $\{-a_n\}$이다. 즉 $-e^x$의 도함수 부호 패턴은 $\{-1,-1,-1,-1,\cdots\}$이고, $-e^{-x}$의 도함수 부호 패턴은 $\{-1,1,-1,1,\cdots\}$이다.
+\end{example}
+
+\begin{example}{}{1.7}
+    $f$를 도함수 부호 패턴 $\{a_n\}$을 갖는 함수라 하자. 함수 $g(x)=f(-x)$의 도함수 부호 패턴은 $\{(-1)^na_n\}$이다
+    \[
+        g(x)=f(-x),\quad g'(x)=-f'(-x),\quad\cdots,\quad g^{(n)}(x)=(-1)^nf^{(n)}(-x)
+    \]
+\end{example}
+
+\begin{example}{}{1.8}
+    다항함수는 도함수 부호 패턴을 갖지 않는다. 충분한 횟수만큼 미분하면 도함수가 0이 되기 때문이다.
+\end{example}
+
+\section{$\mathbb R$ 위의 도함수 부호 패턴}
+실수 전체의 집합 위의 도함수 부호 패턴은 위의 예시에서 살펴본 네 가지 패턴이 전부이다.
+\[
+    \{1,1,1,1,\cdots\},\quad \{1,-1,1,-1,\cdots\},\quad \{-1,1,-1,1,\cdots\},\quad \{-1,-1,-1,-1,\cdots\}
+\]
+이를 증명하기 위해 다음 보조정리를 증명하자.
+
+\begin{lemma}{}{2.1}
+    함수 $f:\mathbb R\to\mathbb R$이 두 번 미분가능하다고 하자. 모든 $x\in\mathbb R$에 대하여 $f(x)>0$이면 어떤 실수 $x_0$에 대하여 $f^{\prime\prime}(x_0)\geq0$이다.
+\end{lemma}
+
+\begin{proof}
+    $f^\prime$이 모든 실수 $x$에 대하여 $f^\prime(x)=0$을 만족하면 $f^{\prime\prime}(x)=0$이므로 보조정리를 만족한다. 따라서 $f^\prime(a)\ne0$인 실수 $a$가 존재한다고 가정하자. 테일러 정리에 따라, $a$와 $x$ 사이에 실수 $c$가 존재하여
+    \[
+        f(x)=f(a)+f^\prime(a)(x-a)+\frac{f^{\prime\prime}(c)}{2}(x-a)^2
+    \]
+    을 만족한다. 이제 $x_0=a-f(a)/f^\prime(a)$라 하자. 이는 $f$의 $x=a$에서의 접선의 $x$절편이다. 이제
+    \[
+        f(x_0)=\frac{f^{\prime\prime}(c)}{2}(x_0-a)^2
+    \]
+    이므로 만약 모든 실수 $x$에 대하여 $f^{\prime\prime}(x)<0$이면 $f(x_0)<0$이 되어 모순이다. 따라서 어떤 실수 $x_0$에 대하여 $f^{\prime\prime}(x_0)\geq0$이다.
+\end{proof}
+
+이제 $\mathbb R$ 위의 도함수 부호 패턴을 특정짓자.
+
+\begin{thm}{}{2.2}
+    무한번 미분가능한 함수 $f:\mathbb R\to\mathbb R$이 도함수 부호 패턴 $\{a_n\}$을 가질 때, $\{a_n\}$은 다음 네 경우 중 하나이다.
+    \[
+        \{1,1,1,1,\cdots\},\quad \{1,-1,1,-1,\cdots\},\quad \{-1,1,-1,1,\cdots\},\quad \{-1,-1,-1,-1,\cdots\}
+    \]
+\end{thm}
+
+\begin{proof}
+    $f$가 도함수 부호 패턴을 가지면 보조정리 \ref{lemma:2.1}에 의해 $a_n=a_{n+2}$가 성립해야 한다. 따라서 도함수 부호 패턴 $\{a_n\}$은 초깃값 $a_0$과 $a_1$에 의해 특정되고, 가능한 경우의 수는 네 가지이다.
+    이 네 가지 부호 패턴을 실제로 갖는 함수는 위의 예시에서 확인했으므로 $\mathbb R$ 위의 도함수 부호 패턴은 이 네 가지가 전부이다. 
+\end{proof}
+
+\section{열린구간 위의 도함수 부호 패턴}
+$\mathbb R$ 위에서는 불행히도 도함수 부호 패턴이 네 가지밖에 존재하지 않지만, 열린구간 $(a,b)$에서는 임의의 도함수 부호 패턴을 갖는 함수를 만들 수 있다.
+
+\begin{thm}{}{3.1}
+    임의의 부호 패턴 $\{a_n\}$에 대하여 $\{a_n\}$을 도함수 부호 패턴으로 갖는 무한번 미분가능한 함수 $f:(0,1)\to\mathbb R$이 존재한다.
+\end{thm}
+
+\begin{proof}
+    부호 패턴 $\{a_n\}$에 대하여 함수 $f:(0,1)\to\mathbb R$을 다음과 같이 정의하자. (이는 $e^{x/2}$의 테일러 전개를 변형한 것이다.)
+    \[
+        f(x)=\sum_{n=0}^\infty\frac{a_nx^n}{2^nn!}
+    \]
+    구간 $(0,1)$에서 급수의 각 항은 $1/2^n$보다 작거나 같으므로 바이어슈트라스 $M$--판정법에 따라 우변의 급수는 균등수렴한다. 따라서 $f$는 잘 정의된 무한번 미분가능한 함수이다. $f$의 무한합에서 각 항을 미분하면
+    \[
+        \begin{aligned}
+            f^{(k)}(x)&=\sum_{n=0}^\infty\frac{a_nn(n-1)\cdots(n-k+1)x^{n-k}}{2^nn!}\\
+            &=\sum_{n=0}^\infty\frac{a_{n+k}x^n}{2^{n+k}n!}\\
+            &=\frac{a_k}{2^k}+\sum_{n=1}^\infty\frac{a_{n+k}x^n}{2^{n+k}n!}
+        \end{aligned}
+    \]
+    이다. 이때
+    \[
+        \left\vert\sum_{n=1}^\infty\frac{a_{n+k}x^n}{2^{n+k}n!}\right\vert\leq\sum_{n=1}^\infty\left\vert\frac{a_{n+k}x^n}{2^{n+k}n!}\right\vert\leq\sum_{n=1}^\infty\frac{1}{2^{n+k}n!}=\frac{e^{1/2}-1}{2^k}<\frac{1}{2^k}=\left\vert\frac{a_k}{2^k}\right\vert
+    \]
+    이므로 $f^{(k)}(x)$의 부호는 $a_k/2^k$의 부호와 일치한다. 따라서 $f$의 도함수 부호 패턴은 $\{a_n\}$이다.
+\end{proof}
+
+임의의 열린구간 $(a$, $b)$에 대해서는 $(0$, $1)$ 구간의 함수에 적절한 일차함수를 합성하는 방식으로 해결할 수 있다. 그러므로 열린구간에 대해서는 임의의 도함수 부호 패턴을 갖는 것이 가능하다.
+
+\begin{thebibliography}{9}
+    \bibitem{1} Clark, J. (2011). Derivative Sign Patterns. The College Mathematics Journal, 42(5), 379–382.\\ \url{https://doi.org/10.4169/college.math.j.42.5.379}
+\end{thebibliography}
+\end{document}

@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  26 JAN 2026 23:23
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  27 JAN 2026 00:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/OneDrive/LaTeX/TeX-Documents/고등학교 수학으로 증명하는 바젤 문제/고등학교 수학으로 증명하는 바젤 문제.tex"
-(d:/OneDrive/LaTeX/TeX-Documents/고등학교 수학으로 증명하는 바젤 문제/고등학교 수학으로 증명하는 바젤 문제.tex
+**"d:/OneDrive/TeX-Documents/고등학교 수학으로 증명하는 바젤 문제/고등학교 수학으로 증명하는 바젤 문제.tex"
+(d:/OneDrive/TeX-Documents/고등학교 수학으로 증명하는 바젤 문제/고등학교 수학으로 증명하는 바젤 문제.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -936,26 +936,26 @@ Package fontspec Info:
 ) (./고등학교 수학으로 증명하는 바젤 문제.aux)
 \openout1 = `"고등학교 수학으로 증명하는 바젤 문제.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -991,21 +991,21 @@ LaTeX Font Info:    ... okay on input line 7.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 7.
+Package hyperref Info: Link coloring OFF on input line 11.
 (./고등학교 수학으로 증명하는 바젤 문제.out) (./고등학교 수학으로 증명하는 바젤 문제.out)
 \@outlinefile=\write4
 \openout4 = `"고등학교 수학으로 증명하는 바젤 문제.out"'.
 
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/KoPubDotum(0)/m/n --> TS1/KoPubDotum(0)/b/n on input line 7.
-Package gensymb Info: Math companion symbols declared on input line 7.
-LaTeX Info: Redefining \degree on input line 7.
-LaTeX Info: Redefining \celsius on input line 7.
-Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 7.
-LaTeX Info: Redefining \ohm on input line 7.
-Package gensymb Info: Using \textohm for \ohm on input line 7.
-Package gensymb Info: Using \textmu for \micro on input line 7.
+(Font)                  TS1/KoPubDotum(0)/m/n --> TS1/KoPubDotum(0)/b/n on input line 11.
+Package gensymb Info: Math companion symbols declared on input line 11.
+LaTeX Info: Redefining \degree on input line 11.
+LaTeX Info: Redefining \celsius on input line 11.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 11.
+LaTeX Info: Redefining \ohm on input line 11.
+Package gensymb Info: Using \textohm for \ohm on input line 11.
+Package gensymb Info: Using \textmu for \micro on input line 11.
 
 Package fontspec Info: 
 (fontspec)             Font family 'UnDotum.ttf(0)' created for font
@@ -1038,24 +1038,24 @@ Package fontspec Info:
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->"[UnDotumBold.ttf]/OT:language=dflt;extend=1.05;"
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 15.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 15.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for TS1+KoPubDotum(0) on input line 11.
-LaTeX Font Info:    No file TS1KoPubDotum(0).fd. on input line 11.
+LaTeX Font Info:    Trying to load font information for TS1+KoPubDotum(0) on input line 15.
+LaTeX Font Info:    No file TS1KoPubDotum(0).fd. on input line 15.
 
 
 LaTeX Font Warning: Font shape `TS1/KoPubDotum(0)/m/n' undefined
-(Font)              using `TS1/cmr/m/n' instead on input line 11.
+(Font)              using `TS1/cmr/m/n' instead on input line 15.
 
 
 LaTeX Font Warning: Font shape `TU/KoPubDotum(0)/b/it' undefined
-(Font)              using `TU/KoPubDotum(0)/b/n' instead on input line 35.
+(Font)              using `TU/KoPubDotum(0)/b/n' instead on input line 39.
 
 [1
 
@@ -1072,12 +1072,12 @@ Package rerunfilecheck Info: File `"고등학교 수학으로 증명하는 바�
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 35324 strings out of 468174
- 717284 string characters out of 5436827
- 1248048 words of memory out of 5000000
- 63472 multiletter control sequences out of 15000+600000
- 636612 words of font info for 93 fonts, out of 8000000 for 9000
+ 35330 strings out of 468174
+ 717389 string characters out of 5436827
+ 1249091 words of memory out of 5000000
+ 63474 multiletter control sequences out of 15000+600000
+ 636628 words of font info for 95 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 94i,13n,100p,612b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,13n,100p,606b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 고등학교 수학으로 증명하는 바젤 문제.xdv (4 pages, 135468 bytes).
+Output written on 고등학교 수학으로 증명하는 바젤 문제.xdv (4 pages, 136576 bytes).

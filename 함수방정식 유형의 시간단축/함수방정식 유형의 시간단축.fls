@@ -1,8 +1,8 @@
-PWD d:/OneDrive/LaTeX/TeX-Documents/함수방정식 유형의 시간단축
+PWD d:/OneDrive/TeX-Documents/함수방정식 유형의 시간단축
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt
-INPUT d:/OneDrive/LaTeX/TeX-Documents/함수방정식 유형의 시간단축/함수방정식 유형의 시간단축.tex
+INPUT d:/OneDrive/TeX-Documents/함수방정식 유형의 시간단축/함수방정식 유형의 시간단축.tex
 OUTPUT 함수방정식 유형의 시간단축.log
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls

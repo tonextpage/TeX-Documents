@@ -1,8 +1,8 @@
-PWD d:/OneDrive/LaTeX/TeX-Documents/sample
+PWD d:/OneDrive/TeX-Documents/sample
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt
-INPUT d:/OneDrive/LaTeX/TeX-Documents/sample/sample.tex
+INPUT d:/OneDrive/TeX-Documents/sample/sample.tex
 OUTPUT sample.log
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls

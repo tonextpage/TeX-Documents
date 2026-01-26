@@ -1,14 +1,13 @@
 # Fdb version 4
-["xdvipdfmx"] 1769442115.51317 "Cooperative Game Theory.xdv" "Cooperative Game Theory.pdf" "Cooperative Game Theory" 1769442116.16052 0
-  "Cooperative Game Theory.xdv" 1769442115 888260 facb8049abeec3ac0b1c8d5163118177 "xelatex"
+["xdvipdfmx"] 1769442127.77879 "Munkres Topology Solution.xdv" "Munkres Topology Solution.pdf" "Munkres Topology Solution" 1769442128.43827 0
+  "Munkres Topology Solution.xdv" 1769442127 675412 d312a6b3e08f1e9dbd0b3066fb47eda2 "xelatex"
   (generated)
-  "Cooperative Game Theory.pdf"
+  "Munkres Topology Solution.pdf"
   (rewritten before read)
-["xelatex"] 1769442111.85095 "d:/OneDrive/TeX-Documents/Cooperative Game Theory/Cooperative Game Theory.tex" "Cooperative Game Theory.xdv" "Cooperative Game Theory" 1769442116.15591 0
-  "Cooperative Game Theory.aux" 1769442115 6617 48a12528ce8a4c7c97ec0c9372973a14 "xelatex"
-  "Cooperative Game Theory.out" 1769442115 1980 3db0633ea3455f4888c9d35edfa245fe "xelatex"
-  "Cooperative Game Theory.tex" 1769442056 87670 f09210dd3f305aa266b26910092a75d2 ""
-  "Cooperative Game Theory.toc" 1769442115 1398 96bc4115fc2d429a5fe137806e042cf5 "xelatex"
+["xelatex"] 1769442125.82951 "d:/OneDrive/TeX-Documents/Munkres Topology Solution/Munkres Topology Solution.tex" "Munkres Topology Solution.xdv" "Munkres Topology Solution" 1769442128.43344 0
+  "Munkres Topology Solution.aux" 1769442127 4580 8d54f507447d7ed0ad676e8b264f8384 "xelatex"
+  "Munkres Topology Solution.out" 1769442127 2973 2e1197f34f6dfa9166aeef91f794cc2d "xelatex"
+  "Munkres Topology Solution.tex" 1769442066 153733 e2ad566bd649de5ac4801e91aadd242d ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1769433238 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1769435731 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1769432973 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -19,6 +18,9 @@
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1769432973 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1769432201 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1769432201 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
+  "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm10.tfm" 1769432201 1040 b84415f97d114011685943ade933dc71 ""
+  "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm5.tfm" 1769432201 1040 a9d2074f3fa062d4d9046b92e2334d8c ""
+  "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/euler/eufm7.tfm" 1769432201 1040 82eb6630b094bff824fccca83ff507f9 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1769432201 916 f87d7c45f9c908e672703b83b72241a3 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1769432201 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1769432201 928 2dc8d444221b7a635bb58038579b861a ""
@@ -119,6 +121,7 @@
   "c:/texlive/2025/texmf-dist/tex/latex/amscls/amsthm.sty" 1769432198 12594 0d51ac3a545aaaa555021326ff22a6cc ""
   "c:/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1769432201 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "c:/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1769432201 13829 94730e64147574077f8ecfea9bb69af4 ""
+  "c:/texlive/2025/texmf-dist/tex/latex/amsfonts/ueuf.fd" 1769432201 1047 4252767c0fde12e3ce9f914ef4bb1ea1 ""
   "c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd" 1769432201 961 6518c6525a34feb5e8250ffa91731cff ""
   "c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd" 1769432201 961 d02606146ba5601b5645f987c92e6193 ""
   "c:/texlive/2025/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1769432203 2222 27db7d52163edae53881b71ff62e754e ""
@@ -129,6 +132,7 @@
   "c:/texlive/2025/texmf-dist/tex/latex/auxhook/auxhook.sty" 1769432297 3935 57aa3c3e203a5c2effb4d2bd2efbc323 ""
   "c:/texlive/2025/texmf-dist/tex/latex/base/article.cls" 1769433790 20144 b966087dda3b194755eb460d32e2ef75 ""
   "c:/texlive/2025/texmf-dist/tex/latex/base/fontenc.sty" 1769433790 5275 6f9d359641b36842524cdb97716ab75f ""
+  "c:/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty" 1769433790 5525 1593ca62a2554dd7423fc8a4e5a82125 ""
   "c:/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty" 1769433790 5048 0270515b828149155424600fd2d58ac5 ""
   "c:/texlive/2025/texmf-dist/tex/latex/base/size10.clo" 1769433790 8448 686612a86f0e04f41ea577f5ec7e83d8 ""
   "c:/texlive/2025/texmf-dist/tex/latex/base/textcomp.sty" 1769433790 2846 e26604d3d895e65d874c07f30c291f3f ""
@@ -144,6 +148,7 @@
   "c:/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty" 1769433248 164714 a0cc5579dc5aec4384653d8dd1b3832a ""
   "c:/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.cfg" 1769433248 549 c4adac819276241fea8eb79c5ab7b99e ""
   "c:/texlive/2025/texmf-dist/tex/latex/fontspec/fontspec.sty" 1769433248 3804 debc05110ffb506cef68ea4e72c7bcee ""
+  "c:/texlive/2025/texmf-dist/tex/latex/forloop/forloop.sty" 1769433260 1720 8470a0e13fbd4c8d2cc96497e30c2ec0 ""
   "c:/texlive/2025/texmf-dist/tex/latex/gensymb/gensymb.sty" 1769433339 4629 bbc3d88bc1fe1146ecbefa95c41cab26 ""
   "c:/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty" 1769433348 41601 9cf6c5257b1bc7af01a58859749dd37a ""
   "c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1769433416 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
@@ -216,12 +221,11 @@
   "c:/texlive/2025/texmf-dist/web2c/texmf.cnf" 1769432127 42213 4e2ca030e8e2640502016e9e45868dcb ""
   "c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1769435966 5948051 a2404ebd8d84f923ded640655b1a0682 ""
   "c:/texlive/2025/texmf.cnf" 1769435751 713 e69b156964470283e0530f5060668171 ""
-  "d:/OneDrive/TeX-Documents/Cooperative Game Theory/Cooperative Game Theory.tex" 1769442056 87670 f09210dd3f305aa266b26910092a75d2 ""
+  "d:/OneDrive/TeX-Documents/Munkres Topology Solution/Munkres Topology Solution.tex" 1769442066 153733 e2ad566bd649de5ac4801e91aadd242d ""
   "preamble.tex" 1769433686 9006 96bace6248f8991397ab6fd4844f9e8c ""
   (generated)
-  "Cooperative Game Theory.aux"
-  "Cooperative Game Theory.log"
-  "Cooperative Game Theory.out"
-  "Cooperative Game Theory.toc"
-  "Cooperative Game Theory.xdv"
+  "Munkres Topology Solution.aux"
+  "Munkres Topology Solution.log"
+  "Munkres Topology Solution.out"
+  "Munkres Topology Solution.xdv"
   (rewritten before read)

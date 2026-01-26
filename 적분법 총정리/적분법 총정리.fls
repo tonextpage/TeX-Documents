@@ -1,8 +1,8 @@
-PWD d:/OneDrive/LaTeX/TeX-Documents/적분법 총정리
+PWD d:/OneDrive/TeX-Documents/적분법 총정리
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt
-INPUT d:/OneDrive/LaTeX/TeX-Documents/적분법 총정리/적분법 총정리.tex
+INPUT d:/OneDrive/TeX-Documents/적분법 총정리/적분법 총정리.tex
 OUTPUT 적분법 총정리.log
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls

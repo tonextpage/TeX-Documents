@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  26 JAN 2026 23:13
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  27 JAN 2026 00:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/OneDrive/LaTeX/TeX-Documents/Cooperative Game Theory/Cooperative Game Theory.tex"
-(d:/OneDrive/LaTeX/TeX-Documents/Cooperative Game Theory/Cooperative Game Theory.tex
+**"d:/OneDrive/TeX-Documents/Cooperative Game Theory/Cooperative Game Theory.tex"
+(d:/OneDrive/TeX-Documents/Cooperative Game Theory/Cooperative Game Theory.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -936,26 +936,26 @@ Package fontspec Info:
 ) (./Cooperative Game Theory.aux)
 \openout1 = `"Cooperative Game Theory.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -991,21 +991,21 @@ LaTeX Font Info:    ... okay on input line 19.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring OFF on input line 19.
+Package hyperref Info: Link coloring OFF on input line 23.
 (./Cooperative Game Theory.out) (./Cooperative Game Theory.out)
 \@outlinefile=\write4
 \openout4 = `"Cooperative Game Theory.out"'.
 
 \symgns@font=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/KoPubDotum(0)/m/n --> TS1/KoPubDotum(0)/b/n on input line 19.
-Package gensymb Info: Math companion symbols declared on input line 19.
-LaTeX Info: Redefining \degree on input line 19.
-LaTeX Info: Redefining \celsius on input line 19.
-Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 19.
-LaTeX Info: Redefining \ohm on input line 19.
-Package gensymb Info: Using \textohm for \ohm on input line 19.
-Package gensymb Info: Using \textmu for \micro on input line 19.
+(Font)                  TS1/KoPubDotum(0)/m/n --> TS1/KoPubDotum(0)/b/n on input line 23.
+Package gensymb Info: Math companion symbols declared on input line 23.
+LaTeX Info: Redefining \degree on input line 23.
+LaTeX Info: Redefining \celsius on input line 23.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 23.
+LaTeX Info: Redefining \ohm on input line 23.
+Package gensymb Info: Using \textohm for \ohm on input line 23.
+Package gensymb Info: Using \textmu for \micro on input line 23.
 
 Package fontspec Info: 
 (fontspec)             Font family 'UnDotum.ttf(0)' created for font
@@ -1038,20 +1038,20 @@ Package fontspec Info:
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->"[UnDotumBold.ttf]/OT:language=dflt;extend=1.05;"
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for TS1+KoPubDotum(0) on input line 22.
-LaTeX Font Info:    No file TS1KoPubDotum(0).fd. on input line 22.
+LaTeX Font Info:    Trying to load font information for TS1+KoPubDotum(0) on input line 26.
+LaTeX Font Info:    No file TS1KoPubDotum(0).fd. on input line 26.
 
 
 LaTeX Font Warning: Font shape `TS1/KoPubDotum(0)/m/n' undefined
-(Font)              using `TS1/cmr/m/n' instead on input line 22.
+(Font)              using `TS1/cmr/m/n' instead on input line 26.
 
 (./Cooperative Game Theory.toc)
 \tf@toc=\write5
@@ -1062,7 +1062,7 @@ LaTeX Font Warning: Font shape `TS1/KoPubDotum(0)/m/n' undefined
 ] [2]
 
 LaTeX Font Warning: Font shape `TU/KoPubDotum(0)/b/it' undefined
-(Font)              using `TU/KoPubDotum(0)/b/n' instead on input line 95.
+(Font)              using `TU/KoPubDotum(0)/b/n' instead on input line 99.
 
 [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] (./Cooperative Game Theory.aux)
  ***********
@@ -1077,12 +1077,12 @@ Package rerunfilecheck Info: File `"Cooperative Game Theory".out' has not change
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 35597 strings out of 468174
- 722014 string characters out of 5436827
- 1245066 words of memory out of 5000000
- 63739 multiletter control sequences out of 15000+600000
- 636636 words of font info for 96 fonts, out of 8000000 for 9000
+ 35603 strings out of 468174
+ 722119 string characters out of 5436827
+ 1245109 words of memory out of 5000000
+ 63741 multiletter control sequences out of 15000+600000
+ 636652 words of font info for 98 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 94i,15n,100p,1017b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,15n,100p,1011b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Cooperative Game Theory.xdv (32 pages, 887156 bytes).
+Output written on Cooperative Game Theory.xdv (32 pages, 888260 bytes).

@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1769437418.4631 "고등학교 수학으로 증명하는 바젤 문제.xdv" "고등학교 수학으로 증명하는 바젤 문제.pdf" "고등학교 수학으로 증명하는 바젤 문제" 1769437419.03548 0
-  "고등학교 수학으로 증명하는 바젤 문제.xdv" 1769437418 135468 c770cb93698370775f72d2322b5ab6ff "xelatex"
+["xdvipdfmx"] 1769442098.07227 "고등학교 수학으로 증명하는 바젤 문제.xdv" "고등학교 수학으로 증명하는 바젤 문제.pdf" "고등학교 수학으로 증명하는 바젤 문제" 1769442098.6514 0
+  "고등학교 수학으로 증명하는 바젤 문제.xdv" 1769442097 136576 d8f0ea71ec7b8c29ee818d022f701a89 "xelatex"
   (generated)
   "고등학교 수학으로 증명하는 바젤 문제.pdf"
   (rewritten before read)
-["xelatex"] 1769437416.76992 "d:/OneDrive/LaTeX/TeX-Documents/고등학교 수학으로 증명하는 바젤 문제/고등학교 수학으로 증명하는 바젤 문제.tex" "고등학교 수학으로 증명하는 바젤 문제.xdv" "고등학교 수학으로 증명하는 바젤 문제" 1769437419.03069 0
+["xelatex"] 1769442096.34452 "d:/OneDrive/TeX-Documents/고등학교 수학으로 증명하는 바젤 문제/고등학교 수학으로 증명하는 바젤 문제.tex" "고등학교 수학으로 증명하는 바젤 문제.xdv" "고등학교 수학으로 증명하는 바젤 문제" 1769442098.64677 0
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1769433238 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1769435731 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1769432973 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -212,11 +212,11 @@
   "c:/texlive/2025/texmf-dist/web2c/texmf.cnf" 1769432127 42213 4e2ca030e8e2640502016e9e45868dcb ""
   "c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1769435966 5948051 a2404ebd8d84f923ded640655b1a0682 ""
   "c:/texlive/2025/texmf.cnf" 1769435751 713 e69b156964470283e0530f5060668171 ""
-  "d:/OneDrive/LaTeX/TeX-Documents/고등학교 수학으로 증명하는 바젤 문제/고등학교 수학으로 증명하는 바젤 문제.tex" 1769433686 8222 a8afde3a8b8b00be30b01dad337e4c50 ""
+  "d:/OneDrive/TeX-Documents/고등학교 수학으로 증명하는 바젤 문제/고등학교 수학으로 증명하는 바젤 문제.tex" 1769442059 8297 07361d352529d9d42cd6543c0193dd61 ""
   "preamble.tex" 1769433686 9006 96bace6248f8991397ab6fd4844f9e8c ""
-  "고등학교 수학으로 증명하는 바젤 문제.aux" 1769437418 1274 49108e9d869b970972ddd31f9d942ff2 "xelatex"
-  "고등학교 수학으로 증명하는 바젤 문제.out" 1769437418 182 0090f02928b3e19a36429292263fc975 "xelatex"
-  "고등학교 수학으로 증명하는 바젤 문제.tex" 1769433686 8222 a8afde3a8b8b00be30b01dad337e4c50 ""
+  "고등학교 수학으로 증명하는 바젤 문제.aux" 1769442097 1274 49108e9d869b970972ddd31f9d942ff2 "xelatex"
+  "고등학교 수학으로 증명하는 바젤 문제.out" 1769442097 182 0090f02928b3e19a36429292263fc975 "xelatex"
+  "고등학교 수학으로 증명하는 바젤 문제.tex" 1769442059 8297 07361d352529d9d42cd6543c0193dd61 ""
   (generated)
   "고등학교 수학으로 증명하는 바젤 문제.aux"
   "고등학교 수학으로 증명하는 바젤 문제.log"
