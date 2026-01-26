@@ -826,6 +826,7 @@ $\sigma$가 $N$의 순열이므로 $P_\sigma(i)$는 결국 \ref{eq:2.2}의 합�
 	이므로 $\psi=\Phi$이다.
 \end{proof}
 
+
 섀플리 값이 갖는 성질을 더 알아보자. 협력 게임 $(N,v)$의 참가자 $i$가 모든 $S\subseteq N\setminus\{i\}$에 대하여 $v(S\cup i)-v(S)=v(i)$을 만족하면 $i$를 \textbf{더미(dummy player})라 하자. 더미 $i$는 연합에 참가하더라도 추가적인 시너지 효과를 내지 못하므로 기여분 $v(i)$의 보수를 받는 것이 이상적이다.
 \begin{itemize}
 	\item \textbf{더미 성질(dummy player property, DUM)}: 모든 $v\in\mathcal G^N$의 더미 $i\in N$에 대하여 $\psi_i(v)=v(i)$이다.
@@ -995,6 +996,520 @@ AN은 SYM을 함의한다. 다음 연습문제를 참고하라.
 			따라서 $\psi$는 ADD를 만족하지 않는다.
 	\end{enumerate}
 \end{sol}
+
+\begin{prob}{}{2.13}
+	협력 게임 $(N,v)$에 대하여 \textbf{쌍대 게임(dual game)} $(N,v^*)$를 다음과 같이 정의하자.
+	\[
+		v^*(S)=v(N)-v(N\setminus S)
+	\]
+	$\Phi(v^*)=\Phi(v)$임을 보여라.
+\end{prob}
+
+\begin{sol}
+	\begin{lemma*}{}{}
+		$v=\sum_{T\in 2^N\setminus\{\varnothing\}}c_Tu_T$이면 $v^*=\sum_{T\in 2^N\setminus\{\varnothing\}}c_Tu_T^*$이다.
+	\end{lemma*}
+	$v=\sum_{T\in 2^N\setminus\{\varnothing\}}c_Tu_T$라 하자. 연합 $T\ne\varnothing$와 $S\subseteq N$에 대하여
+	\[
+		u_T^*(S)=u_T(N)-u_T(N\setminus S)=\begin{cases}
+			1 & (S\cap T\ne\varnothing)\\
+			0 & (T\subseteq N\setminus S)
+		\end{cases}
+	\]
+	이므로
+	\[
+		\begin{aligned}
+			v^*(S)&=v(N)-v(N\setminus S)\\
+			&=\sum_{T\ne\varnothing}c_Tu_T(N)-\sum_{T\ne\varnothing}c_Tu_T(N\setminus S)\\
+			&=\sum_{T\ne\varnothing}c_T-\sum_{T\subseteq N\setminus S}c_T=\sum_{T:S\cap T\ne\varnothing}c_T=\sum_{T\ne\varnothing}c_Tu_T^*(S)
+		\end{aligned}
+	\]
+	이 성립하여 $v^*=\sum_{T\in 2^N\setminus\{\varnothing\}}c_Tu_T^*$이다.
+	\begin{lemma*}{}{}
+		임의의 연합 $T\ne\varnothing$와 $c\in\mathbb R$ 대하여 $\Phi(cu_T^*)=\Phi(cu_T)$이다.
+	\end{lemma*}
+	먼저 $i\in N\setminus T$라 하자. $S\cap T\ne\varnothing$인 연합 $S$에 대하여
+	\[
+		cu_T^*(S\cup i)-cu_T^*(S)=c-c=0
+	\]
+	이고 $T\subseteq N\setminus S$인 연합 $S$에 대하여
+	\[
+		cu_T^*(S\cup i)-cu_T^*(S)=0-0=0
+	\]
+	이므로 $i$는 $u_T^*$에서 무임승차자이다. 섀플리 값은 NP를 만족하므로 모든 $i\in N\setminus T$에 대하여 $\Phi_i(u_T^*)=0$이다. 이제 $i,j\in T$라 하자. 그러면 모든 $S\subseteq N\setminus\{i,j\}$에 대하여
+	\[
+		cu_T^*(S\cup i)=cu_T^*(S\cup j)=c
+	\]
+	이므로 $i$와 $j$는 $u_T^*$에서 대칭이다. 섀플리 값은 SYM와 EFF를 만족하므로 모든 $i,j\in T$에 대하여 $\Phi_i(u_T^*)=\Phi_i(u_T^*)$가 성립하고, 따라서 모든 $i\in T$에 대하여 $\Phi_i(u_T^*)=c/\vert T\vert$이다. ADD와 앞선 두 보조정리를 이용하면 임의의 협력 게임 $v$에 대하여 $\Phi(v^*)=\Phi(v)$를 얻는다.\qed
+\end{sol}
+
+지금까지 섀플리 값이 갖는 좋은 성질을 확인했고, 아래에서 더 다양한 접근 방식으로 섀플리 값을 탐구할 것이다. 하지만 연습문제 \ref{prob:2.4}와 \ref{prob:2.5}에서 알 수 있듯이 섀플리 값은 코어에 속할 필요도 없고, 개인에게 합리적일 필요도 없다는 단점이 있다.
+
+\subsection{섀플리 값의 성질과 특정 (2)}
+이 절에서는 섀플리 값을 세 가지의 다른 방식으로 접근한다.
+
+\subsubsection*{배당}
+다음 정의와 같은 방식으로 협력 게임에서 한 연합의 시너지 효과를 계산할 수 있다.
+
+\begin{dfn}{}{2.14}
+	 협력 게임 $(N,v)$의 각 연합 $T\subseteq N$의 \textbf{배당(dividend)} $\Delta_v(T)$를 다음과 같이 재귀적으로 정의한다.
+	\[
+		\begin{aligned}
+			T=\varnothing\text{인 경우: }&\Delta_v(\varnothing)=0\\
+			\vert T\vert\geq1\text{인 경우: }&\Delta_v(T)=v(T)-\sum_{S\subsetneq T}\Delta_v(S)
+		\end{aligned}
+	\]
+\end{dfn}
+
+협력 게임에서 특정 참가자의 섀플리 값은 그가 속한 모든 연합에서 균등 분배된 배당의 합과 같다.
+
+\begin{thm}{}{2.15}
+	$v=\sum_{T\in 2^N\setminus\{\varnothing\}}c_Tu_T$라 하자.
+	\begin{enumerate}[(1)]
+		\item 모든 연합 $T\ne\varnothing$에 대하여 $\Delta_v(T)=c_T$이다.
+		\item 참가자 $i\in N$의 섀플리 값 $\Phi_i(v)$는 $i$가 속한 모든 연합에서 균등 분배된 배당의 합이다:
+			\[
+				\Phi_i(v)=\sum_{T:i\in T}\frac{\Delta_v(T)}{\vert T\vert}.
+			\]
+	\end{enumerate}
+\end{thm}
+
+\begin{proof}
+	정리 \ref{thm:2.7}의 증명에서 $\Phi(c_Tu_T)=c_T\vert T\vert^{-1}e^T$임을 알고 있다. $\Phi$는 ADD를 만족하므로
+	\[
+		\Phi(v)=\sum_{T\ne\varnothing}\frac{c_T}{\vert T\vert}e^T~\longrightarrow~\Phi_i(v)=\sum_{T:i\in T}\frac{c_T}{\vert T\vert}
+	\]
+	이다. 따라서 (1)만 보이면 충분하다. $T=\{i\}$일 때,
+	\[
+		\Delta_v(\{i\})=v(i)-\Delta_v(\varnothing)=v(i)=c_{\{i\}}
+	\]
+	이므로 (1)은 크기가 $1$인 모든 연합에 대하여 성립한다. 이제 $T\ne\varnothing$를 임의의 연합이라 하고 크기가 $\vert T\vert$보다 작은 모든 연합에 대해 (1)이 성립한다고 가정하자. $v(T)=\sum_{S\subseteq T}c_S$이므로
+	\[
+		\Delta_v(T)=v(T)-\sum_{S\subsetneq T}\Delta_v(S)=v(T)-\sum_{S\subsetneq T}c_S=c_T
+	\]
+	이다. 따라서 $\Phi_i(v)=\sum_{T:i\in T}\Delta_v(T)/\vert T\vert$가 성립한다.
+\end{proof}
+
+\begin{prob}{}{2.16}
+	협력 게임 $v\in\mathcal G^N$을 $v=\sum_{T\in 2^N\setminus\{\varnothing\}}c_Tu_T$로 표현할 때, $c_T$가 다음과 같음을 보여라.
+	\[
+		c_T=\sum_{S\subseteq T}(-1)^{\vert T\vert-\vert S\vert}v(S)
+	\]
+\end{prob}
+
+\begin{sol}
+	연합 $W\subseteq N$에 대하여
+	\[
+		\begin{aligned}
+			\sum_{T\in 2^N\setminus\{\varnothing\}}c_Tu_T(W)&=\sum_{T\subseteq W}\sum_{S\subseteq T}(-1)^{\vert T\vert-\vert S\vert}v(S)\\
+			&=\sum_{S\subseteq W}\sum_{T:S\subseteq T\subseteq W}(-1)^{\vert T\vert-\vert S\vert}v(S)\\
+			&=v(W)+\sum_{S\subsetneq W}v(S)\sum_{T:S\subseteq T\subseteq W}(-1)^{\vert T\vert-\vert S\vert}\\
+		\end{aligned}
+	\]
+	이다. 연합 $S\subsetneq W$에 대하여 $k:=\vert W\vert-\vert S\vert>0$라 하면
+	\[
+		\sum_{T:S\subseteq T\subseteq W}(-1)^{\vert T\vert-\vert S\vert}=\sum_{i=\vert S\vert}^{\vert W\vert}(-1)^{i-\vert S\vert}\binom{k}{i-\vert S\vert}=\sum_{i=0}^k(-1)^i\binom{k}{i}=0
+	\]
+	이므로 $\sum_{T\in 2^N\setminus\{\varnothing\}}c_Tu_T(W)=v(W)$이다.\qed
+\end{sol}
+
+\begin{remark}
+	정리 \ref{thm:2.15}와 연습문제 \ref{prob:2.16}으로부터 배당 $\Delta_v(T)$의 닫힌 식을 얻는다: $\Delta_v(T)=\sum_{S\subseteq T}(-1)^{\vert T\vert-\vert S\vert}v(S)$.\qed
+\end{remark}
+
+\subsubsection*{강단조성}
+$(N,v)$와 $(N,w)$을 협력 게임이라 하자. 어떤 참가자의 임의의 연합에서의 기여도가 $w$보다 $v$에서 더 크거나 같다면, 그 참가자의 섀플리 값에 의한 보수는 $w$보다 $v$에서 크거나 같다. 이를 엄밀하게 다음 공리로 서술하자. $\psi:\mathcal G^N\to\mathbb R^N$을 $\mathcal G^N$ 위의 값이라 하자.
+\begin{itemize}
+	\item \textbf{강단조성(strong monotonicity, SMON)}: 두 협력 게임 $v,w\in\mathcal G^N$에서 참가자 $i\in N$가
+	\[
+		\text{모든 }S\subseteq N\text{에 대하여 }v(S\cup i)-v(S)\geq w(S\cup i)-w(S)
+	\]
+	를 만족하면 $\psi_i(v)\geq\psi_i(w)$이다.
+\end{itemize}
+
+정리 \ref{thm:2.7}과 마찬가지로 SMON은 섀플리 값을 특정하는데 이용할 수 있다.
+
+\begin{thm}{}{2.17}
+	$\mathcal G^N$ 위의 값 $\psi$가 EFF, SYM, SMON을 모두 만족할 필요충분조건은 $\psi=\Phi$이다.
+\end{thm}
+
+\begin{proof}
+	섀플리 값이 SMON을 만족함은 자명하다. 역으로 $\psi$가 세 성질을 만족하는 $\mathcal G^N$ 위의 값이라 하자.
+	\begin{enumerate}[(i)]
+		\item 모든 연합에 $0$의 가치를 부여하는 협력 게임을 $z$라 하자. 임의의 두 참가자는 $z$에서 대칭이므로 EFF와 SYM에 의해 $\psi(z)=0$이다.
+		\item $i\in N$를 협력 게임 $v\in\mathcal G^N$의 무임승차자라 하자. 임의의 연합 $S\subseteq N$에 대하여
+			\[
+				v(S\cup i)-v(S)=z(S\cup i)-z(S)=0
+			\]
+			이므로 SMON으로부터 $\psi_i(v)=0$이다.
+		\item $T\in 2^N\setminus\{\varnothing\}$이고 $c\in\mathbb R$이라 하자. 정리 \ref{thm:2.7}의 증명과 같은 방법으로 $\psi(cu_T)=c\vert T\vert^{-1}e^T$임을 알 수 있다.
+	\end{enumerate}
+	협력 게임 $v$를 $v=\sum_{T\in 2^N\setminus\{\varnothing\}}c_Tu_T$로 표현할 때, $\alpha(v):=\vert\{c_T\mid c_T\ne 0\}\vert$라 하자. $\alpha(v)$에 귀납법을 사용하여 $\psi=\Phi$임을 보이자. $\alpha(v)=0$이면 (i)에 의해 $\psi(v)=\Phi(v)=0$이다. $\alpha(v)=1$이면 $v=cu_T$이므로 (iii)에 의해 $\psi(v)=\Phi(v)=c\vert T\vert{-1}e^T$이다. $\alpha(w)<k$인 모든 협력 게임 $w$에 대하여 $\psi(w)=\Phi(w)$가 성립한다고 가정하자. $\alpha(v)=k$라 하면 $v$를
+	\[
+		v=\sum_{r=1}^kc_ru_{T_r}\quad(T_r\subseteq N, c_i\ne0)
+	\]
+	로 표현할 수 있다. $D:=\bigcap_{r=1}^kT_r$이라 하자. $i\in N\setminus D$에 대하여 협력 게임 $w^i$를
+	\[
+		w^i:=\sum_{r:i\in T_r}c_ru_{T_r}
+	\]
+	로 정의하자. $\alpha(w^i)<k$이므로 가정에 의해 $\psi_i(w^i)=\Phi_i(w^i)$이 성립한다. 모든 연합 $S\subseteq N$에 대하여
+	\[
+		\sum_{r:i\notin T_r}c_ru_{T_r}(S\cup i)-\sum_{r:i\notin T_r}c_ru_{T_r}(S)=0
+	\]
+	이므로
+	\[
+		\begin{aligned}
+			v(S\cup i)-v(S)&=\sum_{r=1}^kc_Tu_{T_r}(S\cup i)-\sum_{r=1}^kc_Tu_{T_r}(S)\\
+			&=\sum_{r:i\in T_r}c_ru_{T_r}(S\cup i)-\sum_{r:i\in T_r}c_ru_{T_r}(S)\\
+			&=w^i(S\cup i)-w^i(S)
+		\end{aligned}
+	\]
+	이 성립한다. SMON을 이용하면 모든 $i\in N\setminus D$에 대하여
+	\[
+		\psi_i(v)=\psi_i(w^i)=\Phi_i(w^i)=\Phi_i(v)
+	\]
+	을 얻는다. 이제 $i,j\in D$라 하자. 그러면 모든 연합 $S\subseteq N\setminus\{i,j\}$에 대하여
+	\[
+		v(S\cup i)=\sum_{r=1}^kc_ru_{T_r}(S\cup i)=\sum_{r=1}^kc_ru_{T_r}(S\cup j)=v(S\cup j)
+	\]
+	이므로 $i$와 $j$는 대칭이다. SYM에 의해
+	\[
+		\psi_i(v)=\psi_j(v),\quad\Phi_i(v)=\Phi_j(v)
+	\]
+	이고, EFF를 이용하면 $\psi(v)=\Phi(v)$임을 알 수 있다.
+\end{proof}
+
+\subsubsection*{다중 선형성}
+섀플리 값은 다중 선형 사상으로 표현할 수 있다. 함수 $f:[0,1]^N\to\mathbb R$을
+\[
+	f(x_1,x_2,\cdots,x_n)=\sum_{S\subseteq N}\left[\prod_{i\in S}x_i\prod_{i\in N\setminus S}(1-x_i)\right]v(S)
+\]
+와 같이 정의하자. $f$는 다중 선형성을 가짐은 자명하다. $f$를 확률론적으로 다음과 같이 해석할 수 있다. $[0,1]^N$의 원소 $(x_1,x_2,\cdots,x_n)$을 각 참가자가 협력할 확률로 생각하자. $1-x_i$는 참가자 $i$가 협력하지 않을 확률이므로 대하여 $\prod_{i\in S}x_i\prod_{i\in N\setminus S}(1-x_i)$는 연합 $S$가 결성될 확률이다. 이 확률에 연합 $S$의 가치 $v(S)$를 곱하고 모든 연합 $S$에 대한 합을 취한 $f$는 모든 연합에 대한 가치의 기댓값이 된다.
+
+\newpage
+이제 $f$를 이용하여 섀플리 값을 구해보자. 각 $k\in N$에 대하여 $\partial_k$를 $\partial_k:=\partial/\partial x_k$, 즉 $x_k$에 대한 편미분이라 하자.
+
+\begin{thm}{}{2.18}
+	각 $k\in N$에 대하여 $\Phi_k(v)=\displaystyle\int_0^1(\partial_kf)(te^N)\,dt$이다.
+\end{thm}
+
+\begin{proof}
+	연합 $S$에 대하여 $k\in S$이면
+	\[
+		\partial_k\left[\prod_{i\in S}x_i\prod_{i\in N\setminus S}(1-x_i)\right]=\prod_{i\in S\setminus\{k\}}x_i\prod_{i\in N\setminus S}(1-x_i)
+	\]
+	이고, $k\notin S$이면
+	\[
+		\partial_k\left[\prod_{i\in S}x_i\prod_{i\in N\setminus S}(1-x_i)\right]=-\prod_{i\in S}x_i\prod_{i\in N\setminus(S\cup\{k\})}(1-x_i)
+	\]
+	이므로
+	\[
+		\begin{aligned}
+			\partial_kf&=\sum_{S:k\in S}\left[\prod_{i\in S\setminus\{k\}}x_i\prod_{i\in N\setminus S}(1-x_i)\right]v(S)-\sum_{S:k\notin S}\left[\prod_{i\in S}x_i\prod_{i\in N\setminus(S\cup\{k\})}(1-x_i)\right]v(S)\\
+			&=\sum_{S:k\notin S}\left[\prod_{i\in S}x_i\prod_{i\in N\setminus(S\cup\{k\})}(1-x_i)\right](v(S\cup\{k\})-v(S))
+		\end{aligned}
+	\]
+	이다. 그러므로 식 \ref{eq:2.3}으로부터
+	\[
+		\begin{aligned}
+			\int_0^1(\partial_kf)(te^N)\,dt&=\sum_{S:k\notin S}\left[\int_0^1t^{\vert S\vert}(1-t)^{n-\vert S\vert-1}\,dt\right](v(S\cup\{k\})-v(S))\\
+			&=\sum_{S:k\notin S}\frac{\vert S\vert!(n-\vert S\vert-1)!}{n!}[v(S\cup\{k\})-v(S)]=\Phi_k(v)
+		\end{aligned}
+	\]
+	가 성립한다. (마지막에 베타 적분 공식을 이용한다.)
+\end{proof}
+
+\begin{example}{}{2.19}
+	$N=\{1,2,3\}$에 대하여 $3$인 협력 게임 $(N,v)$를 다음과 같이 정의하자.
+	\[
+		v(1)=v(2)=v(3)=v(1,2)=0,\quad v(1,3)=1,\quad v(2,3)=2,\quad v(1,2,3)=4
+	\]
+	그러면 $f(x_1,x_2,x_3)=x_1(1-x)2x_3+2(1-x_1)x_2x_3+4x_1x_2x_3=x_1x_3+2x_2x_3+x_1x_2x_3$에서
+	\[
+		\partial_1f=x_3+x_2x_3,\quad\partial_2f=2x_3+x_1x_3,\quad\partial_3f=x_1+2x_2+x_1x_2
+	\]
+	이므로 섀플리 값 $\Phi(v)$은 다음과 같다.
+	
+	\[
+		\begin{aligned}
+			\Phi_1(v)&=\int_0^1\partial_1f(t,t,t)\,dt=\int_0^1(t+t^2)\,dt=\frac{5}{6}\\[3pt]
+			\Phi_2(v)&=\int_0^1\partial_2f(t,t,t)\,dt=\int_0^1(2t+t^2)\,dt=\frac{4}{3}\\[3pt]
+			\Phi_3(v)&=\int_0^1\partial_3f(t,t,t)\,dt=\int_0^1(3t+t^2)\,dt=\frac{11}{6}
+		\end{aligned}
+	\]
+\end{example}
+
+\subsection{퍼텐셜과 축소 게임}
+이 절에서는 배당의 쌍대 격인 개념, 퍼텐셜과 축소 게임으로 섀플리 값을 특정한다. 가능한 모든 참가자의 조합에 따른 협력 게임의 집합을 $\mathcal G$라 하자. 즉 자연수 전체의 집합 $\mathbb N$에 대하여
+\[
+	\mathcal G=\bigcup_{N\subseteq N:\vert N\vert<\infty}\mathcal G^N
+\]
+이라 하자. $\mathcal G$에는 참가자가 없는 협력 게임 $(\varnothing, v)$도 포함되며, 참가자의 집합이 굳이 첫 몇 개의 자연수일 필요가 없다.
+
+\subsubsection*{퍼텐셜}
+\begin{dfn}{}{2.20}
+	\textbf{퍼텐셜(potential)}은 다음을 모두 만족하는 함수 $P:\mathcal G\to\mathbb R$이다.
+	\begin{enumerate}[(i)]
+		\item $P(\varnothing,v)=0$
+		\item 모든 $(N,v)\in\mathcal G$에 대하여 $\sum_{i\in N}D_iP(N,v)=v(N)$이다.
+	\end{enumerate}
+	여기서 $D_iP(N,v):=P(N,v)-P(N\setminus\{i\},v)$이다. (두 번째 항의 $v$는 $N\setminus\{i\}$로 제한하여 생각한다.)
+\end{dfn}
+정의에 의해 퍼텐셜의 기울기(gradient) 벡터 $\operatorname{grad}P(N,v)=(D_iP(N,v))_{i\in N}$는 협력 게임 $(N,v)$의 효율적인 보수 분배이다. 다음 정리를 통해 퍼텐셜과 섀플리 값의 관계를 살펴보자.
+
+\begin{thm}{}{2.21}
+	\begin{enumerate}[(a)]
+		\item 퍼텐셜 $P:\mathcal G\to\mathbb R$은 유일하다.
+		\item $v=\sum_{\varnothing\ne T\subseteq N}c_Tu_T$에 대하여 $P(N,v)=\sum_{\varnothing\ne T\subseteq N}c_T\vert T\vert^{-1}$이다.
+		\item $\operatorname{grad}P(N,v)=\Phi(N,v)$
+	\end{enumerate}
+\end{thm}
+
+\begin{proof}
+	정의 \ref{dfn:2.20}으로부터
+	\[
+		P(\{i\},v)=v(i),\quad P(\{i,j\},v)=\frac{1}{2}(v(i,j)+v(i)+v(j))
+	\]
+	이다. 이를 일반화하면
+	\begin{equation}
+		\label{eq:2.6}
+		P(N,v)=\frac{1}{\vert N\vert}\biggl(v(N)+\sum_{i\in N}P(N\setminus\{i\},v)\biggr)
+	\end{equation}
+	이다. 즉 협력 게임 $(N,v)$의 퍼텐셜은 $(N,v)$의 부분게임(subgame)의 퍼텐셜로부터 얻을 수 있으므로 정의 \ref{dfn:2.20}의 조건을 만족하는 퍼텐셜 $P$는 유일하다. (b)를 보이기 위해 $v=\sum_{T\in 2^N\setminus\{\varnothing\}}c_Tu_T$에 대하여 함수 $Q:\mathcal G\to\mathbb R$를 $Q(\varnothing,v)=0$이고 $Q(N,v)=\sum_{T\in 2^N\setminus\{\varnothing\}}c_T\vert T\vert^{-1}$로 정의하자. $v:2^N\to\mathbb R$를 $N\setminus\{i\}$로 제한한 함수를 $v^\prime:2^{N\setminus\{i\}}\to\mathbb R$라 하자. 그러면 $v=\sum_{\varnothing\ne T\subseteq N}c_Tu_T$와 $v^\prime=\sum_{\varnothing\ne T\subseteq N\setminus\{i\}}c_T^\prime u_T$에 대하여
+	\[
+		D_iQ(N,v)=Q(N,v)-Q(N\setminus\{i\},v^\prime)=\sum_{\varnothing\ne T\subseteq N}c_T\vert T\vert^{-1}-\sum_{\varnothing\ne T\subseteq N\setminus\{i\}}c^\prime_T\vert T\vert^{-1}
+	\]
+	이다. 이때 임의의 $S\subseteq N\setminus\{i\}$에 대하여
+	\begin{equation}
+		\label{eq:2.7}
+		\sum_{\varnothing\ne T\subseteq N\setminus\{i\}}c_Tu_T(S)=v(S)=v^\prime(S)=\sum_{\varnothing\ne T\subseteq N\setminus\{i\}}c_T^\prime u_T(S)
+	\end{equation}
+	이 성립하므로 귀납법을 적절히 이용하면 모든 $\varnothing\ne T\subseteq N\setminus\{i\}$에 대하여 $c_T=c_T^\prime$을 얻는다. 식 \ref{eq:2.7}과 정리 \ref{thm:2.15}로부터
+	
+	\[
+		\begin{aligned}
+			D_iQ(N,v)&=\sum_{\varnothing\ne T\subseteq N}c_T\vert T\vert^{-1}-\sum_{\varnothing\ne T\subseteq N\setminus\{i\}}c_T^\prime u_T\\
+			&=\sum_{\varnothing\ne T\subseteq N\setminus\{i\}}c_T\vert T\vert^{-1}+\sum_{T:i\in T}c_T\vert T\vert^{-1}-\sum_{\varnothing\ne T\subseteq N\setminus\{i\}}c_T^\prime u_T\\
+			&=\sum_{T:i\in T}c_T\vert T\vert^{-1}=\Phi_i(N,v)
+		\end{aligned}
+	\]
+	이 성립한다. $\Phi$가 EFF를 만족하므로
+	\[
+		\sum_{i\in N}D_iQ(N,v)=\sum_{i\in N}\Phi(N,v)=v(N)
+	\]
+	이다. 따라서 (a)에 의해 $Q=P$이고 (c)가 성립한다.
+\end{proof}
+
+퍼텐셜 $P$는 특성함수 $v$로 직접 표현 가능하다.
+
+\begin{thm}{}{2.22}
+	협력 게임 $(N,v)\in\mathcal G$에 대하여 다음이 성립한다.
+	\[
+		P(N,v)=\sum_{S\subseteq N}\frac{(\vert S\vert-1)!(\vert N\vert-\vert S\vert)!}{\vert N\vert!}v(S)
+	\]
+\end{thm}
+
+\begin{proof}
+	협력 게임 $(N,v)\in\mathcal G$에 대하여
+	\[
+		Q(N,v)=\sum_{S\subseteq N}\frac{(\vert S\vert-1)!(\vert N\vert-\vert S\vert)!}{\vert N\vert!}v(S)
+	\]
+	라 하자. $Q(\varnothing,v)=0$이고, 식 \ref{eq:2.3}으로부터 각 $i\in N$에 대하여
+	\[
+		\begin{aligned}
+			D_iQ(N,v)&=Q(N,v)-Q(N\setminus\{i\},v)\\[3pt]
+			&=\sum_{S\subseteq N}\frac{(\vert S\vert-1)!(\vert N\vert-\vert S\vert)!}{\vert N\vert!}v(S)-\sum_{S\subseteq N\setminus\{i\}}\frac{(\vert S\vert-1)!(\vert N\vert-1-\vert S\vert)!}{(\vert N\vert-1)!}v(S)\\[3pt]
+			&=\sum_{S:i\in S}\frac{(\vert S\vert-1)!(\vert N\vert-\vert S\vert)!}{\vert N\vert!}v(S)+\sum_{S\subseteq N\setminus\{i\}}\frac{(\vert S\vert-1)!(\vert N\vert-\vert S\vert)!}{\vert N\vert!}v(S)\\
+			&\phantom{=}-\sum_{S\subseteq N\setminus\{i\}}\frac{(\vert S\vert-1)!(\vert N\vert-1-\vert S\vert)!}{(\vert N\vert-1)!}v(S)\\[3pt]
+			&=\sum_{S\in N\setminus\{i\}}\frac{\vert S\vert!(\vert N\vert-\vert S\vert-1)!}{\vert N\vert!}v(S\cup i)+\sum_{S\subseteq N\setminus\{i\}}\frac{(\vert S\vert-1)!(\vert N\vert-\vert S\vert)!}{\vert N\vert!}v(S)\\
+			&\phantom{=}-\sum_{S\subseteq N\setminus\{i\}}\frac{(\vert S\vert-1)!(\vert N\vert-1-\vert S\vert)!}{(\vert N\vert-1)!}v(S)\\[3pt]
+			&=\sum_{S\subseteq N\setminus\{i\}}\frac{\vert S\vert!(\vert N-\vert S\vert-1)!}{\vert N\vert!}[v(S\cup i)-v(S)]=\Phi_i(N,v)
+		\end{aligned}
+	\]
+	이므로 $Q=P$이다.
+\end{proof}
+
+\begin{remark}
+	이항계수를 이용하면
+	\[
+		P(N,v)=\sum_{S\subseteq N}\binom{\vert N\vert}{\vert S\vert}^{-1}\frac{v(S)}{\vert S\vert}
+	\]
+	로 쓸 수 있다.
+\end{remark}
+
+\subsubsection*{축소 게임}
+\begin{dfn}{}{2.23}
+	함수 $\psi$를 협력 게임 $(N,v)\in\mathcal G$를 보수 분배 $\psi(N,v)\in\mathbb R^N$에 대응시키는 $G$ 위의 값이라 하자. 협력 게임 $(N,v)\in\mathcal G$와 연합 $U\in 2^N\setminus\{\varnothing\}$에 대하여 협력 게임 $(N\setminus S,v_{U,\psi})$을 $v_{U,\psi}(\varnothing)=0$이고, $S\in 2^{N\setminus S}\setminus\{\varnothing\}$에  대하여
+	\[
+		v_{U,\psi}:=v(S\cup U)-\sum_{k\in U}\psi_k(S\cup U,v)
+	\]
+	이라 정의하자. 이 협력 게임을 $v$의 $(U,\psi)$\textbf{--축소 게임(reduced game)}이라 한다.
+\end{dfn}
+
+축소 게임은 정의하기 나름이지만, 정의 \ref{dfn:2.23}의 축소 게임은 대연합에서 이용한 단일점 해 $\psi$를 작은 연합에서도 계속 사용할 것임을 의미한다. 각 참가자가 섀플리 값의 보수 분배를 인정하면 섀플리 값은 각 참가자가 대연합의 기존 협력 게임과 축소 게임을 구별하지 않고 같은 보수를 제시한다. 이를 Hart와 Mas-Colell은 다음 성질로 엄밀하게 기술하였다.
+\begin{itemize}
+	\item \textbf{HM--일관성(HM--consistency, HMC)}: 모든 협력 게임 $(N,v)$와 $U\in 2^N\setminus\{\varnothing\}$에 대하여 다음이 성립한다:
+	\[
+		\text{모든 }i\in N\setminus U\text{에 대하여 }\psi_i(N\setminus U,v_{U,\psi})=\psi_i(N,v)\text{이다.}
+	\]
+\end{itemize}
+
+이제 섀플리 값이 HMC를 만족함을 보이자.
+
+\begin{lemma}{}{2.24}
+	협력 게임 $(N,v)\in\mathcal G$에 대하여 함수 $Q:2^N\to\mathbb R$이 모든 $S\subseteq N$에 대하여
+	\[
+		\sum_{i\in S}[Q(S)-Q(S\setminus\{i\})]=v(S)
+	\]
+	를 만족하면 모든 $S\subseteq N$에 대하여
+	\begin{equation}
+		\label{eq:2.8}
+		Q(S)=P(S,v)+Q(\varnothing)
+	\end{equation}
+	이 성립한다.
+\end{lemma}
+
+\begin{proof}
+	$\vert S\vert$에 대한 귀납법으로 증명한다. $\vert S\vert=0$이 경우는 자명하다. $T$가 공집합이 아닌 $N$의 부분집합이라 하고, $\vert S\vert<\vert T\vert$인 모든 부분집합 $S$에 대하여 식 \ref{eq:2.8}이 성립한다고 가정하자. 식 \ref{eq:2.6}으로부터
+	\[
+		\begin{aligned}
+			Q(T)&=\frac{1}{\vert T\vert}\biggl(v(T)+\sum_{i\in T}Q(T\setminus\{i\})\biggr)\\
+			&=\frac{1}{\vert T\vert}\biggl(v(T)+\vert T\vert Q(\varnothing)+\sum_{i\in T}P(T\setminus\{i\},v)\biggr)\\
+			&=Q(\varnothing)+\frac{1}{\vert T\vert}\biggl(v(T)+\sum_{i\in T}P(T\setminus\{i\},v)\biggr)\\
+			&=Q(\varnothing)+P(T,v)
+		\end{aligned}
+	\]
+	이 성립하므로 식 \ref{eq:2.8}은 모든 부분집합 $S$에 대하여 성립한다.
+\end{proof}
+
+\newpage
+\begin{thm}{}{2.25}
+	섀플리 값 $\Phi$는 HMC를 만족한다.
+\end{thm}
+
+\begin{proof}
+	$(N,v)\in\mathcal G$, $U\in 2^N\setminus\{\varnothing\}$이라 하자. 정의 \ref{dfn:2.23}, EFF, 정리 \ref{thm:2.21}(c)를 이용하면 모든 $S\subseteq N\setminus U$에 대하여
+	\begin{equation}
+		\begin{aligned}
+		\label{eq:2.9}
+			v_{U,\Phi}(S)&=v(S\cup U)-\sum_{i\in U}\Phi_i(S\cup U,v)=\sum_{i\in S}\Phi_i(S\cup U,v)\\
+			&=\sum_{i\in S}[P(S\cup U,v)-P((S\cup U)\setminus\{i\},v)]
+		\end{aligned}
+	\end{equation}
+	이 성립한다. $S\subseteq N\setminus U$에 대하여 $Q(S):=P(S\cup U,v)$로 정의하자. 식 \ref{eq:2.9}에 보조정리 \ref{lemma:2.24}를 적용하면
+	\[
+		Q(S)=P(S,v_{U,\Phi})+Q(\varnothing)=P(S,v_{U,\Phi})+P(U,v)
+	\]
+	이다. 즉 모든 $S\subseteq N\setminus U$에 대하여
+	\[
+		P(S\cup U,v)=P(S,v_{U,\Phi})+P(U,v)
+	\]
+	이다. 정리 \ref{thm:2.21}(c)를 적용하면
+	\[
+		\begin{aligned}
+			\Phi_i(N\setminus U,v_{U,\Phi})&=P(N\setminus U,v_{U,\Phi})-P((N\setminus U)\setminus\{i\},v_{U,\Phi})\\
+			&=(P(N,v)-P(U,v))-(P(N\setminus\{i\},v)-P(U,v))\\
+			&=P(N,v)-P(N\setminus\{i\},v)=\Phi_i(N,v)
+		\end{aligned}
+	\]
+	이므로 $\Phi$는 HMC를 만족한다.
+\end{proof}
+
+$\mathcal G$ 위의 값 $\psi$가 모든 $2$인 협력 게임 $(\{i,j\},v)\in\mathcal G$에 대하여
+\[
+	\psi_i(\{i,j\},v)=\frac{v(i,j)+v(i)-v(j)}{2},\quad\psi_j(\{i,j\},v)=\frac{v(i,j)-v(i)+v(j)}{2}
+\]
+을 만족하면 $\psi$가 \textbf{$2$인 협력 게임에 대하여 표준적(standard for $2$--person games, STD2)}이라 하자. HMC와 STD2로부터 섀플리 값을 특정할 수 있다.
+
+\begin{thm}{}{2.26}
+	$\mathcal G$ 위의 값 $\psi$가 HMC와 STD2를 모두 만족할 필요충분조건은 $\psi=\Phi$이다.
+\end{thm}
+
+\begin{proof}
+	정리 \ref{thm:2.25}와 예시 \ref{ex:2.3}(a)로부터 섀플리 값이 HMC와 STD2를 만족함을 알 수 있다. 역으로 $\mathcal G$ 위의 값 $\psi$가 두 성질을 만족한다고 가정하자. 먼저 $\psi$가 EFF를 만족함을 보이자. STD2로부터 $2$인 협력 게임에 대한 효율성은 자명하다. $1$인 협력 게임 $(\{i\},v)$에 대한 효율성, 즉 $\psi_i(\{i\},v)=v(i)$임을 보이자. 이를 위해 $2$인 협력 게임 $(\{i,j\},v^*)$를
+	\[
+		v^*(i)=v(i),\quad v^*(j)=0,\quad v^*(i,j)=v(i)
+	\]
+	로 정의하자. $\psi$가 STD2를 만족하므로
+	\[
+		\psi_i(\{i,j\},v^*)=v(i),\quad\psi_j(\{i,j\},v^*)=0
+	\]
+	이다. $v^*$의 축소 게임 $v^*_{j,\psi}$의 정의로부터
+	\[
+		v^*_{j,\psi}(i)=v^*(i,j)-\psi_j(\{i,j\},v^*)=v(i)-0=v(i)
+	\]
+	이므로 두 협력 게임 $(\{i\},v^*_{j,\psi})$와 $(\{i\},v)$는 서로 같다. $\phi$는 HMC를 만족하므로
+	\[
+		\psi_i(\{i\},v)=\psi_i(\{i\},v^*_{j,\psi})=\psi_i(\{i,j\},v^*)=v(i)
+	\]
+	이 성립한다. 이제 $\vert T\vert\geq3$인 협력 게임 $(T,v)$를 생각하고, $\vert S\vert<\vert T\vert$인 모든 협력 게임 $(S,v)$에 대하여 $\psi$가 효율적이라 가정하자. $k\in T$라 하면 HMC로부터
+	\[
+		\begin{aligned}
+			\sum_{i\in S}\psi_i(T,v)&=\psi_k(T,v)+\sum_{i\in T\setminus\{k\}}\psi_i(T,v)\\
+			&=\psi_k(T,v)+\sum_{i\in T\setminus\{k\}}\psi_i(T\setminus\{k\},v_{k,\psi})\\
+			&=\psi_k(T,v)+v_{k,\psi}(T\setminus\{k\})\\
+			&=v(S)
+		\end{aligned}
+	\]
+	이 성립하므로 $\psi$는 모든 협력 게임에 대하여 효율적이다. 여기서 $Q(\varnothing,v)=0$이고 모든 $(N,v)\in\mathcal G$와 $i\in N$에 대하여
+	\begin{equation}
+		\label{eq:2.10}
+		\psi_i(N,v)=Q(N,v)-Q(N\setminus\{i\},v)
+	\end{equation}
+	를 만족하는 함수 $Q:\mathcal G\to\mathbb R$이 존재하면 $\psi$의 효율성과 정리 \ref{thm:2.21}(a)로부터 $Q$는 퍼텐셜 $P$이고, \ref{thm:2.21}(c)로부터 $\psi_i(N,v)=\Phi_i(N,v)$이 성립한다. 즉 우리는 식 \ref{eq:2.10}을 만족하는 $Q$의 구성하면 충분하다. 먼저 다음과 같이 정의하자.
+	\[
+		Q(\varnothing,v):=0,\quad Q(\{i\},v):=v(i),\quad Q(\{i,j\},v):=\frac{v(i,j)+v(i)+v(j)}{2}
+	\]
+	재귀적으로 계속 정의를 시도하자. $(N,v)\in\mathcal G$를 $\vert N\vert\geq3$인 협력 게임이라 하자. $Q$가 $\vert N\vert$보다 적은 수의 참가자의 집합에 대하여 식 \ref{eq:2.10}을 만족한다고 하자. 그러면 $\alpha:=Q(N,v)$는 다음 조건을 만족해야 한다:
+	\[
+		\text{모든 }i\in N\text{에 대하여 }\alpha-Q(N\setminus\{i\},v)=\psi_i(N,v)\text{이다.}
+	\]
+	이는 $Q(N\setminus\{i\},v)+\psi_i(N,v)$의 값이 참가자 $i$에 상관없이 일정함을 의미하므로 모든 $i,j\in N$에 대해
+	\begin{equation}
+		\label{eq:2.11}
+		\psi_i(N,v)+Q(N\setminus\{i\},v)=\psi_j(N,v)+Q(N\setminus\{j\},v)
+	\end{equation}
+	이 성립해야 한다. 이를 보이기 위해 $k\in N\setminus\{i,j\}$라 하자. ($\vert N\vert\geq3$이므로 $k$의 선택이 가능하다.) 그러면
+	\[
+		\begin{aligned}
+			\psi_i(N,v)-\psi_j(N,v)&=\psi_i(N\setminus\{k\},v_{k,\psi})-\psi_j(N\setminus\{k\},v_{k,\psi})\\
+			&=[Q(N\setminus\{k\},v_{k,\psi})-Q(N\setminus\{k,i\},v_{k,\psi})]\\
+			&\phantom{=}-[Q(N\setminus\{k\},v_{k,\psi})-Q(N\setminus\{k,j\},v_{k\psi})]\\
+			&=-Q(N\setminus\{k,i\},v_{k,\psi})+Q(N\setminus\{i,j,k\},v_{k,\psi})\\
+			&\phantom{=}+Q(N\setminus\{k,j\},v_{k,\psi})-Q(N\setminus\{i,j,k\},v_{k,\psi})\\
+			&=-\psi_j(N\setminus\{k,i\},v_{k,\psi})+\psi_i(N\setminus\{k,j\},v_{k,\psi})\\
+			&=-\psi_j(N\setminus\{i\},v)+\psi_i(N\setminus\{j\},v)\\
+			&=-Q(N\setminus\{i\},v)+Q(N\setminus\{i,j\},v)\\
+			&\phantom{=}+Q(N\setminus\{j\},v)-Q(N\setminus\{i,j\},v)\\
+			&=Q(N\setminus\{j\},v)-Q(N\setminus\{i\},v)
+		\end{aligned}
+	\]
+	이므로 식 \ref{eq:2.11}이 성립한다.
+\end{proof}
+
+\begin{prob}{}{2.27}
+	$(N,v)\in\mathcal G^N$을 $N=\{1,2,\cdots,n\}$인 협력 게임이라 하자. 임의의 순열 $\tau:N\to N$에 대하여
+	\[
+		\sum_{k=1}^n\Phi_{\tau(k)}(\{\tau(1),\tau(2),\cdots,\tau(k)\},v)=\sum_{k=1}^n\Phi_k(\{1,2,\cdots,k\},v)
+	\]
+	이 성립함을 보여라.
+\end{prob}
+
+\begin{prob}{}{2.28}
+	$\psi$를 $\mathcal G$ 위의 값이라 하자. $\psi=\Phi$일 필요충분조건이 $\psi$가 다음 네 조건을 모두 만족하는 것임을 보여라.
+	\begin{enumerate}[(i)]
+		\item $\psi$는 HMC를 만족한다.
+		\item $\psi$는 $2$인 협력 게임에 대해 효율적이다.
+		\item $\psi$는 $2$인 협력 게임에 대해 익명성을 갖는다.
+		\item $\psi$는 $2$인 협력 게임에서 전략적 동치에 대해 무관하다. 즉 $\alpha>0$, $(\beta_i,\beta_j)\in\mathbb R^{\{i,j\}}$에 대하여 \newline $\tilde{v}(S)=\alpha v(S)+\beta(S)$이면 $(\psi_i(\tilde{v}),\psi_j(\tilde{v}))=\alpha(\psi_i(v),\psi_j(v))+(\beta_i,\beta_j)$이다.
+	\end{enumerate}
+\end{prob}
+
+\section{웨버 집합}
+\subsection{웨버 집합}
+\subsection{볼록 게임}
+\subsection{Random Order Value}
+\subsection{가중 섀플리 값}
 
 \begin{thebibliography}{9}
 	\bibitem{1}
