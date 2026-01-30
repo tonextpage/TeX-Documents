@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  27 JAN 2026 00:43
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  29 JAN 2026 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1082,10 +1082,10 @@ Package rerunfilecheck Info: File `"적분법 총정리".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 38417 strings out of 468174
- 792069 string characters out of 5436827
- 1273264 words of memory out of 5000000
- 66560 multiletter control sequences out of 15000+600000
+ 38437 strings out of 468174
+ 792377 string characters out of 5436827
+ 1274457 words of memory out of 5000000
+ 66580 multiletter control sequences out of 15000+600000
  636636 words of font info for 96 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  94i,19n,100p,580b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s

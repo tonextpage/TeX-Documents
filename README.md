@@ -25,6 +25,7 @@ preamble.tex에는 문서 조판에 도움되는 여러 tcolorbox 환경이 정�
 | 정리 | \begin{thm}{제목}{참조 키워드} | \ref{thm:참조 키워드}
 | 보조정리 | \begin{lemma}{제목}{참조 키워드} | \ref{lemma:참조 키워드}
 | 명제 | \begin{prop}{제목}{참조 키워드} | \ref{prop:참조 키워드}
+| 따름정리 | \begin{cor}{제목}{참조 키워드} | \ref{cor:참조 키워드}
 | 증명 | \begin{proof} | |
 | 참고 | \begin{remark}[제목] | |
 | 연습문제 | \begin{prob}{제목}{참조 키워드} | \ref{prob:참조 키워드} |
@@ -74,6 +75,11 @@ https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b57
 \begin{prop}{제목}{참조 키워드}
   내용
 \end{prop}
+
+% 따름정리
+\begin{cor}{제목}{참조 키워드}
+  내용
+\end{cor}
 ```
 
 https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L29-L36

@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1769442141.17436 "sample.xdv" "sample.pdf" "sample" 1769442141.72722 0
-  "sample.xdv" 1769442141 79116 161cf74767b0994974e8962345130789 "xelatex"
+["xdvipdfmx"] 1769683707.04409 "sample.xdv" "sample.pdf" "sample" 1769683707.59185 0
+  "sample.xdv" 1769683706 79116 2ee2186b0a10e6222282f924c32769ce "xelatex"
   (generated)
   "sample.pdf"
   (rewritten before read)
-["xelatex"] 1769442139.02274 "d:/OneDrive/TeX-Documents/sample/sample.tex" "sample.xdv" "sample" 1769442141.72269 0
+["xelatex"] 1769683705.53928 "d:/OneDrive/TeX-Documents/sample/sample.tex" "sample.xdv" "sample" 1769683707.58784 0
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1769433238 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1769435731 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1769432973 1536 b3387106d9afecbfe14bde2de6eadf47 ""
@@ -199,9 +199,9 @@
   "c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1769435966 5948051 a2404ebd8d84f923ded640655b1a0682 ""
   "c:/texlive/2025/texmf.cnf" 1769435751 713 e69b156964470283e0530f5060668171 ""
   "d:/OneDrive/TeX-Documents/sample/sample.tex" 1769442058 6128 c4e26dec8c686f453c7bab09f5ccea6e ""
-  "preamble.tex" 1769433686 9006 96bace6248f8991397ab6fd4844f9e8c ""
-  "sample.aux" 1769442141 750 cd9c51a715328176f2e5df879539298e "xelatex"
-  "sample.out" 1769442141 107 a46cf4168a10fbe1f1580fcecf898894 "xelatex"
+  "preamble.tex" 1769683696 9767 0a5c189ad6048d846d03029ff302cba6 ""
+  "sample.aux" 1769683706 750 cd9c51a715328176f2e5df879539298e "xelatex"
+  "sample.out" 1769683706 107 a46cf4168a10fbe1f1580fcecf898894 "xelatex"
   "sample.tex" 1769442058 6128 c4e26dec8c686f453c7bab09f5ccea6e ""
   (generated)
   "sample.aux"

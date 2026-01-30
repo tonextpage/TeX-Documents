@@ -10,8 +10,8 @@
 \contentsline {subsection}{\numberline {2.2}섀플리 값의 성질과 특정 (1)}{16}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}섀플리 값의 성질과 특정 (2)}{23}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}퍼텐셜과 축소 게임}{27}{subsection.2.4}%
-\contentsline {section}{\numberline {3}웨버 집합}{32}{section.3}%
-\contentsline {subsection}{\numberline {3.1}웨버 집합}{32}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}볼록 게임}{32}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Random Order Value}{32}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}가중 섀플리 값}{32}{subsection.3.4}%
+\contentsline {section}{\numberline {3}웨버 집합}{33}{section.3}%
+\contentsline {subsection}{\numberline {3.1}웨버 집합}{33}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}볼록 게임}{34}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Random Order Value}{38}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}가중 섀플리 값}{38}{subsection.3.4}%

@@ -106,6 +106,23 @@
 	separator sign none, description delimiters parenthesis
 }{prop}
 
+%%%%% TCBox - Corollary %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% usage:
+%	\begin{cor}{Corollary Title}{Reference Keyword}
+%		Text Here
+%	\end{cor}
+% reference:
+%	\ref{cor:Reference Keyword}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareTcbTheorem[use counter from=dfn]{cor}{따름정리}{
+	enhanced, breakable, left=4mm, right=4mm, top=4mm, bottom=2mm,
+	colback=BurntOrange!5, coltitle=white, colframe=BurntOrange,
+	before title={\,}, title={#1}, after title={\,}, fonttitle=\bfseries,
+	attach boxed title to top left={xshift=4mm, yshift=-3.45mm},
+	boxed title style={colback=BurntOrange, left=0mm,right=0mm, top=0mm, bottom=0mm,},
+	separator sign none, description delimiters parenthesis
+}{cor}
+
 %%%%% TCBox - Example %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % usage:
 %	\begin{example}{Example Title}{Reference Keyword}

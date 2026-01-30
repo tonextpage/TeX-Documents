@@ -1,12 +1,12 @@
 # Fdb version 4
-["xdvipdfmx"] 1769442127.77879 "Munkres Topology Solution.xdv" "Munkres Topology Solution.pdf" "Munkres Topology Solution" 1769442128.43827 0
-  "Munkres Topology Solution.xdv" 1769442127 675412 d312a6b3e08f1e9dbd0b3066fb47eda2 "xelatex"
+["xdvipdfmx"] 1769683703.3665 "Munkres Topology Solution.xdv" "Munkres Topology Solution.pdf" "Munkres Topology Solution" 1769683704.17065 0
+  "Munkres Topology Solution.xdv" 1769683703 675412 14ed3b77aa20536a31404509b3a8ad00 "xelatex"
   (generated)
   "Munkres Topology Solution.pdf"
   (rewritten before read)
-["xelatex"] 1769442125.82951 "d:/OneDrive/TeX-Documents/Munkres Topology Solution/Munkres Topology Solution.tex" "Munkres Topology Solution.xdv" "Munkres Topology Solution" 1769442128.43344 0
-  "Munkres Topology Solution.aux" 1769442127 4580 8d54f507447d7ed0ad676e8b264f8384 "xelatex"
-  "Munkres Topology Solution.out" 1769442127 2973 2e1197f34f6dfa9166aeef91f794cc2d "xelatex"
+["xelatex"] 1769683698.57018 "d:/OneDrive/TeX-Documents/Munkres Topology Solution/Munkres Topology Solution.tex" "Munkres Topology Solution.xdv" "Munkres Topology Solution" 1769683704.16628 0
+  "Munkres Topology Solution.aux" 1769683703 4580 8d54f507447d7ed0ad676e8b264f8384 "xelatex"
+  "Munkres Topology Solution.out" 1769683703 2973 2e1197f34f6dfa9166aeef91f794cc2d "xelatex"
   "Munkres Topology Solution.tex" 1769442066 153733 e2ad566bd649de5ac4801e91aadd242d ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1769433238 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1769435731 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -222,7 +222,7 @@
   "c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1769435966 5948051 a2404ebd8d84f923ded640655b1a0682 ""
   "c:/texlive/2025/texmf.cnf" 1769435751 713 e69b156964470283e0530f5060668171 ""
   "d:/OneDrive/TeX-Documents/Munkres Topology Solution/Munkres Topology Solution.tex" 1769442066 153733 e2ad566bd649de5ac4801e91aadd242d ""
-  "preamble.tex" 1769433686 9006 96bace6248f8991397ab6fd4844f9e8c ""
+  "preamble.tex" 1769683696 9767 0a5c189ad6048d846d03029ff302cba6 ""
   (generated)
   "Munkres Topology Solution.aux"
   "Munkres Topology Solution.log"
