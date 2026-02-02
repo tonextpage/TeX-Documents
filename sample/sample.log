@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  29 JAN 2026 19:48
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  31 JAN 2026 05:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -38,18 +38,12 @@ LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) o
  (c:/texlive/2025/texmf-dist/tex/generic/babel/xebabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count280
- (c:/texlive/2025/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
-Package babel Info: Importing font and identification data for english
-(babel)             from babel-en.ini. Reported on input line 4330.
- (c:/texlive/2025/texmf-dist/tex/generic/babel-english/english.ldf
-Language: english 2017/06/06 v3.3r English support from the babel system
-Package babel Info: Hyphen rules for 'canadian' set to \l@english
-(babel)             (\language0). Reported on input line 102.
-Package babel Info: Hyphen rules for 'australian' set to \l@ukenglish
-(babel)             (\language22). Reported on input line 105.
-Package babel Info: Hyphen rules for 'newzealand' set to \l@ukenglish
-(babel)             (\language22). Reported on input line 108.
-)) (c:/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
+ (c:/texlive/2025/texmf-dist/tex/generic/babel/locale/ko/babel-korean.tex)
+Package babel Info: Importing data for korean
+(babel)             from babel-ko.ini. Reported on input line 4330.
+Package babel Info: Hyphen rules for 'korean' set to \l@english
+(babel)             (\language0). Reported on input line 4330.
+ (c:/texlive/2025/texmf-dist/tex/generic/babel/locale/ko/babel-korean.tex)) (c:/texlive/2025/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
@@ -1072,12 +1066,12 @@ Package rerunfilecheck Info: File `sample.out' has not changed.
 (rerunfilecheck)             Checksum: A46CF4168A10FBE1F1580FCECF898894;107.
  ) 
 Here is how much of TeX's memory you used:
- 35294 strings out of 468174
- 716676 string characters out of 5436827
- 1254247 words of memory out of 5000000
- 63457 multiletter control sequences out of 15000+600000
+ 35438 strings out of 468174
+ 719818 string characters out of 5436827
+ 1263642 words of memory out of 5000000
+ 63604 multiletter control sequences out of 15000+600000
  630945 words of font info for 71 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 94i,7n,100p,576b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 94i,7n,100p,1643b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on sample.xdv (2 pages, 79116 bytes).
+Output written on sample.xdv (2 pages, 79088 bytes).
