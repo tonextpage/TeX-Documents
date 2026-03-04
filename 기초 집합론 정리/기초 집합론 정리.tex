@@ -1,0 +1,512 @@
+\documentclass{article}
+\input{"preamble.tex"}
+
+\geometry{a4paper, total={6.4in, 10in}}
+\title{기초 집합론 정리}
+\author{tonextpage\\
+    \url{https://github.com/tonextpage}
+}
+\date{}
+
+\begin{document}
+\setstretch{1.3}
+\maketitle
+
+\noindent 주인장이 위상수학을 수강하게 되어서 기초적인 집합론을 증명없이 간결하게 정리합니다.
+
+\tableofcontents
+\newpage
+
+\section{집합과 그 연산}
+\subsection{집합의 상등}
+\begin{multicols}{2}
+\begin{itemize}
+    \item 집합 \\
+        대상(원소)의 모임
+    \item 공집합 \\
+        원소를 갖지 않는 집합
+    \item $x\in A$ \\
+        $x$는 $A$의 원소이다.
+    \item $x\notin A$ \\
+        $x$는 $A$의 원소가 아니다.
+\end{itemize}
+\end{multicols}
+
+\begin{itemize}
+    \item 집합의 상등(외연성 공리): $A=B$ iff $\forall x:x\in A\longleftrightarrow x\in B$
+\end{itemize}
+
+\subsection{부분집합과 멱집합}
+\begin{multicols}{3}
+\begin{itemize}
+    \item $A\subseteq B$ (부분집합) \\
+        $\forall x:x\in A\longrightarrow x\in B$
+    \item $A\nsubseteq B$ (부분집합 아님) \\
+        $\exists x:x\in A\wedge x\notin B$
+    \item $A\subsetneq B$ (진부분집합) \\
+        $A\subseteq B\wedge A\neq B$
+\end{itemize}
+\end{multicols}
+
+\begin{prop}{}{1.1}
+    $A=B$ iff $A\subseteq B\wedge B\subseteq A$
+\end{prop}
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item $A$의 모든 원소 $x$에 대하여 $\varphi(x)$가 성립
+        \begin{itemize}
+            \item[$\checkmark$] $\forall x\in A:\varphi(x)$
+            \item[$\checkmark$] $\forall x:x\in A\longrightarrow\varphi(x)$
+        \end{itemize}
+    \item $A$의 어떤 원소 $x$에 대하여 $\varphi(x)$가 성립
+        \begin{itemize}
+            \item[$\checkmark$] $\exists x\in A:\varphi(x)$
+            \item[$\checkmark$] $\exists x:x\in A\wedge\varphi(x)$
+        \end{itemize}
+\end{itemize}
+\end{multicols}
+
+\subsection{집합의 연산}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 합집합 \\
+            $A\cup B=\{x:x\in A\vee x\in B\}$
+        \item 차집합 \\
+            $A\setminus B=\{x:x\in A\wedge x\notin B\}$
+        \item 교집합 \\
+            $A\cap B=\{x:x\in A\wedge x\in B\}$
+        \item 대칭차집합 \\
+            $A\triangle B=\{x:(x\in A\wedge x\notin B)\vee(x\notin A\wedge x\in B)\}$
+    \end{itemize}
+\end{multicols}
+
+\noindent $A$가 집합의 집합일 때,
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 합집합 \\
+            $\bigcup A=\{x:\exists B\in A:x\in B\}$
+        \item 교집합 \\
+            $\bigcap A=\{x:\forall B\in A:x\in B\}$
+    \end{itemize}
+\end{multicols}
+
+\noindent 인덱스 집합 $I$에 대하여 $A=\{A_i:i\in I\}$일 때,
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 합집합 \\
+            $\bigcup_{i\in I}A_i=\{x:\exists i\in I:x\in A_i\}$
+        \item 교집합 \\
+            $\bigcap_{i\in I}A_i=\{x:\forall i\in I:x\in A_i\}$
+    \end{itemize}
+\end{multicols}
+
+\begin{thm}{드 모르간 법칙}{1.2}
+    \begin{enumerate}[(1)]
+        \item $A\setminus(X\cup Y)=(A\setminus X)\cap(A\setminus Y)$
+        \item $A\setminus(X\cap Y)=(A\setminus X)\cup(A\setminus Y)$
+        \item $A\setminus\bigcup_{i\in I}A_i=\bigcap_{i\in I}(A\setminus A_i)$
+        \item $A\setminus\bigcap_{i\in I}A_i=\bigcup_{i\in I}(A\setminus A_i)$
+    \end{enumerate}
+\end{thm}
+
+\subsection{집합의 카테시안 곱}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 순서쌍 \\
+            $(a,b)=\{\{a\},\{a,b\}\}$
+        \item 두 집합의 카테시안 곱 \\
+            $A\times B=\{(a,b):a\in A\wedge b\in B\}$
+        \item 유한개의 집합의 카테시안 곱 \\
+            $A_1\times\cdots A_n=\{(a_1,\cdots,a_n):a_i\in A_i\}$
+        \item 일반화된 카테시안 곱 \\
+            $\prod_{i\in I}A_i=\{(a_i)_{i\in I}:a_i\in A_i\}$
+    \end{itemize}
+\end{multicols}
+
+\section{함수}
+\subsection{함수의 정의}
+집합 $X$(정의역)에서 $Y$(공역)로의 함수 (또는 사상) $f:X\to Y$는 $X\times Y$의 부분집합으로서
+\[
+    \forall x\in X:\exists!y\in Y:(x,y)\in f
+\]
+를 만족하는 것이다. $f:X\to Y$와 $g:A\to B$가 함수라 하자.
+\begin{itemize}
+    \item 함수의 상등: $f=g$ iff $X=A\wedge Y=B\wedge\forall x\in X:f(x)=g(x)$
+    \item 함수의 그래프: $\operatorname{Graph}(f)=\{(x,y)\in X\times Y:y=f(x)\}=\{(x,f(x)):x\in X\}$
+\end{itemize}
+
+\begin{multicols}{3}
+    \begin{itemize}
+        \item 항등함수 \\
+            $\operatorname{id}_X:X\to X$,$x\mapsto x$
+        \item 공함수 \\
+            $\varnothing\to X$, 대응 관계 없음
+        \item 함수의 제한 \\
+            $f|_A:A\to Y$, $x\mapsto f(x)$
+    \end{itemize}
+\end{multicols}
+
+\begin{itemize}
+    \item 두 함수 $f:X\to Y$와 $g:Y\to Z$의 합성은 함수 $g\circ f:X\to Z$, $x\mapsto g(f(x))$이다.
+    \item 집합 $X$의 부분집합 $U$에 대하여 $U$의 특성함수는 $\chi_U:X\to\{0,1\}$, $x\mapsto\begin{cases}
+        1 & \text{if } x\in U \\
+        0 & \text{if } x\notin U
+    \end{cases}$이다.
+\end{itemize}
+
+\begin{prop}{}{2.1}
+    집합 $X$의 두 부분집합 $U$, $V$에 대하여 $U=V$ iff $\chi_U=\chi_V$.
+\end{prop}
+
+\begin{prop}{}{2.2}
+    집합 $X$의 두 부분집합 $U$, $V$과 $x\in X$에 대하여
+    \begin{enumerate}[(1)]
+        \item $\chi_{U\cap V}(x)=\chi_U(x)\chi_V(x)$
+        \item $\chi_{U\cup V}(x)=\chi_U(x)+\chi_V(x)-\chi_U(x)\chi_V(x)$
+        \item $\chi_{X\setminus U}(x)=1-\chi_U(x)$
+    \end{enumerate}
+\end{prop}
+
+\subsection{함수의 상과 역상}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 함수의 상 \\
+            $f(A)=\{f(a):a\in A\}$
+        \item 함수의 역상 \\
+            $f^{-1}(B)=\{x\in X:f(x)\in B\}$
+    \end{itemize}
+\end{multicols}
+
+\newpage
+\subsection{단사와 전사}
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 단사 \\
+            $\forall x,y\in X:f(x)=f(y)\longrightarrow x=y$
+        \item 전사 \\
+            $\forall y\in Y:\exists x\in X:f(x)=y$ i.e. $f(X)=Y$
+    \end{itemize}
+\end{multicols}
+
+\begin{itemize}
+    \item 전단사(일대일대응) \\
+        단사이면서 전사인 함수
+\end{itemize}
+
+\noindent 함수 $f:X\to Y$에 대하여
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 좌역함수 \\
+            $g\circ f=\operatorname{id}_X$를 만족하는 함수 $g:Y\to X$
+        \item 우역함수 \\
+            $f\circ h=\operatorname{id}_Y$를 만족하는 함수 $h:Y\to X$
+    \end{itemize}
+\end{multicols}
+
+\begin{prop}{}{2.3}
+    단사함수는 좌역함수를 갖는다.
+\end{prop}
+
+\begin{prop}{}{2.4}
+    전사함수는 우역함수를 갖는다.$^{\text{AC와 동치}}$
+\end{prop}
+
+\begin{itemize}
+    \item 역함수\\
+        좌역함수이면서 우역함수인 함수
+\end{itemize}
+
+\begin{prop}{}{2.5}
+    함수 $f:X\to Y$에 대하여 $g:Y\to X$가 $f$의 좌역함수이고, $h:Y\to X$가 $f$의 우역함수이면, $g=h$이다.
+\end{prop}
+
+\begin{itemize}
+    \item[$\blacktriangleright$] 역함수는 유일하므로 $f^{-1}$로 표기한다.
+\end{itemize}
+
+\begin{prop}{}{2.6}
+    $f:X\to Y$가 전단사일 때, $g:Y\to X$가 $f$의 좌역함수 iff $g$가 $f$의 우역함수.
+\end{prop}
+
+\begin{itemize}
+    \item[$\bigstar$] 상과 역상의 성질
+\end{itemize}
+
+\setlength{\tabcolsep}{10pt}
+\renewcommand{\arraystretch}{1.5}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+        \toprule
+        상 & 역상 \\
+        \midrule
+        $f(X)\subseteq Y$ & $f^{-1}(Y)=X$ \\
+        $f(f^{-1}(Y))=f(X)$ & $f^{-1}(f(X))=X$ \\
+        $f(f^{-1}(B))\subseteq B$ (등호는 $B\subseteq f(X)$일 때 성립) & $f^{-1}(f(A))\supseteq A$ (등호는 $f$가 단사일 때 성립) \\
+        $f(f^{-1}(B))=B\cap f(X)$ & $(f|_A)^{-1}(B)=A\cap f^{-1}(B)$ \\
+        $f(f^{-1}(f(A)))=f(A)$ & $f^{-1}(f(f^{-1}(B)))=f^{-1}(B)$ \\
+        $f(A)=\varnothing$ iff $A=\varnothing$ & $f^{-1}(B)=\varnothing$ iff $B\subseteq Y\setminus f(X)$ \\
+        $f(A)\supseteq B$ iff $\exists C\subseteq A:f(C)=B$ & $f^{-1}(B)\supseteq A$ iff $f(A)\subseteq B$ \\
+        $f(A)\supseteq f(X\setminus A)$ iff $f(A)=f(X)$ & $f^{-1}(B)\supseteq f^{-1}(Y\setminus B)$ iff $f^{-1}(B)=X$ \\
+        $f(X\setminus A)\supseteq f(X)\setminus f(A)$ & $f^{-1}(Y\setminus B)=X\setminus f^{-1}(B)$ \\
+        $f(A\cup f^{-1}(B))\subseteq f(A)\cup B$ & $f^{-1}(f(A)\cup B)\supseteq A\cup f^{-1}(B)$ \\
+        $f(A\cap f^{-1}(B))=f(A)\cap B$ & $f^{-1}(f(A)\cap B)\supseteq A\cap f^{-1}(B)$ \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1}
+
+\begin{itemize}
+    \item $f(A)\cap B=\varnothing$ iff $A\cap f^{-1}(B)=\varnothing$
+\end{itemize}
+
+\begin{multicols}{2}
+    \begin{itemize}
+        \item $(g\circ f)(A)=g(f(A))$
+        \item $f(\bigcup_{i\in I}A_i)=\bigcup_{i\in I}f(A_i)$
+        \item $f(\bigcap_{i\in I}A_i)\subseteq\bigcap_{i\in I}f(A_i)$
+        \item $(g\circ f)^{-1}(C)=f^{-1}(g^{-1}(C))$
+        \item $f^{-1}(\bigcup_{i\in I}B_i)=\bigcup_{i\in I}f^{-1}(B_i)$
+        \item $f^{-1}(\bigcap_{i\in I}B_i)=\bigcap_{i\in I}f^{-1}(B_i)$
+    \end{itemize}
+\end{multicols}
+
+\section{관계}
+\subsection{집합 위의 관계}
+집합 $X$ 위의 (이항) 관계는 집합 $X^2$의 부분집합 $\sim$이다. 기호: $(x,y)\in\sim~\longleftrightarrow~x\sim y$
+
+
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 반사성 \\
+            $\forall x\in X:x\sim x$
+        \item 추이성 \\
+            $\forall x,y,z\in X:(x\sim y\wedge y\sim z)\longrightarrow x\sim z$
+        \item 대칭성 \\
+            $\forall x,y\in X:x\sim y\longrightarrow y\sim x$
+        \item 반대칭성 \\
+            $\forall x,y\in X:(x\sim y\wedge y\sim x)\longrightarrow x=y$
+        \item 연결성 \\
+            $\forall x,y\in X:x\sim y\vee y\sim x$
+        \item 비반사성 \\
+            $\forall x\in X:\neg(x\sim x)$
+    \end{itemize}
+\end{multicols}
+
+\subsection{동치 관계}
+
+\noindent 집합 $X$ 위의 동치 관계는 반사성, 추이성, 대칭성을 만족하는 관계 $\sim$이다.
+\begin{multicols}{3}
+    \begin{itemize}
+        \item 동치류 \\
+            $[x]_\sim=\{y\in X:y\sim x\}$
+        \item 상집합 \\
+            $X/{\sim}=\{[x]_\sim:x\in X\}$
+        \item 상사상(사영) \\
+        $q_\sim: X \to X/{\sim}$, $x\mapsto[x]_\sim$
+    \end{itemize}
+\end{multicols}
+
+\begin{prop}{}{3.1}
+    $\sim$이 집합 $X$ 위의 동치 관계일 때, $x\sim y$ iff $[x]_\sim=[y]_\sim$.
+\end{prop}
+
+\noindent 집합 $X$의 부분집합의 집합 $\mathcal A$가
+\begin{enumerate}[(i)]
+    \item $\forall A\in\mathcal A:A\ne\varnothing$
+    \item $\forall A,B\in\mathcal A:A\ne B\longrightarrow A\cap B=\varnothing$
+    \item $\bigcup\mathcal A=X$
+\end{enumerate}
+를 만족하면 $\mathcal A$를 집합 $X$의 분할이라 한다.
+
+\begin{prop}{}{3.2}
+    집합 $X$ 위의 동치 관계에 의한 상집합은 $X$의 분할이다. 반대로, $X$의 한 분할을 상집합으로 갖는 $X$ 위의 동치 관계가 존재한다.
+\end{prop}
+
+\begin{prop}{}{3.3}
+    $p:X\to Z$가 전사 사상이라 하자. $X$ 위의 동치 관계 $\sim$과 전단사 $f:X/{\sim}\to Z$가 유일하게 존재하여 $f([x]_\sim)=p(x)$이다.
+\end{prop}
+
+\begin{itemize}
+    \item[$\blacktriangleright$] 명제 \ref{prop:3.2}와 \ref{prop:3.3}은 동치 관계, 분할, 전사 사상이 서로 같은 개념임을 시사한다.
+\end{itemize}
+
+\subsection{순서 관계}
+집합 $X$ 위의 순서 관계는 연결성, 비반사성, 추이성을 만족하는 관계 $<$이다.
+
+\begin{itemize}
+    \item 삼분성 \\
+        임의의 $x,y\in X$에 대하여 $x<y$, $x=y$, $y<x$ 중 하나만 성립한다.
+    \item 열린구간 $(a,b)=\{x:a<x<b\}$ \\
+        $(a,b)=\varnothing$일 때, $a$는 $b$의 바로 앞 원소, $b$는 $a$의 바로 뒤 원소
+    \item 사전식 순서 \\
+        $a_1\times b_1<a_2\times b_2$ iff $a_1<_Aa_2$ 또는 $a_1=a_2\wedge b_1<_Bb_2$
+\end{itemize}
+
+\noindent 순서 관계가 주어진 집합 $(X,<)$의 부분집합 $X_0\subseteq A$에 대하여
+\begin{multicols}{2}
+    \begin{itemize}
+        \item 최대원 $M$ \\
+            $M\in X_0$이고 $\forall x\in X_0:x\leq M$
+        \item $X_0$가 위로 유계 \\
+            $\exists s\in X:[\forall x\in X_0:x\leq s]$ ($s$는 상계)
+        \item 상한 \\
+            $X_0$의 상계의 집합의 최소원
+        \item 상한 성질 \\
+        위로 유계인 모든 부분집합이 상한을 갖는다.
+        \item 최소원 $m$ \\
+            $m\in X_0$이고 $\forall x\in X_0:m\leq x$
+        \item $X_0$가 아래로 유계 \\
+            $\exists t\in X:[\forall x\in X_0:s\leq x]$ ($t$는 하계)
+        \item 하한 \\
+            $X_0$의 하계의 집합의 최대원
+        \item 하한 성질 \\
+        아래로 유계인 모든 부분집합이 하한을 갖는다.
+    \end{itemize}
+\end{multicols}
+
+\begin{prop}{}{3.4}
+    상한 성질과 하한 성질은 서로 동치이다.
+\end{prop}
+
+\begin{itemize}
+    \item 정렬 성질 \\
+        공집합이 아닌 모든 부분집합은 최소원을 갖는다.
+\end{itemize}
+
+\section{자연수와 실수}
+\subsection{자연수}
+다음을 만족하는 집합 $I$를 귀납 집합이라 한다.
+\begin{enumerate}[(i)]
+    \item $\varnothing\in I$
+    \item $\forall x\in I:x\cup \{x\}\in I$
+\end{enumerate}
+자연수의 집합 $\mathbb N$은 가장 작은 귀납 집합이다: $\mathbb N=\bigcap\{I:I\text{ inductive}\}$.
+
+\begin{thm}{수학적 귀납법}{3.5}
+    자연수 $n$에 대한 술어 $P(n)$이
+    \begin{multicols}{2}
+        \begin{enumerate}[(i)]
+            \item $P(1)$이 참이다.
+            \item $\forall k\in\mathbb N:P(k)\longrightarrow P(k+1)$
+        \end{enumerate}
+    \end{multicols}
+    를 만족하면 $\forall n\in\mathbb N:P(n)$이 성립한다.
+\end{thm}
+
+\begin{thm}{강한 수학적 귀납법}{3.6}
+    자연수 $n$에 대한 술어 $P(n)$이
+    \begin{multicols}{2}
+        \begin{enumerate}[(i)]
+            \item $P(1)$이 참이다.
+            \item $\forall k\in\mathbb N:[\forall i\leq k:P(i)]\longrightarrow P(k+1)$
+        \end{enumerate}
+    \end{multicols}
+    를 만족하면 $\forall n\in\mathbb N:P(n)$이 성립한다.
+\end{thm}
+
+\begin{thm}{정렬 원리}{3.7}
+    $\mathbb N$는 정렬 성질을 갖는다.
+\end{thm}
+
+\begin{thm}{}{3.8}
+    $\mathbb N$에서 수학적 귀납법, 강한 수학적 귀납법, 정렬 원리는 모두 서로 동치이다.
+\end{thm}
+
+\subsection{실수}
+실수의 집합 $\mathbb R$은 아르키메데스 성질을 만족하는 (유일한) 완비 순서체이다.
+
+\begin{thm}{실수의 완비성}{3.9}
+    $\mathbb R$에서 다음은 서로 동치이다.
+    \begin{enumerate}[(i)]
+        \item 상한 성질 (데데킨트 완비성)
+        \item 볼차노--바이어슈트라스 성질: 유계 무한 부분집합은 극한점(집적점)을 갖는다.
+        \item 단조 수렴 정리: 유계 단조 수열은 수렴한다.
+        \item 코시 완비성: 임의의 코시 수열은 수렴한다.
+        \item 축소집합열 성질: $\{C_k\}$가 공집합이 아닌 닫힌 유계 집합의 축소열이면 $\bigcap_{k=1}^\infty C_k\ne\varnothing$이다.
+        \item 하이네--보렐 정리: 닫힌 유계 집합 iff 컴팩트 집합
+    \end{enumerate}
+\end{thm}
+
+\section{집합의 크기}
+$A$와 $B$를 집합이라 하자.
+\begin{itemize}
+    \item $A$가 유한 집합: $A=\varnothing$이거나 어떤 자연수 $n$에 대하여 전단사 $f:A\to\{1,\cdots,n\}$이 존재한다.
+    \item $A$가 무한 집합: $A$가 유한집합이 아니다.
+    \item $A$가 가산무한 집합: 전단사 $f:A\to\mathbb N$가 존재한다.
+    \item $A$가 비가산무한 집합: 전단사 $f:A\to\mathbb N$가 존재하지 않는다.
+    \item $A$가 가산 집합: $A$가 유한 집합이거나 가산무한 집합이다.
+\end{itemize}
+
+\begin{multicols}{3}
+    \begin{itemize}
+        \item $\vert A\vert=\vert B\vert$ \\
+            전단사 $f:A\to B$가 존재
+        \item $\vert A\vert\leq\vert B\vert$ \\
+            단사 $f:A\to B$가 존재
+        \item $\vert A\vert\geq\vert B\vert$ \\
+            전사 $f:A\to B$가 존재
+    \end{itemize}
+\end{multicols}
+
+\begin{multicols}{2}
+    \begin{itemize}
+        \item $\vert A\vert<\vert B\vert$ \\
+            $\vert A\vert\leq\vert B\vert$이고 $\vert A\vert=\vert B\vert$
+        \item $\vert A\vert>\vert B\vert$ \\
+            $\vert A\vert\geq\vert B\vert$이고 $\vert A\vert=\vert B\vert$
+    \end{itemize}
+\end{multicols}
+
+\begin{prop}{}{5.1}
+    $C$가 공집합이 아닌 집합이라 하면 다음은 모두 서로 동치이다.
+    \begin{enumerate}[(i)]
+        \item $C$는 가산 집합이다.
+        \item 전사 $f:\mathbb N\to C$가 존재한다.
+        \item 단사 $g:C\to\mathbb N$이 존재한다.
+    \end{enumerate}
+\end{prop}
+
+\begin{prop}{}{5.2}
+    \begin{enumerate}[(1)]
+        \item 가산 집합의 부분집합은 가산 집합이다.
+        \item 가산 집합의 가산 합집합은 가산 집합이다.
+        \item 가산 집합의 유한 곱집합은 가산 집합이다.
+    \end{enumerate}
+\end{prop}
+
+\begin{itemize}
+    \item[$\blacktriangleright$] 가산 집합의 가산 곱집합은 가신 집합이 아닐 수 있음에 유의한다. ($\{0,1\}^{\mathbb N}$에 대각선 논법 적용)
+\end{itemize}
+
+\begin{thm}{칸토어 정리}{5.3}
+    임의의 집합 $S$에 대하여 $\vert S\vert<\vert P(S)\vert$이다.
+\end{thm}
+
+\begin{thm}{}{5.4}
+    $\mathbb R$은 비가산 집합이다.
+\end{thm}
+
+\section{선택 공리}
+\begin{itemize}
+    \item 선택 공리(AC) \\
+        공집합이 아닌 집합의 집합족은 선택 함수를 갖는다. \\
+        즉 $\mathcal B$가 공집합이 아닌 집합의 집합족일 때, 모든 $B\in\mathcal B$에 대하여 $c(B)\in B$인 함수 $c:\mathcal B\to\bigcup\mathcal B$가 존재한다.
+\end{itemize}
+
+\begin{itemize}
+    \item[$\bigstar$] 선택 공리와 동치인 명제
+        \begin{itemize}
+            \item[\checkmark] 모든 분할은 대표값의 집합을 갖는다.
+            \item[\checkmark] 임의의 무한 집합 $X$에 대하여 $\vert X\vert=\vert X^2\vert$이다.
+            \item[\checkmark] 모든 전사 함수는 우역원을 갖는다.
+            \item[\checkmark] 초른 보조정리: 임의의 사슬이 상계를 갖는 부분 순서 집합은 극대원을 갖는다.
+            \item[\checkmark] 하우스도르프 극대 원리: 공집합이 아닌 부분 순서 집합은 극대 사슬을 갖는다.
+            \item[\checkmark] 투키 보조정리: 공집합이 아닌 모든 유한 지표 집합족은 극대원을 갖는다.
+            \item[\checkmark] 정렬 정리: 임의의 집합은 정렬 가능하다.
+            \item[\checkmark] 모든 벡터 공간은 기저를 갖는다.
+        \end{itemize}
+\end{itemize}
+\end{document}
