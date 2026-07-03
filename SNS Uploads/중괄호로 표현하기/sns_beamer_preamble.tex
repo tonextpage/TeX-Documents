@@ -1,7 +1,7 @@
 \usepackage[korean]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[a4paper]{geometry}
-\usepackage{mathtools}
+\usepackage{geometry}
+\geometry{papersize={160mm, 160mm}}
 \usepackage{amsthm, amsmath, amsfonts, amssymb}
 \usepackage[]{mdframed}
 \usepackage{hyperref}
@@ -23,6 +23,25 @@
 \usepackage{cancel}
 \usepackage{diagbox}
 \usepackage[no-math]{fontspec}
+
+%%%%% beamer style %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setbeamertemplate{background canvas}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[line width=5mm, cyan] 
+            (current page.south west) 
+            rectangle 
+            (current page.north east);
+        \node[anchor=south east, font=\large\ttfamily, gray] 
+            at ([shift={(-5mm,5mm)}]current page.south east) 
+            {@\_tonextpage\_};
+    \end{tikzpicture}
+}
+
+\usefonttheme{professionalfonts}
+\setbeamertemplate{frametitle}[default][center]
+\addtobeamertemplate{frametitle}{\vspace{0.5cm}}{}
+\setbeamertemplate{navigation symbols}{} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% font setting %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setmainfont{KoPub Dotum}[

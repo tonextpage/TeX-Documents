@@ -1,0 +1,65 @@
+\documentclass[serif]{beamer}
+\input{sns_beamer_preamble.tex}
+
+\begin{document}
+\begin{frame}{복소해석학으로 보는 이산수학}
+    다음 중등교사임용시험 이산수학 기출문제를 봅시다.
+
+    \begin{hint}[2021학년도 전공 A 7번]
+        일반화된 이항계수 $\displaystyle\binom{-\frac{1}{2}}{n}$이 $\displaystyle\binom{2n}{n}=f(n)\times\binom{-\frac{1}{2}}{n}$을 만족할 때, $f(n)$과 $\displaystyle\sum_{n=0}^\infty\binom{2n}{n}\biggl(-\frac{1}{8}\biggr)^n$의 값을 풀이 과정과 함께 쓰시오. (단, $n$은 음이 아닌 정수이다.)
+    \end{hint}
+
+    일반화된 이항계수를 모르는 저는 $f(n)$ 구하기를 포기하고 급수의 합을 구하고자 합니다.
+\end{frame}
+
+\begin{frame}{}
+    먼저 $\displaystyle(-1)^n\binom{2n}{n}$을 살펴 봅시다. 이항정리를 이용하면
+    \[
+        (-1)^n\binom{2n}{n}=\text{다항식 }(1-z)^{2n}\text{의 전개식에서 } z^n\text{의 계수}
+    \]
+    임을 알 수 있습니다. 그런데 제가 왜 흔한 $x$ 대신에 $z$라고 썼을까요? 코시 적분 공식으로부터
+    \[
+        (-1)^n\binom{2n}{n}=\frac{1}{2\pi i}\int_C\frac{(1-z)^{2n}}{z^{n+1}}\,dz
+    \]
+    을 얻기 때문입니다. 여기서 $C$는 원점을 둘러싸는 단순 닫힌 경로입니다.
+\end{frame}
+
+\begin{frame}{}
+    이제 급수를 계산해 봅시다.
+    \[
+        \begin{aligned}
+            \sum_{n=0}^\infty\binom{2n}{n}\biggl(-\frac{1}{8}\biggr)^n&=\frac{1}{2\pi i}\sum_{n=0}^\infty\int_C \frac{(1-z)^{2n}}{(8z)^n}\frac{dz}{z}\\
+            &=\frac{1}{2\pi i}\int_C\sum_{n=0}^\infty\frac{(1-z)^{2n}}{(8z)^n}\frac{dz}{z}\\
+            &=\frac{1}{2\pi i}\int_C\frac{1/z}{1-(1-z)^2/8z}\,dz\\
+            &=\frac{1}{2\pi i}\int_C\frac{8}{8z-(1-z)^2}\,dz\\
+            &=\frac{4}{\pi i}\int_C\frac{dz}{10z-1-z^2}
+        \end{aligned}
+    \]
+    위의 계산에서 무한합과 선적분을 교환했습니다. 이는 일반적으로 성립하지 않지만, 적당한 경로 $C$의 선택으로 이를 해결해 봅시다.
+\end{frame}
+
+\begin{frame}{}
+    가장 만만한 선택은 역시 $C:\vert z\vert=1$입니다. $C$ 위에서
+    \[
+        \biggl\vert\frac{(1-z)^2}{8z}\biggr\vert\leq\frac{(1+\vert z\vert)^2}{8\vert z\vert}=\frac{1}{2}<1
+    \]
+    이므로 균등수렴성에 의해 무한합과 선적분의 교환이 가능하게 됩니다. 계산을 마무리하기 위해 이차방정식 하나만 풀어봅시다.
+    \[
+        z^2-10z+1=0~\longrightarrow~ z=5\pm2\sqrt{6}
+    \]
+    우리가 택한 경로의 내부에 극점이 생기네요. 유수를 계산합시다.
+    \[
+        \begin{aligned}
+            \operatorname{Res}\biggl(\frac{1}{10z-1-z^2};5-2\sqrt{6}\biggr)=\frac{1}{10-2z}\biggr\vert_{z=5-2\sqrt{6}}=\frac{1}{4\sqrt{6}}
+        \end{aligned}
+    \]
+    따라서 유수 정리를 적용하면
+    \[
+        \begin{aligned}
+            \sum_{n=0}^\infty\binom{2n}{n}\biggl(-\frac{1}{8}\biggr)^n&=\frac{4}{\pi i}\int_C\frac{dz}{10z-1-z^2}\\
+            &=\frac{4}{\pi i}\cdot2\pi i\operatorname{Res}\biggl(\frac{1}{10z-1-z^2};5-2\sqrt{6}\biggr)\\
+            &=8\cdot\frac{1}{4\sqrt{6}}=\frac{\sqrt{6}}{3}.
+        \end{aligned}
+    \]
+\end{frame}
+\end{document}
