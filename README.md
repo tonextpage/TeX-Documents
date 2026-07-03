@@ -135,3 +135,9 @@ https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b57
 https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L81-L84
 
 https://github.com/tonextpage/TeX-Documents/blob/b9b5e07a7dc044fb30f40f719d58b573d1f3f7f8/sample/sample.tex#L86-L93
+
+## [sns_beamer_preamble.tex](https://github.com/tonextpage/TeX-Documents/blob/22a160cf202f1a8bf78bf957d8e237a34cf93047/sns_beamer_preamble.tex)
+
+sns_beamer_preamble.tex는 preamble.tex를 확장하여 SNS 업로드용 beamer의 레이아웃을 조판합니다. 기본 레이아웃은 다음과 같습니다.
+
+https://github.com/tonextpage/TeX-Documents/blob/22a160cf202f1a8bf78bf957d8e237a34cf93047/sns_beamer_preamble.tex#L28-L43
