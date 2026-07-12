@@ -1,10 +1,14 @@
 # Fdb version 4
-["xdvipdfmx"] 1783090139.29621 "중괄호로 표현하기.xdv" "중괄호로 표현하기.pdf" "중괄호로 표현하기" 1783090139.86868 0
-  "중괄호로 표현하기.xdv" 1783090139 25824 63c13095a3fa6992a4a2b1f3f5febb11 "xelatex"
+["xdvipdfmx"] 1783870217.35152 "Real Induction.xdv" "Real Induction.pdf" "Real Induction" 1783870218.07397 0
+  "Real Induction.xdv" 1783870217 198764 933df33b89d0a025b2dde3aaf0d73da6 "xelatex"
   (generated)
-  "중괄호로 표현하기.pdf"
+  "Real Induction.pdf"
   (rewritten before read)
-["xelatex"] 1783090137.5607 "d:/OneDrive/Repositories/TeX-Documents/SNS Uploads/중괄호로 표현하기/중괄호로 표현하기.tex" "중괄호로 표현하기.xdv" "중괄호로 표현하기" 1783090139.85809 0
+["xelatex"] 1783870214.58047 "d:/OneDrive/Repositories/TeX-Documents/SNS Uploads/Real Induction/Real Induction.tex" "Real Induction.xdv" "Real Induction" 1783870218.06101 0
+  "Real Induction.aux" 1783870217 2560 478ca50e7f13eca8a55b6d33b319b878 "xelatex"
+  "Real Induction.nav" 1783870217 1109 07396102f9d82bf25877ba7d82798efb "xelatex"
+  "Real Induction.out" 1783870216 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "Real Induction.tex" 1783870213 16106 a985773683f7b4a1f0e27e06f7e9cbdb ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1769433238 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1769435731 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1769432973 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -254,18 +258,14 @@
   "c:/texlive/2025/texmf-dist/web2c/texmf.cnf" 1769432127 42213 4e2ca030e8e2640502016e9e45868dcb ""
   "c:/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1769435966 5948051 a2404ebd8d84f923ded640655b1a0682 ""
   "c:/texlive/2025/texmf.cnf" 1769435751 713 e69b156964470283e0530f5060668171 ""
-  "d:/OneDrive/Repositories/TeX-Documents/SNS Uploads/중괄호로 표현하기/중괄호로 표현하기.tex" 1783090135 3123 acd6301c559d88e18d797212a77f900b ""
+  "d:/OneDrive/Repositories/TeX-Documents/SNS Uploads/Real Induction/Real Induction.tex" 1783870213 16106 a985773683f7b4a1f0e27e06f7e9cbdb ""
   "sns_beamer_preamble.tex" 1782786477 10518 c39d705bfe4552e87ea211dc89e9efd0 ""
-  "중괄호로 표현하기.aux" 1783090139 960 be4cb1301b5c2e594c4669b6b6a3e570 "xelatex"
-  "중괄호로 표현하기.nav" 1783090139 395 640a03f4d3f0f705896c1d8375ddfa75 "xelatex"
-  "중괄호로 표현하기.out" 1783090139 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
-  "중괄호로 표현하기.tex" 1783090135 3123 acd6301c559d88e18d797212a77f900b ""
   (generated)
-  "중괄호로 표현하기.aux"
-  "중괄호로 표현하기.log"
-  "중괄호로 표현하기.nav"
-  "중괄호로 표현하기.out"
-  "중괄호로 표현하기.snm"
-  "중괄호로 표현하기.toc"
-  "중괄호로 표현하기.xdv"
+  "Real Induction.aux"
+  "Real Induction.log"
+  "Real Induction.nav"
+  "Real Induction.out"
+  "Real Induction.snm"
+  "Real Induction.toc"
+  "Real Induction.xdv"
   (rewritten before read)

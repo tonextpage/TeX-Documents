@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  3 JUL 2026 23:48
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.26)  13 JUL 2026 00:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"d:/OneDrive/Repositories/TeX-Documents/SNS Uploads/중괄호로 표현하기/중괄호로 표현하기.tex"
-(d:/OneDrive/Repositories/TeX-Documents/SNS Uploads/중괄호로 표현하기/중괄호로 표현하기.tex
+**"d:/OneDrive/Repositories/TeX-Documents/SNS Uploads/Real Induction/Real Induction.tex"
+(d:/OneDrive/Repositories/TeX-Documents/SNS Uploads/Real Induction/Real Induction.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
 (c:/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
@@ -1049,8 +1049,8 @@ Package fontspec Info:
 
 \c@tcb@cnt@dfn=\count419
 \c@tcb@cnt@prob=\count420
-) (./중괄호로 표현하기.aux)
-\openout1 = `"중괄호로 표현하기.aux"'.
+) (./Real Induction.aux)
+\openout1 = `"Real Induction.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
@@ -1108,9 +1108,9 @@ LaTeX Font Info:    ... okay on input line 4.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 4.
-(./중괄호로 표현하기.out) (./중괄호로 표현하기.out)
+(./Real Induction.out) (./Real Induction.out)
 \@outlinefile=\write5
-\openout5 = `"중괄호로 표현하기.out"'.
+\openout5 = `"Real Induction.out"'.
 
  (c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1167,37 +1167,53 @@ Package fontspec Info:
 (fontspec)             - 'bold' (b/n) with NFSS spec.:
 (fontspec)             <->"[UnDotumBold.ttf]/OT:language=dflt;extend=1.05;"
 
- (./중괄호로 표현하기.nav)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 48.
+ (./Real Induction.nav)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 48.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for TS1+KoPubDotum(0) on input line 48.
-LaTeX Font Info:    No file TS1KoPubDotum(0).fd. on input line 48.
+LaTeX Font Info:    Trying to load font information for TS1+KoPubDotum(0) on input line 29.
+LaTeX Font Info:    No file TS1KoPubDotum(0).fd. on input line 29.
 
 
 LaTeX Font Warning: Font shape `TS1/KoPubDotum(0)/m/n' undefined
-(Font)              using `TS1/cmr/m/n' instead on input line 48.
+(Font)              using `TS1/cmr/m/n' instead on input line 29.
 
 [1
 
 ] [2
 
+] [3
+
+] [4
+
+] [5
+
+] [6
+
+] [7
+
+] [8
+
+] [9
+
+] [10
+
 ]
 \tf@nav=\write6
-\openout6 = `"중괄호로 표현하기.nav"'.
+\openout6 = `"Real Induction.nav"'.
 
 \tf@toc=\write7
-\openout7 = `"중괄호로 표현하기.toc"'.
+\openout7 = `"Real Induction.toc"'.
 
 \tf@snm=\write8
-\openout8 = `"중괄호로 표현하기.snm"'.
+\openout8 = `"Real Induction.snm"'.
 
- (./중괄호로 표현하기.aux)
+ (./Real Induction.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
@@ -1206,16 +1222,16 @@ L3 programming layer <2026-01-19>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `"중괄호로 표현하기".out' has not changed.
+Package rerunfilecheck Info: File `"Real Induction".out' has not changed.
 (rerunfilecheck)             Checksum: <no file>.
  ) 
 Here is how much of TeX's memory you used:
- 38392 strings out of 468174
- 804742 string characters out of 5436827
- 1324996 words of memory out of 5000000
- 66424 multiletter control sequences out of 15000+600000
- 633923 words of font info for 84 fonts, out of 8000000 for 9000
+ 38530 strings out of 468174
+ 807701 string characters out of 5436827
+ 1332004 words of memory out of 5000000
+ 66561 multiletter control sequences out of 15000+600000
+ 633931 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 101i,11n,107p,1685b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,12n,107p,1695b,2826s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 중괄호로 표현하기.xdv (2 pages, 25824 bytes).
+Output written on Real Induction.xdv (10 pages, 198764 bytes).
