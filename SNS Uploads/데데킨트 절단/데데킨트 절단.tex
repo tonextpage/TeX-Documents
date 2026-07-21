@@ -1,0 +1,189 @@
+\documentclass[serif]{beamer}
+\usepackage{circuitikz}
+\usepackage{ulem}
+
+\input{sns_beamer_preamble.tex}
+
+\begin{document}
+
+\begin{frame}{데데킨트 절단}
+    해석학에 입문하면 가장 먼저 실수가 가지는 공리를 배웁니다.
+    \begin{enumerate}[-]
+        \item 체 공리
+        \item 순서 공리
+        \item 완비성 공리
+    \end{enumerate}
+    사실 이것은 실수의 성질을 말할 뿐, 실수가 무엇인지를 설명하지는 않습니다.
+    그렇다면 \\ 실수는 어떻게 구성할 수 있을까요? 유리수 직선을 이용해 실수의 `모델'을 만들어 봅시다.
+    \[
+        \mathbb Q \longrightarrow \mathbb R
+    \]
+    참고문헌: \textcolor{blue}{Open Logic Project, \underline{The Open Logic Text}}
+\end{frame}
+
+\begin{frame}{}
+    수학자 데데킨트는 유리수로부터 실수를 구성하기 위해 유리수 직선을 \textbf{절단}하는 방식을 택했습니다.
+    예를 들어 $\sqrt2$는 수직선 위의 한 점이 아니라, $\sqrt2$보다 작은 유리수의 집합과 그보다 큰 유리수의 집합의 쌍입니다.
+    \begin{figure}[!ht]
+        \centering
+        \resizebox{1\textwidth}{!}{%
+        \begin{circuitikz}
+        \tikzstyle{every node}=[font=\fontsize{10.8pt}{14.1pt}\selectfont]
+        \draw [ color={rgb,255:red,22; green,0; blue,255}, draw opacity=1, line width=0.7pt, short] (17.25,19.75) -- (23.375,19.75);
+        \draw [line width=0.7pt, dashed] (17.125,19.625) -- (17.125,17.625);
+        \draw [line width=0.7pt, -{Stealth[scale=1.5]}, ] (15.625,18.75) -- (17.0366,17.5884);
+        \node [font=\fontsize{10.8pt}{14.1pt}\selectfont, fill={rgb,255:red,255; green,255; blue,255}, fill opacity=1, text opacity=1, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (15.25,19.125) {$\sqrt2$};
+        \draw [ line width=0.7pt ] (17.125,17.5) circle (0.125cm);
+        \node [font=\fontsize{10.8pt}{14.1pt}\selectfont, fill={rgb,255:red,255; green,255; blue,255}, fill opacity=1, text opacity=1, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (22.25,18.625) {$\mathbb Q$};
+        \draw [ color={rgb,255:red,22; green,0; blue,255}, draw opacity=1, line width=0.7pt, short] (17.25,15.625) -- (23.375,15.625);
+        \draw [line width=0.7pt, dashed] (17.125,15.5) -- (17.125,13.5);
+        \node [font=\fontsize{10.8pt}{14.1pt}\selectfont, fill={rgb,255:red,255; green,255; blue,255}, fill opacity=1, text opacity=1, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (13.25,14.625) {$\sqrt2$};
+        \draw [ line width=0.7pt ] (17.125,13.375) circle (0.125cm);
+        \node [font=\fontsize{10.8pt}{14.1pt}\selectfont, fill={rgb,255:red,255; green,255; blue,255}, fill opacity=1, text opacity=1, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (22.25,14.25) {$\mathbb Q$};
+        \node [font=\fontsize{10.8pt}{14.1pt}\selectfont, fill={rgb,255:red,255; green,255; blue,255}, fill opacity=1, text opacity=1, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (17.375,17) {여기에 있는 점이 $\sqrt2$ $\leftarrow$ 이게 아니고!};
+        \node [font=\fontsize{10.8pt}{14.1pt}\selectfont, fill={rgb,255:red,255; green,255; blue,255}, fill opacity=1, text opacity=1, inner xsep=0.080cm, inner ysep=0.085cm, rounded corners=0.020cm] at (17.25,12.75) {이렇게 잘린 직선 자체가 $\sqrt2$.};
+        \draw [ line width=0.7pt , dashed] (10.375,16.125) rectangle  (23.875,12.125);
+        \draw [ color={rgb,255:red,255; green,47; blue,47}, draw opacity=1, line width=0.7pt, short] (10.75,17.5) -- (17,17.5);
+        \draw [ line width=0.7pt ] (17.125,19.75) circle (0.125cm);
+        \draw [ line width=0.7pt ] (17.125,15.625) circle (0.125cm);
+        \draw [ color={rgb,255:red,255; green,47; blue,47}, draw opacity=1, line width=0.7pt, short] (10.75,13.375) -- (17,13.375);
+        \end{circuitikz}
+        }%
+        \caption{데데킨트 절단으로 나타낸 $\sqrt2$}
+        \label{fig:DedekindCut}
+    \end{figure}
+    이 같은 방식으로 실수를 정의하는 방법을 \textcolor{blue}{\textbf{데데킨트 절단(Dedekind's Cut)}}이라 합니다.
+\end{frame}
+
+\begin{frame}{}
+    이제 데데킨트 절단을 통한 실수의 구성을 엄밀하게 살펴봅시다.
+    \begin{dfn*}{}
+        유리수체 $\mathbb Q$의 \textbf{절단(cut)}은 다음을 만족하는 $\mathbb Q$의 부분집합 $\alpha$이다.
+        \begin{enumerate}[(i)]
+            \item $\alpha$는 공집합이 아닌 진부분집합이다: $\varnothing\ne\alpha\subsetneq\mathbb Q$.
+            \item $\alpha$는 $\mathbb Q$의 앞절편(initial segment)이다: \\
+                모든 $p,q\in\mathbb Q$에 대하여, $p<q$이고 $q\in\alpha$이면 $p\in\alpha$이다.
+            \item $\alpha$에는 최댓값이 존재하지 않는다: \\
+                모든 $p\in\alpha$에 대하여 $p<q$인 $q\in\alpha$가 존재한다.
+        \end{enumerate}
+        실수의 집합 $\mathbb R$을 이러한 모든 절단의 집합으로 정의한다.
+    \end{dfn*}
+    앞선 그림에서는 잘린 유리수 직선의 두 부분을 모두 통틀어 하나의 실수라고 했습니다.
+    반면 위의 정의에서는 앞절편, 즉 왼쪽 부분만을 절단으로 취급합니다.
+    왼쪽 부분이 정해지면 오른쪽 부분은 자동으로 결정되기 때문입니다.
+    유리수의 절단에는 최댓값이 존재하지 않는 점 역시 눈여겨볼 만합니다.
+    아무렇게나 자르는 것이 아니라, `예쁘게' 잘라야 한다는 것이죠.
+\end{frame}
+
+\begin{frame}{}
+    유리수의 모든 절단의 집합으로 정의한 실수의 집합 $\mathbb R$에서 완비성 공리에 주목하기 위해, \\
+    순서 관계를 먼저 정의합시다:
+    \begin{center}
+        정의: 두 절단 $\alpha$와 $\beta$가 $\alpha\subseteq\beta$을 만족하면 $\alpha\leq\beta$라 한다.
+    \end{center}
+    이렇게 정의한 순서 관계에서 $\mathbb R$이 완비성 공리를 만족함을 보이겠습니다.
+    \begin{thm*}{}
+        절단의 집합 $\mathbb R$은 완비성 공리를 만족한다.
+    \end{thm*}
+    증명에 앞서 완비성 공리를 간단하게 복습하겠습니다.
+    \begin{hint}[완비성 공리]
+        공집합이 아닌 $\mathbb R$의 부분집합 $S$가 위로 유계이면, $\sup S$가 존재한다.
+    \end{hint}
+    $S$를 공집합이 아니고 위로 유계인 $\mathbb R$의 부분집합이라 합시다.
+    $S$의 상한 $\sup S$를 무엇으로 \\ 정해야 할까요?
+    여기서 $S$ 역시 절단으로 구성되어 있음에 주의하면서 잠시 고민해 보세요!
+\end{frame}
+
+\begin{frame}{}
+    정답은 $\mu:=\bigcup S$입니다! 이제 $\mu$가 유리수의 절단이면서 $S$의 상한임을 보이면 됩니다. \\
+    (참고: 상한은 존재하면 유일하므로 다른 후보는 없습니다.)
+    \begin{hint}[목표]
+        \begin{enumerate}[(1)]
+            \item $\mu$가 절단임을 보인다.
+            \item $\mu=\sup S$임을 보인다.
+        \end{enumerate}
+    \end{hint}
+    먼저 $\mu$가 절단임을 보이겠습니다. 절단이 만족해야 하는 세 조건을 차근차근 따지면 됩니다.
+    \begin{enumerate}[(i)]
+        \item $S\ne\varnothing$이므로 절단 $\alpha\in S$가 존재한다.
+            정의에 의해 $\alpha\ne\varnothing$이므로 유리수 $p\in\alpha$가 존재한다.
+            따라서 $p\in\alpha\subseteq\mu$이므로 $p\in\mu$가 되어 $\mu\ne\varnothing$이다.
+            한편, $S$는 위로 유계이므로 상계 $M$이 존재한다.
+            절단의 정의에 의해 유리수 $p\notin M$이 존재한다.
+            상계의 정의에 의해 모든 $\alpha\in S$는 $\alpha\subseteq M$을 만족한다.
+            그러므로 $p\notin\mu$이 되어 $\mu\ne\mathbb Q$이다.
+        \item 두 유리수 $p$와 $q$에 대하여 $p<q$이고 $q\in\mu$라 하자.
+            그러면 어떤 $\alpha\in S$에 대하여 $q\in\alpha$이다.
+            절단의 정의에 의해 $p\in\alpha$이므로 $p\in\mu$이다.
+        \item 유리수 $p\in\mu$를 임의로 택하면, 어떤 $\alpha\in S$에 대하여 $p\in\alpha$이다.
+            절단의 정의에 의해 $p<q$인 유리수 $q\in\alpha$가 존재한다.
+            $\mu$의 정의에 의해 $q\in\mu$이다.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{}
+    \begin{hint}[목표]
+        \begin{enumerate}[(1)]
+            \item \sout{$\mu$가 절단임을 보인다.} (완료!)
+            \item $\mu=\sup S$임을 보인다.
+        \end{enumerate}
+    \end{hint}
+    이제 $\mu=\sup S$을 보이겠습니다. 두 절단 사이에서 $\leq$와 $\subseteq$는 같은 의미임에 유의하세요!
+    \begin{enumerate}[(i)]
+        \item $\mu$의 정의에 의해 모든 $\alpha\in S$는 $\alpha\subseteq\mu$를 만족하므로 $\mu$는 $S$의 상계이다.
+        \item $M$을 $S$의 상계라 하자. 임의의 유리수 $p\in\mu$에 대하여 $p\in\alpha$인 절단 $\alpha\in S$를 택하자.
+            상계의 정의에 의해 $\alpha\subseteq M$이므로 $p\in M$이다. 따라서 $\mu\subseteq M$이다. \qed
+    \end{enumerate}
+    이로서 절단의 집합 $\mathbb R$이 완비성 공리를 만족함을 보였습니다.
+    $\mathbb R$이 체 공리와 순서 공리를 \\ 만족함을 보이기 위해선 덧셈과 곱셈을 정의해야 합니다.
+    그 전에 기존의 유리수를 절단으로 표현하여 $\mathbb R$의 원소로 다시 써야 합니다.
+    \begin{center}
+        유리수 $p$의 절단 표현: $p_{\mathbb R}=\{q\in\mathbb Q\mid q<p\}$.
+    \end{center}
+    유리수를 실수로 `매장(embedding)'한 상태에서 두 절단의 덧셈은 다음과 같이 정의합니다.
+    \[
+        \alpha+\beta=\{p+q\mid p\in\alpha\text{이고 }q\in\beta\}
+    \]
+\end{frame}
+
+\begin{frame}{}
+    곱셈은 조금 까다롭습니다. 먼저 $\alpha,\beta\geq 0_{\mathbb R}$인 두 절단 $\alpha,\beta$의 곱셈은
+    \[
+        \alpha\times\beta=\{p\times q\mid 0\leq p\in\alpha\text{이고 }0\leq q\in\beta\}\cup 0_{\mathbb R}
+    \]
+    으로 정의합니다. ($0_{\mathbb R}$은 유리수 $0$의 절단 표현 $\{q\in\mathbb Q\mid q<0\}$입니다.) \\
+    다른 경우의 곱셈을 위해서는 다음이 필요합니다.
+    \[
+        -\alpha=\{p-q\mid p<0\text{이고 }q\notin\alpha\}
+    \]
+    이제 나머지 경우에서도 곱셈을 온전하게 정의할 수 있습니다.
+    \[
+        \alpha\times\beta=\begin{cases}
+            (-\alpha)\times(-\beta) & (\alpha<0_{\mathbb R}\text{이고 }\beta<0_{\mathbb R}\text{인 경우}) \\
+            -((-\alpha)\times-\beta) & (\alpha<0_{\mathbb R}\text{이고 }\beta>0_{\mathbb R}\text{인 경우}) \\
+            -(\alpha\times(-\beta)) & (\alpha>0_{\mathbb R}\text{이고 }\beta<0_{\mathbb R}\text{인 경우})
+        \end{cases}
+    \]
+    이제 다음을 생각해야 하지만... 여기서는 생략하겠습니다.
+    \begin{enumerate}[-]
+        \item $\alpha+\beta$와 $\alpha\times\beta$는 절단인가?
+        \item 위와 같이 정의한 연산에서 $\mathbb R$은 체 공리와 순서 공리를 만족하는가?
+    \end{enumerate}
+    아니면 직접 확인해보셔도 좋겠네요.
+\end{frame}
+
+\begin{frame}{}
+    대신에 연습문제를 남기겠습니다.
+    \begin{prob*}{무리수 $\sqrt2$}
+        $\mathbb Q$의 부분집합 $\alpha$를 다음과 같이 정의하자.
+        \[
+            \alpha=\{p\in\mathbb Q\mid p<0\text{ 또는 }p^2<2\}
+        \]
+        \begin{enumerate}[(a)]
+            \item $\alpha$가 절단임을 보여라.
+            \item $\alpha$는 $\mathbb R$에서 유리수가 아님을 보여라. 즉 임의의 유리수 $q$에 대해 $\alpha\ne q_{\mathbb R}$임을 보여라.
+            \item $\alpha^2=2_{\mathbb R}$임을 보여라.
+        \end{enumerate}
+    \end{prob*}
+\end{frame}
+\end{document}
