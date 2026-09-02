@@ -1,0 +1,83 @@
+\documentclass[serif]{beamer}
+\input{sns_beamer_preamble.tex}
+
+\begin{document}
+\begin{frame}{평가원이 던지는 힌트}
+    따끈따끈한 9월 모의평가 두 문제 보겠습니다.
+    \begin{hint}[2027학년도 9월 모의평가 공통 10번]
+        상수 $a$ $(a>1)$에 대하여 직선 $y=7$이 두 곡선 $y=16a^x$, $y=\dfrac{1}{4}a^x$와 만나는 점을 각각 $\mathrm A$, $\mathrm B$라 하자.
+        $\overline{\mathrm{AB}}=4$일 때, $a$의 값은? [4점]
+    \end{hint}
+    \begin{hint}[2027학년도 9월 모의평가 미적분 30번]
+        함수 $f(x)=2^{2x+\frac{1}{2}\cos\pi x}$의 역함수 $g(x)$는 양의 실수 전체의 집합에서 연속인 도함수를 갖는다.
+        \[
+            \frac{1}{4}\int_{f(1)}^{f(3)}g(x)\,dx+\int_{f(0)}^{f(2)}\frac{2^{4g(x)}g^\prime(x)}{x}\,dx=\frac{q}{p}\sqrt{2}
+        \]
+        일 때, $p+q$의 값을 구하시오. (단, $p$와 $q$는 서로소인 자연수이다.) [4점]
+    \end{hint}
+\end{frame}
+
+\begin{frame}
+    먼저 공통 10번을 보겠습니다. 두 곡선의 식을 살짝 바꾸면
+    \[
+        y=16a^x=a^{x+\log_a16}=a^{x+4\log_a2},\quad y=\frac{1}{4}a^x=a^{x+\log_a\frac{1}{4}}=a^{x-2\log_a2}
+    \]
+    이므로 평행이동을 생각하면 자연스럽게 $\overline{\mathrm{AB}}=6\log_a2$임을 알 수 있습니다. 따라서
+    \[
+        6\log_a2=4~\longrightarrow~\log_a2=\frac{2}{3}~\longrightarrow~\log_2a=\frac{3}{2}~\longrightarrow~a=2^{3/2}=2\sqrt{2}
+    \]
+    가 됩니다. 이 문항에서 지수함수의 $x$축 방향으로의 평행이동과 상수배가 동일함을 명심하고 미적분 30번을 보겠습니다. (이 문항에서 숫자 $7$은 장식이라는 사실도!)
+\end{frame}
+
+\begin{frame}{}
+    미적분 30번입니다. 두 번째 항에서 치환적분 냄새를 맡았습니다. $g(x)=t$라 하면 $g^\prime(x)\,dx=dt$이므로
+    \[
+        [\text{2}]=\int_{f(0)}^{f(2)}\frac{2^{4g(x)}g^\prime(x)}{x}\,dx=\int_{0}^{2}\frac{2^{4t}}{f(t)}\,dt
+    \]
+    입니다. 먼저 $f(t)$를 대입하면
+    \[
+        [\text{2}]=\int_{0}^{2}\frac{2^{4t}}{f(t)}\,dt=\int_{0}^{2}2^{4t}\cdot 2^{-2t-\frac{1}{2}\cos\pi t}\,dt=\int_{0}^{2}2^{2t-\frac{1}{2}\cos\pi t}\,dt
+    \]
+    인데, 아마 여기서 막힐 겁니다. 그러니 다른 항도 살펴봅시다. 기출문제를 열심히 봤다면 \\ 다음 식을 떠올릴 수 있습니다.
+    \[
+        [\text{1}]=\frac{1}{4}\int_{f(1)}^{f(3)}g(x)\,dx=\frac{3f(3)-f(1)}{4}-\frac{1}{4}\int_{1}^{3}f(x)\,dx
+    \]
+    감을 잡으셨나요?
+\end{frame}
+
+\begin{frame}
+    이제 머릿속에서
+    \begin{enumerate}[-]
+        \item $2t-\frac{1}{2}\cos\pi t$와 $f(x)=2x+\frac{1}{2}\cos\pi x$의 위화감
+        \item 적분 구간 $[0,2]$와 $[1,3]$의 길이가 같다는 사실
+        \item 삼각함수의 성질을 이용한 정적분 식 조작 [기출문제의 경험]
+        \item 지수함수의 $x$축 방향 평행이동 [평가원의 힌트: 공통 10번]
+    \end{enumerate}
+    이 모든 것을 합쳐서 뭔가 적분 구간을 평행이동하고 싶다는 욕구가 들어야 합니다. \\
+    여기서 마지막 항목은 평행이동으로 $\frac{1}{4}$을 얻는다는 확신을 얻기 위해 꼭 필요합니다.
+    \begin{align*}
+        [\text{2}]&=\int_{0}^{2}2^{2t-\frac{1}{2}\cos\pi t}\,dt\\[3pt]
+        &=\int_{1}^{3}2^{2(t-1)-\frac{1}{2}\cos\pi(t-1)}\,dt\\[3pt]
+        &=\int_{1}^{3}2^{2t-2+\frac{1}{2}\cos\pi t}\,dt\\[3pt]
+        &=\frac{1}{4}\int_{1}^{3}f(t)\,dt
+    \end{align*}
+    임을 알 수 있고, 따라서
+    \[
+        (\text{준 식})=[\text{1}]+[\text{2}]=\frac{3f(3)-f(1)}{4}=\frac{47}{2}\sqrt{2}
+    \]
+    이므로 $p+q=47+2=49$입니다.
+\end{frame}
+
+\begin{frame}
+    솔직히 저도 다음 기출문제가 없었다면 많이 헤맸을 겁니다.
+    \begin{hint}[2025년 7월 학력평가 미적분 30번]
+        함수 $\displaystyle f(x)=\int_0^xe^{\cos\pi t}\,dt$의 역함수를 $g(x)$라 할 때, 실수 전체의 집합에서 도함수가\\
+        연속인 함수 $h(x)$가 모든 실수 $x$에 대하여
+        \[
+            h(g(x)+2)=2x^3+6f(1)x^2+1
+        \]
+        을 만족시킨다. $\displaystyle\int_3^7\frac{h^\prime(x)}{f(x)}\,dx=k\times\{f(1)\}^2$일 때, 실수 $k$의 값을 구하시오. [4점]
+    \end{hint}
+    기출문제 많이 푸세요.
+\end{frame}
+\end{document}
